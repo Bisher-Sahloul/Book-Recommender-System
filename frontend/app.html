@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Book Recommender</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="app" class="app-root">
+    <header class="topbar">
+      <div class="brand">📚 AI Book Recommender</div>
+      <div class="user-area" id="userArea">Loading user...</div>
+    </header>
+
+    <main class="container">
+      <section class="left-col">
+        <div class="search-card">
+          <label class="search-label">Search by description or category</label>
+          <input id="searchInput" class="search-input" placeholder="e.g. romantic tragic story in Italy" autocomplete="off">
+          <div id="searchResults" class="search-results"></div>
+        </div>
+
+        <div class="section">
+          <h3>⭐ Most Popular Books</h3>
+          <div id="popularList" class="grid-list"></div>
+        </div>
+
+        <div class="section">
+          <h3>🎯 Recommended for You</h3>
+          <div id="userRecList" class="grid-list"></div>
+        </div>
+      </section>
+
+      <aside class="right-col" id="detailPane">
+        <div id="placeholderDetail" class="detail-placeholder">
+          <h2>Select a book</h2>
+          <p>Click any book to view full details and related recommendations.</p>
+        </div>
+        <div id="bookDetail" class="book-detail hidden"></div>
+      </aside>
+    </main>
+
+    <footer class="footer">AI Book Recommender — powered by Vector Search & FastAPI</footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

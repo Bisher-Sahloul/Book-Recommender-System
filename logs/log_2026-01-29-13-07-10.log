@@ -1,0 +1,664 @@
+[2026-01-29 13:07:10,663] root - INFO - ******************** Data Ingestion log started.********************
+[2026-01-29 13:07:10,663] root - INFO - Data Ingestion Config: DatasetConfig(raw_data_dir='artifacts\\dataset\\raw_data', ingested_data_dir='artifacts\\dataset\\ingested_data', Amazon_data_dir='artifacts\\dataset\\raw_data\\Amazon', Openlibrary_data_dir='artifacts\\dataset\\raw_data\\Openlibrary', Amazon_books_data='artifacts\\dataset\\raw_data\\Amazon\\books_data.csv', Amazon_books_rating='artifacts\\dataset\\raw_data\\Amazon\\books_rating.csv', Openlibrary_books='artifacts\\dataset\\raw_data\\Openlibrary\\openlibrary_books.csv', Current_books='artifacts\\dataset\\ingested_data\\current_books.csv', Current_reviews='artifacts\\dataset\\ingested_data\\current_reviews.csv')
+[2026-01-29 13:07:10,663] root - INFO - Data Ingestion Config: DatasetConfig(raw_data_dir='artifacts\\dataset\\raw_data', ingested_data_dir='artifacts\\dataset\\ingested_data', Amazon_data_dir='artifacts\\dataset\\raw_data\\Amazon', Openlibrary_data_dir='artifacts\\dataset\\raw_data\\Openlibrary', Amazon_books_data='artifacts\\dataset\\raw_data\\Amazon\\books_data.csv', Amazon_books_rating='artifacts\\dataset\\raw_data\\Amazon\\books_rating.csv', Openlibrary_books='artifacts\\dataset\\raw_data\\Openlibrary\\openlibrary_books.csv', Current_books='artifacts\\dataset\\ingested_data\\current_books.csv', Current_reviews='artifacts\\dataset\\ingested_data\\current_reviews.csv')
+[2026-01-29 13:07:48,631] root - INFO - Amazon books are ready for merging
+[2026-01-29 13:07:48,631] root - INFO - Data Ingestion Config: DatasetConfig(raw_data_dir='artifacts\\dataset\\raw_data', ingested_data_dir='artifacts\\dataset\\ingested_data', Amazon_data_dir='artifacts\\dataset\\raw_data\\Amazon', Openlibrary_data_dir='artifacts\\dataset\\raw_data\\Openlibrary', Amazon_books_data='artifacts\\dataset\\raw_data\\Amazon\\books_data.csv', Amazon_books_rating='artifacts\\dataset\\raw_data\\Amazon\\books_rating.csv', Openlibrary_books='artifacts\\dataset\\raw_data\\Openlibrary\\openlibrary_books.csv', Current_books='artifacts\\dataset\\ingested_data\\current_books.csv', Current_reviews='artifacts\\dataset\\ingested_data\\current_reviews.csv')
+[2026-01-29 13:07:48,637] urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): openlibrary.org:443
+[2026-01-29 13:07:49,742] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:07:49,750] root - INFO - Scraper allowed by robots.txt for base=https://openlibrary.org ? True
+[2026-01-29 13:07:49,750] root - INFO - Fetching subjects from https://openlibrary.org/subjects
+[2026-01-29 13:07:49,750] root - DEBUG - Fetching URL: https://openlibrary.org/subjects
+[2026-01-29 13:07:50,135] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /subjects HTTP/1.1" 200 None
+[2026-01-29 13:07:50,178] root - INFO - Page 67: sampled 10 subjects
+[2026-01-29 13:07:50,179] root - INFO - Searching Fashion (page=67)
+[2026-01-29 13:07:50,179] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Fashion&page=67
+[2026-01-29 13:07:51,241] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Fashion&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:07:53,767] root - INFO - Found 20 works for subject=Fashion page=67
+[2026-01-29 13:07:54,001] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:07:54,003] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL24222136W/Fashion_Killa
+[2026-01-29 13:07:54,483] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL24222136W/Fashion_Killa HTTP/1.1" 200 None
+[2026-01-29 13:07:57,098] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:07:57,099] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL27826896W/Fashion_Book
+[2026-01-29 13:07:57,633] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL27826896W/Fashion_Book HTTP/1.1" 200 None
+[2026-01-29 13:08:00,069] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:00,069] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL40568295W/Fashion_Design
+[2026-01-29 13:08:00,508] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL40568295W/Fashion_Design HTTP/1.1" 200 None
+[2026-01-29 13:08:02,699] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:02,701] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL28165258W/Fashion_Sketchbook
+[2026-01-29 13:08:03,147] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL28165258W/Fashion_Sketchbook HTTP/1.1" 200 None
+[2026-01-29 13:08:06,631] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:06,633] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL38577171W/Fashion_careers
+[2026-01-29 13:08:07,104] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL38577171W/Fashion_careers HTTP/1.1" 200 None
+[2026-01-29 13:08:10,182] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:10,183] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL13245971W/Gothic_woman's_fashion
+[2026-01-29 13:08:10,568] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL13245971W/Gothic_woman's_fashion HTTP/1.1" 200 None
+[2026-01-29 13:08:13,790] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:13,792] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL23536554W/Fashion_doll_fantasy
+[2026-01-29 13:08:14,304] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL23536554W/Fashion_doll_fantasy HTTP/1.1" 200 None
+[2026-01-29 13:08:17,816] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:17,818] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19706421W/Lights_camera_fashion!
+[2026-01-29 13:08:18,354] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19706421W/Lights_camera_fashion! HTTP/1.1" 200 None
+[2026-01-29 13:08:21,437] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:21,440] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL24121931W/Not_in_fashion
+[2026-01-29 13:08:21,907] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL24121931W/Not_in_fashion HTTP/1.1" 200 None
+[2026-01-29 13:08:25,492] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:25,493] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19625511W/Islamic_Fashion_(Pepin_Fashion_Textiles_Patterns)
+[2026-01-29 13:08:26,161] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19625511W/Islamic_Fashion_(Pepin_Fashion_Textiles_Patterns) HTTP/1.1" 200 None
+[2026-01-29 13:08:29,336] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:29,337] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL28852215W/Fashion
+[2026-01-29 13:08:29,791] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL28852215W/Fashion HTTP/1.1" 200 None
+[2026-01-29 13:08:32,610] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:32,611] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4145984W/Ladies_fashion_illustration
+[2026-01-29 13:08:33,027] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4145984W/Ladies_fashion_illustration HTTP/1.1" 200 None
+[2026-01-29 13:08:36,052] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:36,053] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18703592W/Fashion_retail
+[2026-01-29 13:08:36,595] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18703592W/Fashion_retail HTTP/1.1" 200 None
+[2026-01-29 13:08:39,271] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:39,272] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL1940246W/Fashion_through_fashion_plates_1771-1970
+[2026-01-29 13:08:40,284] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL1940246W/Fashion_through_fashion_plates_1771-1970 HTTP/1.1" 200 None
+[2026-01-29 13:08:42,301] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:42,302] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL29005846W/Fashion_Figure_Templates_for_Fashion_Portfolio
+[2026-01-29 13:08:42,741] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL29005846W/Fashion_Figure_Templates_for_Fashion_Portfolio HTTP/1.1" 200 None
+[2026-01-29 13:08:44,669] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:44,669] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL216276W/Fashion_a_poem
+[2026-01-29 13:08:45,101] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL216276W/Fashion_a_poem HTTP/1.1" 200 None
+[2026-01-29 13:08:46,980] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:46,981] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17532275W/Fashion_and_the_Consumer_Understanding_Fashion
+[2026-01-29 13:08:47,446] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17532275W/Fashion_and_the_Consumer_Understanding_Fashion HTTP/1.1" 200 None
+[2026-01-29 13:08:49,678] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:49,679] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4561153W/Fashion_and_war
+[2026-01-29 13:08:50,104] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4561153W/Fashion_and_war HTTP/1.1" 200 None
+[2026-01-29 13:08:52,703] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:52,704] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL29403530W/Nail_Fashion
+[2026-01-29 13:08:53,302] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL29403530W/Nail_Fashion HTTP/1.1" 200 None
+[2026-01-29 13:08:57,463] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:08:57,464] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL26519367W/Music_and_Fashion
+[2026-01-29 13:08:58,106] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL26519367W/Music_and_Fashion HTTP/1.1" 200 None
+[2026-01-29 13:09:00,747] root - INFO - Searching Russian (page=67)
+[2026-01-29 13:09:00,747] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Russian&page=67
+[2026-01-29 13:09:02,364] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Russian&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:09:04,789] root - INFO - Found 20 works for subject=Russian page=67
+[2026-01-29 13:09:05,065] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:05,067] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL41074905W/Numbers_in_Russian
+[2026-01-29 13:09:05,606] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL41074905W/Numbers_in_Russian HTTP/1.1" 200 None
+[2026-01-29 13:09:09,384] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:09,387] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL1337103W/Mulliner_nights
+[2026-01-29 13:09:10,102] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL1337103W/Mulliner_nights HTTP/1.1" 200 None
+[2026-01-29 13:09:12,619] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:12,621] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6212002W/Oxford_take_off_in_Russian
+[2026-01-29 13:09:13,676] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6212002W/Oxford_take_off_in_Russian HTTP/1.1" 200 None
+[2026-01-29 13:09:17,471] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:17,472] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL43508566W/Fundamentals_of_Russian
+[2026-01-29 13:09:18,512] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL43508566W/Fundamentals_of_Russian HTTP/1.1" 200 None
+[2026-01-29 13:09:21,773] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:21,774] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL28198488W/Russian_literature_triquarterly
+[2026-01-29 13:09:22,750] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL28198488W/Russian_literature_triquarterly HTTP/1.1" 200 None
+[2026-01-29 13:09:25,210] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:25,212] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL8599154W/Russian_Illustrated_Bible
+[2026-01-29 13:09:26,058] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL8599154W/Russian_Illustrated_Bible HTTP/1.1" 200 None
+[2026-01-29 13:09:28,391] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:28,392] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL13245233W/Fundamentals_of_Russian
+[2026-01-29 13:09:29,086] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL13245233W/Fundamentals_of_Russian HTTP/1.1" 200 None
+[2026-01-29 13:09:31,447] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:31,449] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL8625417W/Russian_stage_two
+[2026-01-29 13:09:32,204] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL8625417W/Russian_stage_two HTTP/1.1" 200 None
+[2026-01-29 13:09:36,194] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:36,195] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15927049W/Essential_Russian
+[2026-01-29 13:09:36,983] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15927049W/Essential_Russian HTTP/1.1" 200 None
+[2026-01-29 13:09:40,303] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:40,318] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL41565750W/Russian_Picture_Book
+[2026-01-29 13:09:40,901] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL41565750W/Russian_Picture_Book HTTP/1.1" 200 None
+[2026-01-29 13:09:44,652] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:44,654] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21570647W/His_Inexperienced_Mistress
+[2026-01-29 13:09:45,357] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21570647W/His_Inexperienced_Mistress HTTP/1.1" 200 None
+[2026-01-29 13:09:48,467] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:48,470] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL26454638W/Russian_Cookbook
+[2026-01-29 13:09:49,054] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL26454638W/Russian_Cookbook HTTP/1.1" 200 None
+[2026-01-29 13:09:51,894] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:51,896] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL40334333W/Childrens_Russian_Books_Gifts_for_Mom_in_Russian
+[2026-01-29 13:09:52,417] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL40334333W/Childrens_Russian_Books_Gifts_for_Mom_in_Russian HTTP/1.1" 200 None
+[2026-01-29 13:09:54,251] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:54,253] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL41068414W/Russian_Everywhere
+[2026-01-29 13:09:54,810] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL41068414W/Russian_Everywhere HTTP/1.1" 200 None
+[2026-01-29 13:09:58,167] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:09:58,172] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL31461116W/Russian_Stories
+[2026-01-29 13:09:58,672] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL31461116W/Russian_Stories HTTP/1.1" 200 None
+[2026-01-29 13:10:01,802] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:01,804] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL40636258W/Russian_Language
+[2026-01-29 13:10:02,349] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL40636258W/Russian_Language HTTP/1.1" 200 None
+[2026-01-29 13:10:05,817] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:05,817] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL7912143W/Instant_Russian
+[2026-01-29 13:10:06,411] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL7912143W/Instant_Russian HTTP/1.1" 200 None
+[2026-01-29 13:10:08,778] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:08,780] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL23185795W/The_everything_essential_Russian_book
+[2026-01-29 13:10:09,419] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL23185795W/The_everything_essential_Russian_book HTTP/1.1" 200 None
+[2026-01-29 13:10:11,828] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:11,828] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4274788W/The_case_of_the_Russian_diplomat
+[2026-01-29 13:10:15,530] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4274788W/The_case_of_the_Russian_diplomat HTTP/1.1" 200 None
+[2026-01-29 13:10:19,207] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:19,209] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL26817719W/Russian_Handwriting_Worksheets
+[2026-01-29 13:10:19,796] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL26817719W/Russian_Handwriting_Worksheets HTTP/1.1" 200 None
+[2026-01-29 13:10:22,426] root - INFO - Searching Business Economics (page=67)
+[2026-01-29 13:10:22,426] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Business Economics&page=67
+[2026-01-29 13:10:24,119] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Business%20Economics&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:10:25,644] root - INFO - Found 20 works for subject=Business Economics page=67
+[2026-01-29 13:10:25,881] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:25,882] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17998677W/Statistics_for_business_and_economics
+[2026-01-29 13:10:26,543] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17998677W/Statistics_for_business_and_economics HTTP/1.1" 200 None
+[2026-01-29 13:10:29,285] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:29,286] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL9740920M/Statistics_for_Business_and_Economics
+[2026-01-29 13:10:29,549] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL9740920M/Statistics_for_Business_and_Economics HTTP/1.1" 301 None
+[2026-01-29 13:10:30,060] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /books/OL9740920M/Statistics_for_Business_and_Economics HTTP/1.1" 200 None
+[2026-01-29 13:10:32,885] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:32,887] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL22444495W/Some_economic_aspects_of_business_organization
+[2026-01-29 13:10:33,838] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL22444495W/Some_economic_aspects_of_business_organization HTTP/1.1" 200 None
+[2026-01-29 13:10:36,801] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:36,802] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6949888W/Economic_penetration_and_business_concentration
+[2026-01-29 13:10:37,264] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6949888W/Economic_penetration_and_business_concentration HTTP/1.1" 200 None
+[2026-01-29 13:10:38,756] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:38,757] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL29344372W/Economics_for_Business_with_Pin_Card_Value_Pack_Economics_for_Business
+[2026-01-29 13:10:39,210] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL29344372W/Economics_for_Business_with_Pin_Card_Value_Pack_Economics_for_Business HTTP/1.1" 200 None
+[2026-01-29 13:10:42,922] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:42,924] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2952380W/Business_elites_and_Russian_economic_policy
+[2026-01-29 13:10:45,569] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2952380W/Business_elites_and_Russian_economic_policy HTTP/1.1" 200 None
+[2026-01-29 13:10:47,125] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:47,125] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21160505W/Economics_of_Small_Business
+[2026-01-29 13:10:47,560] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21160505W/Economics_of_Small_Business HTTP/1.1" 200 None
+[2026-01-29 13:10:51,031] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:51,031] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL10246023M/Studies_in_Economics_and_Business
+[2026-01-29 13:10:51,267] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL10246023M/Studies_in_Economics_and_Business HTTP/1.1" 301 None
+[2026-01-29 13:10:51,760] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /books/OL10246023M/Studies_in_Economics_and_Business HTTP/1.1" 200 None
+[2026-01-29 13:10:55,154] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:55,156] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL27970156W/Economics_in_a_business_context
+[2026-01-29 13:10:55,644] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL27970156W/Economics_in_a_business_context HTTP/1.1" 200 None
+[2026-01-29 13:10:58,468] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:10:58,470] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL10260874M/Economics_Business_and_Finance
+[2026-01-29 13:10:58,714] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL10260874M/Economics_Business_and_Finance HTTP/1.1" 301 None
+[2026-01-29 13:10:59,377] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /books/OL10260874M/Economics_Business_and_Finance HTTP/1.1" 200 None
+[2026-01-29 13:11:02,542] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:02,544] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19436077W/Educational_innovation_in_economics_and_business
+[2026-01-29 13:11:03,132] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19436077W/Educational_innovation_in_economics_and_business HTTP/1.1" 200 None
+[2026-01-29 13:11:05,641] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:05,642] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL43793389W/U._S._direct_investment_abroad_1966_final_data
+[2026-01-29 13:11:06,095] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL43793389W/U._S._direct_investment_abroad_1966_final_data HTTP/1.1" 200 None
+[2026-01-29 13:11:07,714] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:07,715] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2493084W/Psychology_in_economics_and_business
+[2026-01-29 13:11:08,520] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2493084W/Psychology_in_economics_and_business HTTP/1.1" 200 None
+[2026-01-29 13:11:11,535] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:11,537] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL20713709W/Economics_Business_Case_Booklet_for_Packaging
+[2026-01-29 13:11:12,065] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL20713709W/Economics_Business_Case_Booklet_for_Packaging HTTP/1.1" 200 None
+[2026-01-29 13:11:14,653] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:14,653] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL20789602W/The_Practice_of_Statistics_for_Business_and_Economics
+[2026-01-29 13:11:15,203] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL20789602W/The_Practice_of_Statistics_for_Business_and_Economics HTTP/1.1" 200 None
+[2026-01-29 13:11:18,218] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:18,218] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL28412650W/International_Business_and_Economics
+[2026-01-29 13:11:18,755] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL28412650W/International_Business_and_Economics HTTP/1.1" 200 None
+[2026-01-29 13:11:20,943] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:20,945] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL3754018W/Economic_regulation_of_business
+[2026-01-29 13:11:21,546] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL3754018W/Economic_regulation_of_business HTTP/1.1" 200 None
+[2026-01-29 13:11:25,137] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:25,140] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL22786362W/Statistics_for_business_and_economics
+[2026-01-29 13:11:25,594] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL22786362W/Statistics_for_business_and_economics HTTP/1.1" 200 None
+[2026-01-29 13:11:28,341] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:28,343] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL16939016W/Health_economics
+[2026-01-29 13:11:28,939] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL16939016W/Health_economics HTTP/1.1" 200 None
+[2026-01-29 13:11:32,142] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:32,143] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL12184058W/Business_and_economics
+[2026-01-29 13:11:32,567] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL12184058W/Business_and_economics HTTP/1.1" 200 None
+[2026-01-29 13:11:34,382] root - INFO - Searching Music (page=67)
+[2026-01-29 13:11:34,382] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Music&page=67
+[2026-01-29 13:11:36,190] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Music&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:11:37,839] root - INFO - Found 20 works for subject=Music page=67
+[2026-01-29 13:11:38,068] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:38,083] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19699622W/Digital_sound_processing_for_music_and_multimedia
+[2026-01-29 13:11:38,758] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19699622W/Digital_sound_processing_for_music_and_multimedia HTTP/1.1" 200 None
+[2026-01-29 13:11:41,028] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:41,028] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL7140683W/Masters_of_French_music
+[2026-01-29 13:11:41,902] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL7140683W/Masters_of_French_music HTTP/1.1" 200 None
+[2026-01-29 13:11:45,524] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:45,526] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL482951W/Gulf_Music
+[2026-01-29 13:11:46,191] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL482951W/Gulf_Music HTTP/1.1" 200 None
+[2026-01-29 13:11:48,843] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:48,846] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6904043W/The_shaping_forces_in_music
+[2026-01-29 13:11:49,567] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6904043W/The_shaping_forces_in_music HTTP/1.1" 200 None
+[2026-01-29 13:11:52,114] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:52,116] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL24168962W/the_21st_century_mapeh_in_action
+[2026-01-29 13:11:52,767] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL24168962W/the_21st_century_mapeh_in_action HTTP/1.1" 200 None
+[2026-01-29 13:11:56,662] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:56,663] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL25215499W/Music_Business
+[2026-01-29 13:11:57,436] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL25215499W/Music_Business HTTP/1.1" 200 None
+[2026-01-29 13:11:59,778] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:11:59,780] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2929531W/Chorus_line
+[2026-01-29 13:12:00,600] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2929531W/Chorus_line HTTP/1.1" 200 None
+[2026-01-29 13:12:04,134] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:04,137] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL5822594W/Funeral_music
+[2026-01-29 13:12:05,154] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL5822594W/Funeral_music HTTP/1.1" 200 None
+[2026-01-29 13:12:07,499] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:07,500] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15415265W/Songwriting
+[2026-01-29 13:12:08,456] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15415265W/Songwriting HTTP/1.1" 200 None
+[2026-01-29 13:12:11,751] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:11,752] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL5119901W/Twentieth_century_church_music
+[2026-01-29 13:12:12,704] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL5119901W/Twentieth_century_church_music HTTP/1.1" 200 None
+[2026-01-29 13:12:15,140] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:15,140] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL3083403W/Native_American_Music_in_Eastern_North_America
+[2026-01-29 13:12:15,871] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL3083403W/Native_American_Music_in_Eastern_North_America HTTP/1.1" 200 None
+[2026-01-29 13:12:18,719] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:18,720] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21358425W/Gateways_to_Understanding_Music
+[2026-01-29 13:12:19,468] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21358425W/Gateways_to_Understanding_Music HTTP/1.1" 200 None
+[2026-01-29 13:12:21,936] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:21,936] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2563721W/A_new_dictionary_of_music
+[2026-01-29 13:12:22,760] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2563721W/A_new_dictionary_of_music HTTP/1.1" 200 None
+[2026-01-29 13:12:24,741] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:24,743] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL30288080W/Blank_Guitar_Tabs
+[2026-01-29 13:12:25,353] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL30288080W/Blank_Guitar_Tabs HTTP/1.1" 200 None
+[2026-01-29 13:12:28,327] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:28,327] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL28081361W/Su_D._Oku_Saves_Earth!_-_200_Sudoku_Puzzles_and_Answers
+[2026-01-29 13:12:29,054] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL28081361W/Su_D._Oku_Saves_Earth!_-_200_Sudoku_Puzzles_and_Answers HTTP/1.1" 200 None
+[2026-01-29 13:12:32,460] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:32,460] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6285080W/Elements_of_music
+[2026-01-29 13:12:36,321] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6285080W/Elements_of_music HTTP/1.1" 200 None
+[2026-01-29 13:12:39,868] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:39,868] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL3877638W/Writing_through_music
+[2026-01-29 13:12:40,572] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL3877638W/Writing_through_music HTTP/1.1" 200 None
+[2026-01-29 13:12:42,951] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:42,951] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL25315726W/Political_Music
+[2026-01-29 13:12:43,463] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL25315726W/Political_Music HTTP/1.1" 200 None
+[2026-01-29 13:12:47,066] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:47,066] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2749559W/The_structure_of_atonal_music
+[2026-01-29 13:12:47,852] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2749559W/The_structure_of_atonal_music HTTP/1.1" 200 None
+[2026-01-29 13:12:51,423] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:51,425] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18332484W/Indigenous_religious_musics
+[2026-01-29 13:12:52,074] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18332484W/Indigenous_religious_musics HTTP/1.1" 200 None
+[2026-01-29 13:12:55,632] root - INFO - Searching Entrepreneurship (page=67)
+[2026-01-29 13:12:55,632] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Entrepreneurship&page=67
+[2026-01-29 13:12:56,458] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Entrepreneurship&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:12:59,529] root - INFO - Found 20 works for subject=Entrepreneurship page=67
+[2026-01-29 13:12:59,767] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:12:59,769] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18925154W/Entrepreneurship_teaching_strategies
+[2026-01-29 13:13:00,255] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18925154W/Entrepreneurship_teaching_strategies HTTP/1.1" 200 None
+[2026-01-29 13:13:02,749] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:02,750] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15621219W/Client-based_entrepreneurship
+[2026-01-29 13:13:03,245] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15621219W/Client-based_entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:05,054] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:05,054] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17105241W/Technology-Based_Entrepreneurship
+[2026-01-29 13:13:05,575] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17105241W/Technology-Based_Entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:09,385] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:09,385] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17101522W/Technology-Based_Entrepreneurship
+[2026-01-29 13:13:09,901] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17101522W/Technology-Based_Entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:12,290] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:12,301] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17100121W/Technology-Based_Entrepreneurship
+[2026-01-29 13:13:12,834] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17100121W/Technology-Based_Entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:16,535] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:16,535] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18851755W/Encouraging_entrepreneurship_internationally
+[2026-01-29 13:13:17,121] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18851755W/Encouraging_entrepreneurship_internationally HTTP/1.1" 200 None
+[2026-01-29 13:13:19,216] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:19,216] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15882912W/Entrepreneurship_and_religion
+[2026-01-29 13:13:19,675] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15882912W/Entrepreneurship_and_religion HTTP/1.1" 200 None
+[2026-01-29 13:13:22,346] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:22,346] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18624758W/Clusters_of_entrepreneurship
+[2026-01-29 13:13:22,886] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18624758W/Clusters_of_entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:24,379] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:24,379] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17189699W/Technology-Based_Entrepreneurship
+[2026-01-29 13:13:24,937] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17189699W/Technology-Based_Entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:28,642] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:28,643] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17305853W/Technology-Based_Entrepreneurship
+[2026-01-29 13:13:29,334] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17305853W/Technology-Based_Entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:32,183] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:32,184] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15301105W/Entrepreneurship_with_PowerWeb
+[2026-01-29 13:13:32,731] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15301105W/Entrepreneurship_with_PowerWeb HTTP/1.1" 200 None
+[2026-01-29 13:13:35,215] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:35,217] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL1486440W/Entrepreneurship_in_agriculture
+[2026-01-29 13:13:35,731] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL1486440W/Entrepreneurship_in_agriculture HTTP/1.1" 200 None
+[2026-01-29 13:13:38,391] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:38,392] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15611576W/Entrepreneurship_for_engineers
+[2026-01-29 13:13:38,890] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15611576W/Entrepreneurship_for_engineers HTTP/1.1" 200 None
+[2026-01-29 13:13:42,132] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:42,133] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17066636W/Technology-Based_Entrepreneurship
+[2026-01-29 13:13:42,688] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17066636W/Technology-Based_Entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:45,065] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:45,067] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL16414535W/Entrepreneurship_in_context
+[2026-01-29 13:13:45,688] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL16414535W/Entrepreneurship_in_context HTTP/1.1" 200 None
+[2026-01-29 13:13:48,118] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:48,120] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19044641W/Strengthening_women's_entrepreneurship
+[2026-01-29 13:13:48,657] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19044641W/Strengthening_women's_entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:52,587] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:52,590] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17091282W/Sustainable_Micro_Entrepreneurships
+[2026-01-29 13:13:53,534] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17091282W/Sustainable_Micro_Entrepreneurships HTTP/1.1" 200 None
+[2026-01-29 13:13:55,046] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:55,048] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL16307026W/Innovation_and_entrepreneurship
+[2026-01-29 13:13:55,508] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL16307026W/Innovation_and_entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:13:57,895] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:13:57,897] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL5140000W/Entrepreneurship_and_Organisation
+[2026-01-29 13:13:58,401] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL5140000W/Entrepreneurship_and_Organisation HTTP/1.1" 200 None
+[2026-01-29 13:14:02,512] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:02,513] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17189310W/Technology-Based_Entrepreneurship
+[2026-01-29 13:14:03,140] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17189310W/Technology-Based_Entrepreneurship HTTP/1.1" 200 None
+[2026-01-29 13:14:06,599] root - INFO - Searching Politics and Government (page=67)
+[2026-01-29 13:14:06,600] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Politics and Government&page=67
+[2026-01-29 13:14:10,494] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Politics%20and%20Government&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:14:11,838] root - INFO - Found 20 works for subject=Politics and Government page=67
+[2026-01-29 13:14:12,767] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:12,768] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL337996W/Principles_of_political_science_and_government
+[2026-01-29 13:14:13,745] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL337996W/Principles_of_political_science_and_government HTTP/1.1" 200 None
+[2026-01-29 13:14:15,703] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:15,705] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL38598702W/Provincial_government_and_politics
+[2026-01-29 13:14:16,260] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL38598702W/Provincial_government_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:14:17,968] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:17,970] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19383852W/Illinois_government_and_politics
+[2026-01-29 13:14:18,516] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19383852W/Illinois_government_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:14:21,716] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:21,719] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL7094861W/Government_and_politics_of_Georgia
+[2026-01-29 13:14:22,282] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL7094861W/Government_and_politics_of_Georgia HTTP/1.1" 200 None
+[2026-01-29 13:14:23,931] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:23,934] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL26774816W/Oklahoma_Government_and_Politics
+[2026-01-29 13:14:24,654] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL26774816W/Oklahoma_Government_and_Politics HTTP/1.1" 200 None
+[2026-01-29 13:14:27,609] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:27,611] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL26775550W/Oklahoma_Government_and_Politics
+[2026-01-29 13:14:28,140] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL26775550W/Oklahoma_Government_and_Politics HTTP/1.1" 200 None
+[2026-01-29 13:14:31,505] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:31,505] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2481615W/American_government_and_politics
+[2026-01-29 13:14:32,082] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2481615W/American_government_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:14:34,217] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:34,218] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL22469169W/Municipal_government_history_and_politics
+[2026-01-29 13:14:34,665] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL22469169W/Municipal_government_history_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:14:37,509] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:37,510] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL35324535W/AMERICAN_GOVERNMENT_AND_POLITICS
+[2026-01-29 13:14:38,011] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL35324535W/AMERICAN_GOVERNMENT_AND_POLITICS HTTP/1.1" 200 None
+[2026-01-29 13:14:40,124] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:40,126] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL13354438W/State_and_local_government_politics
+[2026-01-29 13:14:40,750] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL13354438W/State_and_local_government_politics HTTP/1.1" 200 None
+[2026-01-29 13:14:43,310] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:43,316] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL32006353W/AP_Government_and_Politics
+[2026-01-29 13:14:43,770] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL32006353W/AP_Government_and_Politics HTTP/1.1" 200 None
+[2026-01-29 13:14:47,374] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:47,376] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL11081642W/Government_and_politics_of_Britain
+[2026-01-29 13:14:47,868] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL11081642W/Government_and_politics_of_Britain HTTP/1.1" 200 None
+[2026-01-29 13:14:50,245] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:50,246] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL3351677W/Connecticut_government_and_politics
+[2026-01-29 13:14:50,822] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL3351677W/Connecticut_government_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:14:53,925] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:53,926] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL28786587W/Governance_and_Politics_of_the_Netherlands._Comparative_Government_and_Politics
+[2026-01-29 13:14:54,492] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL28786587W/Governance_and_Politics_of_the_Netherlands._Comparative_Government_and_Politics HTTP/1.1" 200 None
+[2026-01-29 13:14:56,689] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:14:56,690] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL20995559W/New_Zealand_Government_and_Politics
+[2026-01-29 13:14:57,291] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL20995559W/New_Zealand_Government_and_Politics HTTP/1.1" 200 None
+[2026-01-29 13:15:00,784] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:00,786] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL22456860W/American_government_and_politics
+[2026-01-29 13:15:01,318] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL22456860W/American_government_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:15:02,851] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:02,852] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL8106120W/Government_and_politics_of_Britain
+[2026-01-29 13:15:03,343] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL8106120W/Government_and_politics_of_Britain HTTP/1.1" 200 None
+[2026-01-29 13:15:05,195] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:05,197] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6928500W/American_Government_and_politics
+[2026-01-29 13:15:05,775] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6928500W/American_Government_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:15:08,264] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:08,265] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL11246632W/Government_and_politics_of_France
+[2026-01-29 13:15:08,783] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL11246632W/Government_and_politics_of_France HTTP/1.1" 200 None
+[2026-01-29 13:15:10,797] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:10,799] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL20378681M/Provincial_government_and_politics
+[2026-01-29 13:15:11,040] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL20378681M/Provincial_government_and_politics HTTP/1.1" 301 None
+[2026-01-29 13:15:11,548] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /books/OL20378681M/Provincial_government_and_politics HTTP/1.1" 200 None
+[2026-01-29 13:15:13,372] root - INFO - Searching Photography (page=67)
+[2026-01-29 13:15:13,372] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Photography&page=67
+[2026-01-29 13:15:14,593] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Photography&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:15:17,341] root - INFO - Found 20 works for subject=Photography page=67
+[2026-01-29 13:15:17,703] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:17,705] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL40412164W/Photography
+[2026-01-29 13:15:18,351] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL40412164W/Photography HTTP/1.1" 200 None
+[2026-01-29 13:15:22,343] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:22,344] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL9716663W/Listen_to_the_Spirit_He_Will_Lead_You
+[2026-01-29 13:15:23,133] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL9716663W/Listen_to_the_Spirit_He_Will_Lead_You HTTP/1.1" 200 None
+[2026-01-29 13:15:26,306] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:26,306] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2696555W/Pro_Techniques_of_People_Photography
+[2026-01-29 13:15:26,885] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2696555W/Pro_Techniques_of_People_Photography HTTP/1.1" 200 None
+[2026-01-29 13:15:30,361] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:30,362] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2136529W/Appearances
+[2026-01-29 13:15:31,704] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2136529W/Appearances HTTP/1.1" 200 None
+[2026-01-29 13:15:35,206] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:35,206] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL35857881W/Photography_Books_Create_Great_Digital_Photography
+[2026-01-29 13:15:35,717] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL35857881W/Photography_Books_Create_Great_Digital_Photography HTTP/1.1" 200 None
+[2026-01-29 13:15:39,826] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:39,827] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4309174W/The_history_of_photography_from_1839_to_the_present_day
+[2026-01-29 13:15:40,648] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4309174W/The_history_of_photography_from_1839_to_the_present_day HTTP/1.1" 200 None
+[2026-01-29 13:15:43,515] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:43,516] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL5124025W/The_photography_of_colored_objects
+[2026-01-29 13:15:44,530] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL5124025W/The_photography_of_colored_objects HTTP/1.1" 200 None
+[2026-01-29 13:15:46,721] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:46,722] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6498638W/Approaching_Photography
+[2026-01-29 13:15:47,318] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6498638W/Approaching_Photography HTTP/1.1" 200 None
+[2026-01-29 13:15:50,102] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:50,104] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL5909880W/Photojournalism_(Library_of_Photography)
+[2026-01-29 13:15:50,920] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL5909880W/Photojournalism_(Library_of_Photography) HTTP/1.1" 200 None
+[2026-01-29 13:15:53,948] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:53,950] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL9716664W/Listen_to_the_Spirit--He_Will_Lead_You_2002
+[2026-01-29 13:15:54,504] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL9716664W/Listen_to_the_Spirit--He_Will_Lead_You_2002 HTTP/1.1" 200 None
+[2026-01-29 13:15:56,825] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:15:56,827] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL543808W/Big_Bucks_Selling_Your_Photography
+[2026-01-29 13:15:57,616] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL543808W/Big_Bucks_Selling_Your_Photography HTTP/1.1" 200 None
+[2026-01-29 13:16:00,104] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:00,105] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21276423W/Introduction_to_Photography
+[2026-01-29 13:16:00,644] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21276423W/Introduction_to_Photography HTTP/1.1" 200 None
+[2026-01-29 13:16:04,033] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:04,035] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4983487W/Gowland's_guide_to_glamour_photography
+[2026-01-29 13:16:04,820] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4983487W/Gowland's_guide_to_glamour_photography HTTP/1.1" 200 None
+[2026-01-29 13:16:08,004] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:08,004] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21349177W/Photography_and_Migration
+[2026-01-29 13:16:08,623] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21349177W/Photography_and_Migration HTTP/1.1" 200 None
+[2026-01-29 13:16:11,885] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:11,887] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL32286875W/A_History_and_handbook_of_photography
+[2026-01-29 13:16:12,501] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL32286875W/A_History_and_handbook_of_photography HTTP/1.1" 200 None
+[2026-01-29 13:16:15,263] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:15,264] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL16190768W/Photography_as_activism
+[2026-01-29 13:16:15,934] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL16190768W/Photography_as_activism HTTP/1.1" 200 None
+[2026-01-29 13:16:18,688] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:18,688] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15090906W/Reframing_photography
+[2026-01-29 13:16:19,363] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15090906W/Reframing_photography HTTP/1.1" 200 None
+[2026-01-29 13:16:21,619] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:21,619] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21243602W/Companion_to_Photography
+[2026-01-29 13:16:22,122] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21243602W/Companion_to_Photography HTTP/1.1" 200 None
+[2026-01-29 13:16:24,897] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:24,898] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21056416W/Photography_and_Cyprus
+[2026-01-29 13:16:25,489] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21056416W/Photography_and_Cyprus HTTP/1.1" 200 None
+[2026-01-29 13:16:28,976] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:28,977] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18512429W/Art_Photographie_numérique
+[2026-01-29 13:16:29,619] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18512429W/Art_Photographie_num%C3%A9rique HTTP/1.1" 200 None
+[2026-01-29 13:16:32,333] root - INFO - Searching Algebra (page=67)
+[2026-01-29 13:16:32,334] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Algebra&page=67
+[2026-01-29 13:16:33,480] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Algebra&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:16:34,727] root - INFO - Found 20 works for subject=Algebra page=67
+[2026-01-29 13:16:34,960] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:34,962] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18423751W/Lectures_on_algebraic_topology
+[2026-01-29 13:16:35,456] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18423751W/Lectures_on_algebraic_topology HTTP/1.1" 200 None
+[2026-01-29 13:16:37,042] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:37,044] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL8316420W/Algebra_One
+[2026-01-29 13:16:37,544] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL8316420W/Algebra_One HTTP/1.1" 200 None
+[2026-01-29 13:16:40,659] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:40,662] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL13573242W/Introduction_to_abstract_algebra
+[2026-01-29 13:16:41,191] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL13573242W/Introduction_to_abstract_algebra HTTP/1.1" 200 None
+[2026-01-29 13:16:44,502] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:44,503] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL7042738W/Basic_algebra
+[2026-01-29 13:16:45,018] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL7042738W/Basic_algebra HTTP/1.1" 200 None
+[2026-01-29 13:16:47,543] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:47,545] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL268537W/Merrill_Pre-Algebra
+[2026-01-29 13:16:48,100] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL268537W/Merrill_Pre-Algebra HTTP/1.1" 200 None
+[2026-01-29 13:16:50,408] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:50,410] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL43924946W/Linear_Algebra
+[2026-01-29 13:16:51,026] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL43924946W/Linear_Algebra HTTP/1.1" 200 None
+[2026-01-29 13:16:52,623] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:52,625] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6807451W/Algebra_2
+[2026-01-29 13:16:53,118] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6807451W/Algebra_2 HTTP/1.1" 200 None
+[2026-01-29 13:16:55,299] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:55,301] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15692178W/Heath_algebra_2
+[2026-01-29 13:16:55,845] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15692178W/Heath_algebra_2 HTTP/1.1" 200 None
+[2026-01-29 13:16:59,192] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:16:59,193] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19217924W/Beginning_algebra
+[2026-01-29 13:16:59,728] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19217924W/Beginning_algebra HTTP/1.1" 200 None
+[2026-01-29 13:17:02,214] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:02,215] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18430998M/Algebra_1
+[2026-01-29 13:17:02,470] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18430998M/Algebra_1 HTTP/1.1" 301 None
+[2026-01-29 13:17:02,937] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /books/OL18430998M/Algebra_1 HTTP/1.1" 200 None
+[2026-01-29 13:17:05,401] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:05,402] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL3958431W/Fundamentals_of_linear_algebra
+[2026-01-29 13:17:05,955] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL3958431W/Fundamentals_of_linear_algebra HTTP/1.1" 200 None
+[2026-01-29 13:17:08,579] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:08,580] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL39127762W/Discriminator-Algebras
+[2026-01-29 13:17:09,065] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL39127762W/Discriminator-Algebras HTTP/1.1" 200 None
+[2026-01-29 13:17:12,402] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:12,404] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL22238457M/Seven_papers_on_algebra_algebraic_geometry_and_algebraic_topology
+[2026-01-29 13:17:12,651] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL22238457M/Seven_papers_on_algebra_algebraic_geometry_and_algebraic_topology HTTP/1.1" 301 None
+[2026-01-29 13:17:13,114] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /books/OL22238457M/Seven_papers_on_algebra_algebraic_geometry_and_algebraic_topology HTTP/1.1" 200 None
+[2026-01-29 13:17:15,204] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:15,205] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL8776694W/Shortcut_algebra_I
+[2026-01-29 13:17:15,782] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL8776694W/Shortcut_algebra_I HTTP/1.1" 200 None
+[2026-01-29 13:17:19,636] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:19,637] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19421934W/Handbook_of_algebraic_topology
+[2026-01-29 13:17:22,960] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19421934W/Handbook_of_algebraic_topology HTTP/1.1" 200 None
+[2026-01-29 13:17:25,235] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:25,237] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL7182453W/Linei\u0306nai\u0361a\ufe21_algebra
+[2026-01-29 13:17:25,784] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL7182453W/Linei%CC%86nai%CD%A1a%EF%B8%A1_algebra HTTP/1.1" 200 None
+[2026-01-29 13:17:28,367] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:28,369] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL40362305W/Basic_Algebra
+[2026-01-29 13:17:28,990] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL40362305W/Basic_Algebra HTTP/1.1" 200 None
+[2026-01-29 13:17:31,136] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:31,138] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL20725075W/Algebra_und_Zahlentheorie
+[2026-01-29 13:17:31,636] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL20725075W/Algebra_und_Zahlentheorie HTTP/1.1" 200 None
+[2026-01-29 13:17:34,512] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:34,512] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18621960W/Algebra_interactive!
+[2026-01-29 13:17:35,056] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18621960W/Algebra_interactive! HTTP/1.1" 200 None
+[2026-01-29 13:17:37,729] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:37,731] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL11240424W/Algebra
+[2026-01-29 13:17:38,240] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL11240424W/Algebra HTTP/1.1" 200 None
+[2026-01-29 13:17:40,610] root - INFO - Searching Romance (page=67)
+[2026-01-29 13:17:40,610] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Romance&page=67
+[2026-01-29 13:17:42,229] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Romance&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:17:43,895] root - INFO - Found 20 works for subject=Romance page=67
+[2026-01-29 13:17:44,131] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:44,132] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL15292063W/The_Romance_of_Lust
+[2026-01-29 13:17:45,326] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL15292063W/The_Romance_of_Lust HTTP/1.1" 200 None
+[2026-01-29 13:17:48,992] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:48,993] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4463843W/A_touch_of_romance
+[2026-01-29 13:17:49,792] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4463843W/A_touch_of_romance HTTP/1.1" 200 None
+[2026-01-29 13:17:53,522] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:53,524] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17365693W/Afterglow_(Harlequin_American_Romance)
+[2026-01-29 13:17:54,362] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17365693W/Afterglow_(Harlequin_American_Romance) HTTP/1.1" 200 None
+[2026-01-29 13:17:57,202] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:17:57,204] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL5691835W/The_Pregnant_Tycoon
+[2026-01-29 13:17:58,118] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL5691835W/The_Pregnant_Tycoon HTTP/1.1" 200 None
+[2026-01-29 13:18:00,444] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:00,447] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4372948W/Marcore\u0301
+[2026-01-29 13:18:01,041] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4372948W/Marcore%CC%81 HTTP/1.1" 200 None
+[2026-01-29 13:18:02,396] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:02,398] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL19720526W/Burn_for_you
+[2026-01-29 13:18:02,948] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL19720526W/Burn_for_you HTTP/1.1" 200 None
+[2026-01-29 13:18:05,545] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:05,546] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL1517799W/Sally_Bishop_A_Romance
+[2026-01-29 13:18:06,703] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL1517799W/Sally_Bishop_A_Romance HTTP/1.1" 200 None
+[2026-01-29 13:18:08,231] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:08,233] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL5853933W/Bride_of_Convenience
+[2026-01-29 13:18:09,111] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL5853933W/Bride_of_Convenience HTTP/1.1" 200 None
+[2026-01-29 13:18:11,271] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:11,272] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL17306214W/Boss's_Bride_(Marrying_The_Boss)_(Harlequin_Romance_3609)
+[2026-01-29 13:18:12,121] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL17306214W/Boss's_Bride_(Marrying_The_Boss)_(Harlequin_Romance_3609) HTTP/1.1" 200 None
+[2026-01-29 13:18:14,874] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:14,876] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4161441W/Solution
+[2026-01-29 13:18:15,695] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4161441W/Solution HTTP/1.1" 200 None
+[2026-01-29 13:18:19,375] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:19,377] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL1492745W/Katy_of_Catoctin
+[2026-01-29 13:18:20,727] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL1492745W/Katy_of_Catoctin HTTP/1.1" 200 None
+[2026-01-29 13:18:22,434] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:22,436] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21235118W/Romance_Readers_and_Romance_Writers
+[2026-01-29 13:18:22,971] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21235118W/Romance_Readers_and_Romance_Writers HTTP/1.1" 200 None
+[2026-01-29 13:18:25,888] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:25,890] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18565722W/Best_lesbian_romance_2009
+[2026-01-29 13:18:26,670] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18565722W/Best_lesbian_romance_2009 HTTP/1.1" 200 None
+[2026-01-29 13:18:30,235] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:30,235] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2697649W/Gloriana_or_The_unfulfill'd_queen
+[2026-01-29 13:18:31,146] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2697649W/Gloriana_or_The_unfulfill'd_queen HTTP/1.1" 200 None
+[2026-01-29 13:18:35,069] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:35,070] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL39986337W/Spanish_Romance_Pure_Sheet_Music_Duet_for_Accordion_and_Alto_Saxophone_Arranged_by_Lars_Christian_Lu
+[2026-01-29 13:18:35,721] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL39986337W/Spanish_Romance_Pure_Sheet_Music_Duet_for_Accordion_and_Alto_Saxophone_Arranged_by_Lars_Christian_Lu HTTP/1.1" 200 None
+[2026-01-29 13:18:40,422] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:40,422] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL32417366W/Jane_Eyre
+[2026-01-29 13:18:42,045] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL32417366W/Jane_Eyre HTTP/1.1" 200 None
+[2026-01-29 13:18:46,105] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:46,107] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL6093074W/Sale_or_Return_Bride
+[2026-01-29 13:18:46,662] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL6093074W/Sale_or_Return_Bride HTTP/1.1" 200 None
+[2026-01-29 13:18:48,990] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:48,992] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL3498822W/The_Australian's_Housekeeper_Bride
+[2026-01-29 13:18:49,872] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL3498822W/The_Australian's_Housekeeper_Bride HTTP/1.1" 200 None
+[2026-01-29 13:18:52,456] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:52,467] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL240881W/The_Queen's_Maries
+[2026-01-29 13:18:56,478] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL240881W/The_Queen's_Maries HTTP/1.1" 200 None
+[2026-01-29 13:18:58,475] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:18:58,477] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4056537W/Married_Under_the_Italian_Sun
+[2026-01-29 13:18:59,821] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4056537W/Married_Under_the_Italian_Sun HTTP/1.1" 200 None
+[2026-01-29 13:19:02,139] root - INFO - Searching Ancient Civilization (page=67)
+[2026-01-29 13:19:02,139] root - DEBUG - Fetching URL: https://openlibrary.org/search?q=Ancient Civilization&page=67
+[2026-01-29 13:19:03,285] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /search?q=Ancient%20Civilization&page=67 HTTP/1.1" 200 None
+[2026-01-29 13:19:05,370] root - INFO - Found 20 works for subject=Ancient Civilization page=67
+[2026-01-29 13:19:05,900] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:05,901] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL24033457W/Mi_mang_de_feng_yun
+[2026-01-29 13:19:06,868] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL24033457W/Mi_mang_de_feng_yun HTTP/1.1" 200 None
+[2026-01-29 13:19:10,161] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:10,163] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4440656W/Ancient_World_Classical_Civilization
+[2026-01-29 13:19:10,655] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4440656W/Ancient_World_Classical_Civilization HTTP/1.1" 200 None
+[2026-01-29 13:19:12,911] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:12,912] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL9012927W/The_Civilization_of_Ancient_Crete
+[2026-01-29 13:19:13,627] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL9012927W/The_Civilization_of_Ancient_Crete HTTP/1.1" 200 None
+[2026-01-29 13:19:16,420] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:16,421] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL37751663W/Ancient_Man
+[2026-01-29 13:19:16,954] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL37751663W/Ancient_Man HTTP/1.1" 200 None
+[2026-01-29 13:19:19,562] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:19,563] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL4784597W/Red_Land_Black_Land
+[2026-01-29 13:19:20,480] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL4784597W/Red_Land_Black_Land HTTP/1.1" 200 None
+[2026-01-29 13:19:24,346] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:24,347] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL1237758W/Lord_Macaulay's_essays_and_Lays_of_ancient_Rome
+[2026-01-29 13:19:28,727] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL1237758W/Lord_Macaulay's_essays_and_Lays_of_ancient_Rome HTTP/1.1" 200 None
+[2026-01-29 13:19:31,294] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:31,296] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL29924169W/Ancient_Greece
+[2026-01-29 13:19:31,769] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL29924169W/Ancient_Greece HTTP/1.1" 200 None
+[2026-01-29 13:19:34,731] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:34,733] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL7653434W/The_history_and_civilization_of_ancient_Megara_..
+[2026-01-29 13:19:35,744] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL7653434W/The_history_and_civilization_of_ancient_Megara_.. HTTP/1.1" 200 None
+[2026-01-29 13:19:38,419] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:38,421] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL823742W/The_Ancient_American_Civilizations
+[2026-01-29 13:19:39,024] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL823742W/The_Ancient_American_Civilizations HTTP/1.1" 200 None
+[2026-01-29 13:19:42,242] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:42,244] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL28369317W/Civilization_of_Ancient_China
+[2026-01-29 13:19:42,750] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL28369317W/Civilization_of_Ancient_China HTTP/1.1" 200 None
+[2026-01-29 13:19:46,160] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:46,160] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL18317765W/The_Collapse_of_ancient_states_and_civilizations
+[2026-01-29 13:19:47,035] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL18317765W/The_Collapse_of_ancient_states_and_civilizations HTTP/1.1" 200 None
+[2026-01-29 13:19:50,555] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:50,557] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21256540W/Ancient_Persia_and_Iranian_Civilization
+[2026-01-29 13:19:51,105] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21256540W/Ancient_Persia_and_Iranian_Civilization HTTP/1.1" 200 None
+[2026-01-29 13:19:54,917] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:54,920] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL2750530W/Lost_Civilizations_-_The_Ancient_Egyptians_(Lost_Civilizations)
+[2026-01-29 13:19:55,521] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL2750530W/Lost_Civilizations_-_The_Ancient_Egyptians_(Lost_Civilizations) HTTP/1.1" 200 None
+[2026-01-29 13:19:57,973] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:19:57,974] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL31350854W/The_SECRET_Of_The_HITTITES
+[2026-01-29 13:19:58,446] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL31350854W/The_SECRET_Of_The_HITTITES HTTP/1.1" 200 None
+[2026-01-29 13:20:00,856] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:20:00,859] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL38095246W/Lost_Ancients
+[2026-01-29 13:20:01,359] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL38095246W/Lost_Ancients HTTP/1.1" 200 None
+[2026-01-29 13:20:04,344] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:20:04,345] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL67878W/Ancient_Indian_history_and_civilization
+[2026-01-29 13:20:04,948] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL67878W/Ancient_Indian_history_and_civilization HTTP/1.1" 200 None
+[2026-01-29 13:20:07,055] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:20:07,058] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL21224099W/Collapse_of_Ancient_States_and_Civilizations
+[2026-01-29 13:20:07,688] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL21224099W/Collapse_of_Ancient_States_and_Civilizations HTTP/1.1" 200 None
+[2026-01-29 13:20:13,430] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:20:13,431] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL31405673W/The_SECRET_Of_The_HITTITES
+[2026-01-29 13:20:13,914] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL31405673W/The_SECRET_Of_The_HITTITES HTTP/1.1" 200 None
+[2026-01-29 13:20:17,182] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:20:17,184] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL20667471W/Civilizations_Ancient_Near_Eas
+[2026-01-29 13:20:17,748] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL20667471W/Civilizations_Ancient_Near_Eas HTTP/1.1" 200 None
+[2026-01-29 13:20:20,217] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /robots.txt HTTP/1.1" 200 None
+[2026-01-29 13:20:20,217] root - DEBUG - Fetching URL: https://openlibrary.org/works/OL23197804W/Discovering_ancient_Mesoamerican_civilizations
+[2026-01-29 13:20:21,001] urllib3.connectionpool - DEBUG - https://openlibrary.org:443 "GET /works/OL23197804W/Discovering_ancient_Mesoamerican_civilizations HTTP/1.1" 200 None
+[2026-01-29 13:20:23,179] root - INFO - OpenLibrary data collected at artifacts\dataset\raw_data\Openlibrary\openlibrary_books.csv
+[2026-01-29 13:20:23,179] root - INFO - Finished scraping run.
+[2026-01-29 13:20:23,302] root - INFO - openlibrarybooks are ready for merging
+[2026-01-29 13:22:03,563] root - INFO - ====================Data Ingestion log completed.==================== 
+
+

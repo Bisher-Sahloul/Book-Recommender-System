@@ -1,0 +1,793 @@
+[2026-01-29 13:39:41,977] pydot - DEBUG - pydot initializing
+[2026-01-29 13:39:41,977] pydot - DEBUG - pydot 4.0.1
+[2026-01-29 13:39:41,980] pydot.core - DEBUG - pydot core module initializing
+[2026-01-29 13:40:02,508] tensorflow - Level 1 - Registering Relayout (<function _relayout_gradient at 0x0000013BA4E322A0>) in gradient.
+[2026-01-29 13:40:02,516] tensorflow - Level 1 - Registering RelayoutLike (<function _relayout_grad_gradient at 0x0000013BA4E323E0>) in gradient.
+[2026-01-29 13:40:02,517] tensorflow - Level 1 - Registering CopyToMesh (<function _copy_to_mesh_gradient at 0x0000013BA4E32AC0>) in gradient.
+[2026-01-29 13:40:02,517] tensorflow - Level 1 - Registering CopyToMeshGrad (<function _copy_to_mesh_grad_gradient at 0x0000013BA4E32A20>) in gradient.
+[2026-01-29 13:40:02,534] tensorflow - Level 1 - Registering FakeQuantWithMinMaxArgs (<function _FakeQuantWithMinMaxArgsGradient at 0x0000013BA4EE6B60>) in gradient.
+[2026-01-29 13:40:02,538] tensorflow - Level 1 - Registering FakeQuantWithMinMaxVars (<function _FakeQuantWithMinMaxVarsGradient at 0x0000013BA4EE6D40>) in gradient.
+[2026-01-29 13:40:02,539] tensorflow - Level 1 - Registering FakeQuantWithMinMaxVarsPerChannel (<function _FakeQuantWithMinMaxVarsPerChannelGradient at 0x0000013BA4EE72E0>) in gradient.
+[2026-01-29 13:40:02,540] tensorflow - Level 1 - Registering QuantizeAndDequantizeV4 (<function _QuantizeAndDequantizeV4Grad at 0x0000013BA4EE7380>) in gradient.
+[2026-01-29 13:40:02,540] tensorflow - Level 1 - Registering QuantizeAndDequantizeV4Grad (<function _QuantizeAndDequantizeV4GradGrad at 0x0000013BA4EE7420>) in gradient.
+[2026-01-29 13:40:02,594] tensorflow - Level 1 - Registering TensorListConcatLists (None) in gradient.
+[2026-01-29 13:40:02,597] tensorflow - Level 1 - Registering TensorListElementShape (None) in gradient.
+[2026-01-29 13:40:02,597] tensorflow - Level 1 - Registering TensorListLength (None) in gradient.
+[2026-01-29 13:40:02,597] tensorflow - Level 1 - Registering TensorListPushBackBatch (None) in gradient.
+[2026-01-29 13:40:02,597] tensorflow - Level 1 - Registering TensorListPushBack (<function _PushBackGrad at 0x0000013BA509BCE0>) in gradient.
+[2026-01-29 13:40:02,598] tensorflow - Level 1 - Registering TensorListPopBack (<function _PopBackGrad at 0x0000013BA509BD80>) in gradient.
+[2026-01-29 13:40:02,598] tensorflow - Level 1 - Registering TensorListStack (<function _TensorListStackGrad at 0x0000013BA509BE20>) in gradient.
+[2026-01-29 13:40:02,598] tensorflow - Level 1 - Registering TensorListConcatV2 (<function _TensorListConcatGrad at 0x0000013BA509BEC0>) in gradient.
+[2026-01-29 13:40:02,598] tensorflow - Level 1 - Registering TensorListConcat (<function _TensorListConcatGrad at 0x0000013BA509BEC0>) in gradient.
+[2026-01-29 13:40:02,598] tensorflow - Level 1 - Registering TensorListSplit (<function _TensorListSplitGrad at 0x0000013BA509BF60>) in gradient.
+[2026-01-29 13:40:02,598] tensorflow - Level 1 - Registering TensorListFromTensor (<function _TensorListFromTensorGrad at 0x0000013BA50B8040>) in gradient.
+[2026-01-29 13:40:02,598] tensorflow - Level 1 - Registering TensorListGetItem (<function _TensorListGetItemGrad at 0x0000013BA50B80E0>) in gradient.
+[2026-01-29 13:40:02,599] tensorflow - Level 1 - Registering TensorListSetItem (<function _TensorListSetItemGrad at 0x0000013BA50B8180>) in gradient.
+[2026-01-29 13:40:02,599] tensorflow - Level 1 - Registering TensorListResize (<function _TensorListResizeGrad at 0x0000013BA50B8220>) in gradient.
+[2026-01-29 13:40:02,599] tensorflow - Level 1 - Registering TensorListGather (<function _TensorListGatherGrad at 0x0000013BA50B82C0>) in gradient.
+[2026-01-29 13:40:02,599] tensorflow - Level 1 - Registering TensorListScatterV2 (<function _TensorListScatterGrad at 0x0000013BA50B8360>) in gradient.
+[2026-01-29 13:40:02,599] tensorflow - Level 1 - Registering TensorListScatter (<function _TensorListScatterGrad at 0x0000013BA50B8360>) in gradient.
+[2026-01-29 13:40:02,599] tensorflow - Level 1 - Registering TensorListScatterIntoExistingList (<function _TensorListScatterIntoExistingListGrad at 0x0000013BA50B8400>) in gradient.
+[2026-01-29 13:40:02,680] tensorflow - Level 1 - Registering AccumulateNV2 (<function _accumulate_n_grad at 0x0000013BA5261620>) in gradient.
+[2026-01-29 13:40:02,766] tensorflow - Level 1 - Registering cond_context ((<class 'tensorflow.core.protobuf.control_flow_pb2.CondContextDef'>, <function CondContext.to_proto at 0x0000013BA5380680>, <function CondContext.from_proto at 0x0000013BA5380720>)) in proto functions.
+[2026-01-29 13:40:02,769] tensorflow - Level 1 - Registering while_context ((<class 'tensorflow.core.protobuf.control_flow_pb2.WhileContextDef'>, <function WhileContext.to_proto at 0x0000013BA53814E0>, <function WhileContext.from_proto at 0x0000013BA5381620>)) in proto functions.
+[2026-01-29 13:40:02,770] tensorflow - Level 1 - Registering _identity_resolver (<function _identity_resolver at 0x0000013BA53834C0>) in acd_resource_resolvers.
+[2026-01-29 13:40:02,874] tensorflow - Level 1 - Registering Assign (None) in gradient.
+[2026-01-29 13:40:02,876] tensorflow - Level 1 - Registering AssignAdd (None) in gradient.
+[2026-01-29 13:40:02,876] tensorflow - Level 1 - Registering AssignSub (None) in gradient.
+[2026-01-29 13:40:02,876] tensorflow - Level 1 - Registering ScatterAdd (None) in gradient.
+[2026-01-29 13:40:02,877] tensorflow - Level 1 - Registering ScatterSub (None) in gradient.
+[2026-01-29 13:40:02,877] tensorflow - Level 1 - Registering ScatterMul (None) in gradient.
+[2026-01-29 13:40:02,877] tensorflow - Level 1 - Registering ScatterDiv (None) in gradient.
+[2026-01-29 13:40:02,878] tensorflow - Level 1 - Registering ScatterNdUpdate (None) in gradient.
+[2026-01-29 13:40:02,878] tensorflow - Level 1 - Registering ScatterNdAdd (None) in gradient.
+[2026-01-29 13:40:02,878] tensorflow - Level 1 - Registering ScatterNdSub (None) in gradient.
+[2026-01-29 13:40:02,878] tensorflow - Level 1 - Registering ScatterNdMul (None) in gradient.
+[2026-01-29 13:40:02,879] tensorflow - Level 1 - Registering ScatterNdDiv (None) in gradient.
+[2026-01-29 13:40:02,915] tensorflow - Level 1 - Registering ReadVariableOp (<function _ReadGrad at 0x0000013BA5507380>) in gradient.
+[2026-01-29 13:40:02,920] tensorflow - Level 1 - Registering ResourceGather (<function _GatherGrad at 0x0000013BA5508400>) in gradient.
+[2026-01-29 13:40:02,920] tensorflow - Level 1 - Registering Assert (None) in gradient.
+[2026-01-29 13:40:02,920] tensorflow - Level 1 - Registering VarIsInitializedOp (None) in gradient.
+[2026-01-29 13:40:02,921] tensorflow - Level 1 - Registering VariableShape (None) in gradient.
+[2026-01-29 13:40:02,985] tensorflow - Level 1 - Registering RandomStandardNormal (None) in gradient.
+[2026-01-29 13:40:02,988] tensorflow - Level 1 - Registering ParameterizedTruncatedNormal (None) in gradient.
+[2026-01-29 13:40:02,989] tensorflow - Level 1 - Registering TruncatedNormal (None) in gradient.
+[2026-01-29 13:40:02,990] tensorflow - Level 1 - Registering RandomUniform (None) in gradient.
+[2026-01-29 13:40:02,991] tensorflow - Level 1 - Registering RandomShuffle (None) in gradient.
+[2026-01-29 13:40:02,992] tensorflow - Level 1 - Registering Multinomial (None) in gradient.
+[2026-01-29 13:40:03,123] tensorflow - Level 1 - Registering If (<function _IfGrad at 0x0000013B9980FBA0>) in gradient.
+[2026-01-29 13:40:03,126] tensorflow - Level 1 - Registering StatelessIf (<function _IfGrad at 0x0000013B9980FBA0>) in gradient.
+[2026-01-29 13:40:03,127] tensorflow - Level 1 - Registering StatelessCase (<function _CaseGrad at 0x0000013B99841300>) in gradient.
+[2026-01-29 13:40:03,127] tensorflow - Level 1 - Registering Case (<function _CaseGrad at 0x0000013B99841300>) in gradient.
+[2026-01-29 13:40:03,174] tensorflow - Level 1 - Registering While (<function _WhileGrad at 0x0000013B9989BBA0>) in gradient.
+[2026-01-29 13:40:03,177] tensorflow - Level 1 - Registering StatelessWhile (<function _WhileGrad at 0x0000013B9989BBA0>) in gradient.
+[2026-01-29 13:40:03,526] tensorflow - Level 1 - Registering EnsureShape (<function _ensure_shape_grad at 0x0000013BA5E3B380>) in gradient.
+[2026-01-29 13:40:03,564] tensorflow - Level 1 - Registering RaggedTensorToSparse (<function _ragged_tensor_to_sparse_gradient at 0x0000013BA5EAB380>) in gradient.
+[2026-01-29 13:40:03,639] tensorflow - Level 1 - Registering Conv2DBackpropInput (<function _Conv2DBackpropInputGrad at 0x0000013BA5F1B7E0>) in gradient.
+[2026-01-29 13:40:03,642] tensorflow - Level 1 - Registering Conv2DBackpropFilter (<function _Conv2DBackpropFilterGrad at 0x0000013BA5F1BE20>) in gradient.
+[2026-01-29 13:40:03,643] tensorflow - Level 1 - Registering DepthwiseConv2dNativeBackpropInput (<function _DepthwiseConv2dNativeBackpropInputGrad at 0x0000013BA5F4C4A0>) in gradient.
+[2026-01-29 13:40:03,643] tensorflow - Level 1 - Registering DepthwiseConv2dNativeBackpropFilter (<function _DepthwiseConv2dNativeBackpropFilterGrad at 0x0000013BA5F4CC20>) in gradient.
+[2026-01-29 13:40:03,644] tensorflow - Level 1 - Registering Conv3D (<function _Conv3DGrad at 0x0000013BA5F4CCC0>) in gradient.
+[2026-01-29 13:40:03,644] tensorflow - Level 1 - Registering Conv3DBackpropInputV2 (<function _Conv3DBackpropInputGrad at 0x0000013BA5F4CD60>) in gradient.
+[2026-01-29 13:40:03,644] tensorflow - Level 1 - Registering Conv3DBackpropFilterV2 (<function _Conv3DBackpropFilterGrad at 0x0000013BA5F4CE00>) in gradient.
+[2026-01-29 13:40:03,645] tensorflow - Level 1 - Registering AvgPool3D (<function _AvgPool3DGrad at 0x0000013BA5F4CEA0>) in gradient.
+[2026-01-29 13:40:03,645] tensorflow - Level 1 - Registering AvgPool3DGrad (<function _AvgPool3DGradGrad at 0x0000013BA5F4CF40>) in gradient.
+[2026-01-29 13:40:03,645] tensorflow - Level 1 - Registering MaxPool3D (<function _MaxPool3DGrad at 0x0000013BA5F4CFE0>) in gradient.
+[2026-01-29 13:40:03,646] tensorflow - Level 1 - Registering MaxPool3DGrad (<function _MaxPool3DGradGrad at 0x0000013BA5F4D080>) in gradient.
+[2026-01-29 13:40:03,646] tensorflow - Level 1 - Registering MaxPool3DGradGrad (<function _MaxPool3DGradGradGrad at 0x0000013BA5F4D120>) in gradient.
+[2026-01-29 13:40:03,646] tensorflow - Level 1 - Registering Softmax (<function _SoftmaxGrad at 0x0000013BA5F4D1C0>) in gradient.
+[2026-01-29 13:40:03,646] tensorflow - Level 1 - Registering LogSoftmax (<function _LogSoftmaxGrad at 0x0000013BA5F4D260>) in gradient.
+[2026-01-29 13:40:03,647] tensorflow - Level 1 - Registering BiasAdd (<function _BiasAddGrad at 0x0000013BA5F4D300>) in gradient.
+[2026-01-29 13:40:03,647] tensorflow - Level 1 - Registering BiasAddGrad (<function _BiasAddGradGrad at 0x0000013BA5F4D3A0>) in gradient.
+[2026-01-29 13:40:03,647] tensorflow - Level 1 - Registering BiasAddV1 (<function _BiasAddGradV1 at 0x0000013BA5F4D440>) in gradient.
+[2026-01-29 13:40:03,647] tensorflow - Level 1 - Registering Relu (<function _ReluGrad at 0x0000013BA5F4D4E0>) in gradient.
+[2026-01-29 13:40:03,648] tensorflow - Level 1 - Registering EluGrad (<function _EluGradGrad at 0x0000013BA5F4D580>) in gradient.
+[2026-01-29 13:40:03,648] tensorflow - Level 1 - Registering SeluGrad (<function _SeluGradGrad at 0x0000013BA5F4D620>) in gradient.
+[2026-01-29 13:40:03,648] tensorflow - Level 1 - Registering Relu6 (<function _Relu6Grad at 0x0000013BA5F4D6C0>) in gradient.
+[2026-01-29 13:40:03,648] tensorflow - Level 1 - Registering Relu6Grad (<function _Relu6GradGrad at 0x0000013BA5F4D760>) in gradient.
+[2026-01-29 13:40:03,649] tensorflow - Level 1 - Registering LeakyRelu (<function _LeakyReluGrad at 0x0000013BA5F4D800>) in gradient.
+[2026-01-29 13:40:03,649] tensorflow - Level 1 - Registering LeakyReluGrad (<function _LeakyReluGradGrad at 0x0000013BA5F4D8A0>) in gradient.
+[2026-01-29 13:40:03,649] tensorflow - Level 1 - Registering Elu (<function _EluGrad at 0x0000013BA5F4D940>) in gradient.
+[2026-01-29 13:40:03,649] tensorflow - Level 1 - Registering Selu (<function _SeluGrad at 0x0000013BA5F4D9E0>) in gradient.
+[2026-01-29 13:40:03,650] tensorflow - Level 1 - Registering Softplus (<function _SoftplusGrad at 0x0000013BA5F4DA80>) in gradient.
+[2026-01-29 13:40:03,650] tensorflow - Level 1 - Registering SoftplusGrad (<function _SoftplusGradGrad at 0x0000013BA5F4DB20>) in gradient.
+[2026-01-29 13:40:03,650] tensorflow - Level 1 - Registering Softsign (<function _SoftsignGrad at 0x0000013BA5F4DBC0>) in gradient.
+[2026-01-29 13:40:03,651] tensorflow - Level 1 - Registering ReluGrad (<function _ReluGradGrad at 0x0000013BA5F4DC60>) in gradient.
+[2026-01-29 13:40:03,651] tensorflow - Level 1 - Registering SoftmaxCrossEntropyWithLogits (<function _SoftmaxCrossEntropyWithLogitsGrad at 0x0000013BA5F4DDA0>) in gradient.
+[2026-01-29 13:40:03,651] tensorflow - Level 1 - Registering SparseSoftmaxCrossEntropyWithLogits (<function _SparseSoftmaxCrossEntropyWithLogitsGrad at 0x0000013BA5F4DE40>) in gradient.
+[2026-01-29 13:40:03,651] tensorflow - Level 1 - Registering Conv2D (<function _Conv2DGrad at 0x0000013BA5F4DEE0>) in gradient.
+[2026-01-29 13:40:03,652] tensorflow - Level 1 - Registering DepthwiseConv2dNative (<function _DepthwiseConv2dNativeGrad at 0x0000013BA5F4DF80>) in gradient.
+[2026-01-29 13:40:03,652] tensorflow - Level 1 - Registering Dilation2D (<function _Dilation2DGrad at 0x0000013BA5F4E020>) in gradient.
+[2026-01-29 13:40:03,652] tensorflow - Level 1 - Registering LRN (<function _LRNGrad at 0x0000013BA5F4E0C0>) in gradient.
+[2026-01-29 13:40:03,652] tensorflow - Level 1 - Registering AvgPool (<function _AvgPoolGrad at 0x0000013BA5F4E160>) in gradient.
+[2026-01-29 13:40:03,652] tensorflow - Level 1 - Registering AvgPoolGrad (<function _AvgPoolGradGrad at 0x0000013BA5F4E200>) in gradient.
+[2026-01-29 13:40:03,654] tensorflow - Level 1 - Registering MaxPool (<function _MaxPoolGrad at 0x0000013BA5F4E2A0>) in gradient.
+[2026-01-29 13:40:03,654] tensorflow - Level 1 - Registering MaxPoolV2 (<function _MaxPoolGradV2 at 0x0000013BA5F4E340>) in gradient.
+[2026-01-29 13:40:03,654] tensorflow - Level 1 - Registering MaxPoolWithArgmax (<function _MaxPoolGradWithArgmax at 0x0000013BA5F4E3E0>) in gradient.
+[2026-01-29 13:40:03,654] tensorflow - Level 1 - Registering MaxPoolGrad (<function _MaxPoolGradGrad at 0x0000013BA5F4E480>) in gradient.
+[2026-01-29 13:40:03,655] tensorflow - Level 1 - Registering MaxPoolGradV2 (<function _MaxPoolGradGradV2 at 0x0000013BA5F4E520>) in gradient.
+[2026-01-29 13:40:03,655] tensorflow - Level 1 - Registering MaxPoolGradGrad (<function _MaxPoolGradGradGrad at 0x0000013BA5F4E5C0>) in gradient.
+[2026-01-29 13:40:03,655] tensorflow - Level 1 - Registering FractionalMaxPool (<function _FractionalMaxPoolGrad at 0x0000013BA5F4E660>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering FractionalAvgPool (<function _FractionalAvgPoolGrad at 0x0000013BA5F4E700>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering BatchNormWithGlobalNormalization (<function _BatchNormWithGlobalNormalizationGrad at 0x0000013BA5F4E7A0>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering FusedBatchNorm (<function _FusedBatchNormGrad at 0x0000013BA5F4E8E0>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering FusedBatchNormV2 (<function _FusedBatchNormV2Grad at 0x0000013BA5F4E980>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering FusedBatchNormV3 (<function _FusedBatchNormV3Grad at 0x0000013BA5F4EA20>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering L2Loss (<function _L2LossGrad at 0x0000013BA5F4EAC0>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering TopKV2 (<function _TopKGrad at 0x0000013BA5F4EB60>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering TopK (<function _TopKGrad at 0x0000013BA5F4EB60>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering ApproxTopK (<function _ApproxTopKGradient at 0x0000013BA5F4EC00>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering NthElement (<function _NthElementGrad at 0x0000013BA5F4ECA0>) in gradient.
+[2026-01-29 13:40:03,656] tensorflow - Level 1 - Registering IsotonicRegression (<function _IsotonicRegressionGrad at 0x0000013BA5F4EDE0>) in gradient.
+[2026-01-29 13:40:03,681] tensorflow - Level 1 - Registering BitwiseAnd (None) in gradient.
+[2026-01-29 13:40:03,683] tensorflow - Level 1 - Registering BitwiseOr (None) in gradient.
+[2026-01-29 13:40:03,684] tensorflow - Level 1 - Registering BitwiseXor (None) in gradient.
+[2026-01-29 13:40:03,684] tensorflow - Level 1 - Registering Invert (None) in gradient.
+[2026-01-29 13:40:03,684] tensorflow - Level 1 - Registering PopulationCount (None) in gradient.
+[2026-01-29 13:40:03,685] tensorflow - Level 1 - Registering LeftShift (None) in gradient.
+[2026-01-29 13:40:03,685] tensorflow - Level 1 - Registering RightShift (None) in gradient.
+[2026-01-29 13:40:03,686] tensorflow - Level 1 - Registering StatelessMultinomial (None) in gradient.
+[2026-01-29 13:40:03,689] tensorflow - Level 1 - Registering StatelessRandomBinomial (None) in gradient.
+[2026-01-29 13:40:03,690] tensorflow - Level 1 - Registering StatelessRandomNormal (None) in gradient.
+[2026-01-29 13:40:03,690] tensorflow - Level 1 - Registering StatelessRandomPoisson (None) in gradient.
+[2026-01-29 13:40:03,690] tensorflow - Level 1 - Registering StatelessRandomUniform (None) in gradient.
+[2026-01-29 13:40:03,691] tensorflow - Level 1 - Registering StatelessRandomUniformInt (None) in gradient.
+[2026-01-29 13:40:03,691] tensorflow - Level 1 - Registering StatelessRandomUniformFullInt (None) in gradient.
+[2026-01-29 13:40:03,691] tensorflow - Level 1 - Registering StatelessTruncatedNormal (None) in gradient.
+[2026-01-29 13:40:03,691] tensorflow - Level 1 - Registering StatelessRandomNormalV2 (None) in gradient.
+[2026-01-29 13:40:03,692] tensorflow - Level 1 - Registering StatelessRandomUniformV2 (None) in gradient.
+[2026-01-29 13:40:03,692] tensorflow - Level 1 - Registering StatelessRandomUniformIntV2 (None) in gradient.
+[2026-01-29 13:40:03,692] tensorflow - Level 1 - Registering StatelessRandomUniformFullIntV2 (None) in gradient.
+[2026-01-29 13:40:03,692] tensorflow - Level 1 - Registering StatelessTruncatedNormalV2 (None) in gradient.
+[2026-01-29 13:40:03,693] tensorflow - Level 1 - Registering StatelessRandomShuffle (None) in gradient.
+[2026-01-29 13:40:03,693] tensorflow - Level 1 - Registering RandomIndexShuffle (None) in gradient.
+[2026-01-29 13:40:03,718] tensorflow - Level 1 - Registering Conv3D,flops (<function _calc_conv3d_flops at 0x0000013BA600D580>) in statistical functions.
+[2026-01-29 13:40:03,722] tensorflow - Level 1 - Registering Conv2D,flops (<function _calc_conv_flops at 0x0000013BA600D760>) in statistical functions.
+[2026-01-29 13:40:03,722] tensorflow - Level 1 - Registering DepthwiseConv2dNative,flops (<function _calc_depthwise_conv_flops at 0x0000013BA600DD00>) in statistical functions.
+[2026-01-29 13:40:03,723] tensorflow - Level 1 - Registering BiasAdd,flops (<function _calc_bias_add_flops at 0x0000013BA600DDA0>) in statistical functions.
+[2026-01-29 13:40:03,727] tensorflow - Level 1 - Registering Dilation2D,flops (<function _calc_dilation2d_flops at 0x0000013BA600F880>) in statistical functions.
+[2026-01-29 13:40:03,756] tensorflow - Level 1 - Registering CompositeTensorVariantFromComponents (<function _composite_tensor_to_variants_grad at 0x0000013BA6100900>) in gradient.
+[2026-01-29 13:40:03,759] tensorflow - Level 1 - Registering CompositeTensorVariantToComponents (<function _composite_tensor_from_variant_grad at 0x0000013BA61009A0>) in gradient.
+[2026-01-29 13:40:03,786] tensorflow - Level 1 - Registering RaggedRange (None) in gradient.
+[2026-01-29 13:40:03,798] tensorflow - Level 1 - Registering RaggedFillEmptyRows (<function _ragged_fill_empty_rows_grad at 0x0000013BA61598A0>) in gradient.
+[2026-01-29 13:40:03,814] tensorflow - Level 1 - Registering RaggedGather (<function _ragged_gather_grad at 0x0000013BA615B740>) in gradient.
+[2026-01-29 13:40:03,830] tensorflow - Level 1 - Registering RegexReplace (None) in gradient.
+[2026-01-29 13:40:03,834] tensorflow - Level 1 - Registering StringToHashBucket (None) in gradient.
+[2026-01-29 13:40:03,834] tensorflow - Level 1 - Registering StringToHashBucketFast (None) in gradient.
+[2026-01-29 13:40:03,834] tensorflow - Level 1 - Registering StringToHashBucketStrong (None) in gradient.
+[2026-01-29 13:40:03,834] tensorflow - Level 1 - Registering ReduceJoin (None) in gradient.
+[2026-01-29 13:40:03,835] tensorflow - Level 1 - Registering StringJoin (None) in gradient.
+[2026-01-29 13:40:03,835] tensorflow - Level 1 - Registering StringSplit (None) in gradient.
+[2026-01-29 13:40:03,835] tensorflow - Level 1 - Registering AsString (None) in gradient.
+[2026-01-29 13:40:03,836] tensorflow - Level 1 - Registering EncodeBase64 (None) in gradient.
+[2026-01-29 13:40:03,836] tensorflow - Level 1 - Registering DecodeBase64 (None) in gradient.
+[2026-01-29 13:40:03,838] tensorflow - Level 1 - Registering Print (<function _PrintGrad at 0x0000013BA61A63E0>) in gradient.
+[2026-01-29 13:40:03,843] tensorflow - Level 1 - Registering HistogramSummary (None) in gradient.
+[2026-01-29 13:40:03,844] tensorflow - Level 1 - Registering ImageSummary (None) in gradient.
+[2026-01-29 13:40:03,844] tensorflow - Level 1 - Registering AudioSummary (None) in gradient.
+[2026-01-29 13:40:03,844] tensorflow - Level 1 - Registering AudioSummaryV2 (None) in gradient.
+[2026-01-29 13:40:03,844] tensorflow - Level 1 - Registering MergeSummary (None) in gradient.
+[2026-01-29 13:40:03,845] tensorflow - Level 1 - Registering ScalarSummary (None) in gradient.
+[2026-01-29 13:40:03,845] tensorflow - Level 1 - Registering TensorSummary (None) in gradient.
+[2026-01-29 13:40:03,845] tensorflow - Level 1 - Registering TensorSummaryV2 (None) in gradient.
+[2026-01-29 13:40:03,845] tensorflow - Level 1 - Registering Timestamp (None) in gradient.
+[2026-01-29 13:40:03,913] tensorflow - Level 1 - Registering XlaEinsum (<function _einsum_grad at 0x0000013BA623D440>) in gradient.
+[2026-01-29 13:40:03,933] tensorflow - Level 1 - Registering RaggedTensorToTensor (<function _ragged_tensor_to_tensor_grad at 0x0000013BA626A3E0>) in gradient.
+[2026-01-29 13:40:03,936] tensorflow - Level 1 - Registering RaggedTensorFromVariant (<function _ragged_tensor_from_variant_grad at 0x0000013BA626A660>) in gradient.
+[2026-01-29 13:40:03,936] tensorflow - Level 1 - Registering RaggedTensorToVariant (<function _ragged_tensor_to_variant_grad at 0x0000013BA626A700>) in gradient.
+[2026-01-29 13:40:03,946] tensorflow - Level 1 - Registering ClipByValue (<function _clip_by_value_grad at 0x0000013BA626ADE0>) in gradient.
+[2026-01-29 13:40:03,953] tensorflow - Level 1 - Registering DynamicPartition (<function _DynamicPartitionGrads at 0x0000013BA626B7E0>) in gradient.
+[2026-01-29 13:40:03,956] tensorflow - Level 1 - Registering ParallelDynamicStitch (<function _DynamicStitchGrads at 0x0000013BA626BB00>) in gradient.
+[2026-01-29 13:40:03,957] tensorflow - Level 1 - Registering DynamicStitch (<function _DynamicStitchGrads at 0x0000013BA626BB00>) in gradient.
+[2026-01-29 13:40:03,957] tensorflow - Level 1 - Registering Queue (None) in gradient.
+[2026-01-29 13:40:03,957] tensorflow - Level 1 - Registering QueueEnqueue (None) in gradient.
+[2026-01-29 13:40:03,957] tensorflow - Level 1 - Registering QueueEnqueueMany (None) in gradient.
+[2026-01-29 13:40:03,958] tensorflow - Level 1 - Registering QueueDequeue (None) in gradient.
+[2026-01-29 13:40:03,958] tensorflow - Level 1 - Registering QueueDequeueMany (None) in gradient.
+[2026-01-29 13:40:03,958] tensorflow - Level 1 - Registering QueueDequeueUpTo (None) in gradient.
+[2026-01-29 13:40:03,958] tensorflow - Level 1 - Registering QueueClose (None) in gradient.
+[2026-01-29 13:40:03,958] tensorflow - Level 1 - Registering QueueSize (None) in gradient.
+[2026-01-29 13:40:03,959] tensorflow - Level 1 - Registering Stack (None) in gradient.
+[2026-01-29 13:40:03,959] tensorflow - Level 1 - Registering StackPush (None) in gradient.
+[2026-01-29 13:40:03,959] tensorflow - Level 1 - Registering StackPop (None) in gradient.
+[2026-01-29 13:40:03,959] tensorflow - Level 1 - Registering StackClose (None) in gradient.
+[2026-01-29 13:40:03,960] tensorflow - Level 1 - Registering GetSessionHandle (None) in gradient.
+[2026-01-29 13:40:03,960] tensorflow - Level 1 - Registering GetSessionHandleV2 (None) in gradient.
+[2026-01-29 13:40:03,960] tensorflow - Level 1 - Registering GetSessionTensor (None) in gradient.
+[2026-01-29 13:40:03,960] tensorflow - Level 1 - Registering DeleteSessionTensor (None) in gradient.
+[2026-01-29 13:40:04,073] tensorflow - Level 1 - Registering TPUReplicatedInput (None) in gradient.
+[2026-01-29 13:40:04,077] tensorflow - Level 1 - Registering AllToAll (<function _all_to_all_grad at 0x0000013BA63F1E40>) in gradient.
+[2026-01-29 13:40:04,077] tensorflow - Level 1 - Registering CollectivePermute (<function _collective_permute_grad at 0x0000013BA63F2020>) in gradient.
+[2026-01-29 13:40:04,077] tensorflow - Level 1 - Registering CrossReplicaSum (<function _cross_replica_sum_grad at 0x0000013BA63F20C0>) in gradient.
+[2026-01-29 13:40:04,078] tensorflow - Level 1 - Registering TPUEmbeddingActivations (<function _embedding_activations_grad at 0x0000013BA63F2160>) in gradient.
+[2026-01-29 13:40:04,138] tensorflow - Level 1 - Registering XlaClusterOutput (<function _XlaClusterOutputGrad at 0x0000013BA6450720>) in gradient.
+[2026-01-29 13:40:04,143] tensorflow - Level 1 - Registering Pack (<function _PackGrad at 0x0000013BA64518A0>) in gradient.
+[2026-01-29 13:40:04,147] tensorflow - Level 1 - Registering Unpack (<function _UnpackGrad at 0x0000013BA64519E0>) in gradient.
+[2026-01-29 13:40:04,147] tensorflow - Level 1 - Registering Concat (<function _ConcatGrad at 0x0000013BA6451BC0>) in gradient.
+[2026-01-29 13:40:04,148] tensorflow - Level 1 - Registering ConcatV2 (<function _ConcatGradV2 at 0x0000013BA6451C60>) in gradient.
+[2026-01-29 13:40:04,148] tensorflow - Level 1 - Registering ConcatOffset (None) in gradient.
+[2026-01-29 13:40:04,149] tensorflow - Level 1 - Registering Slice (<function _SliceGrad at 0x0000013BA6451D00>) in gradient.
+[2026-01-29 13:40:04,149] tensorflow - Level 1 - Registering StridedSlice (<function _StridedSliceGrad at 0x0000013BA6451EE0>) in gradient.
+[2026-01-29 13:40:04,150] tensorflow - Level 1 - Registering StridedSliceGrad (<function _StridedSliceGradGrad at 0x0000013BA6451F80>) in gradient.
+[2026-01-29 13:40:04,150] tensorflow - Level 1 - Registering TensorStridedSliceUpdate (<function _TensorStridedSliceUpdateGrad at 0x0000013BA6452020>) in gradient.
+[2026-01-29 13:40:04,151] tensorflow - Level 1 - Registering Split (<function _SplitGrad at 0x0000013BA64520C0>) in gradient.
+[2026-01-29 13:40:04,151] tensorflow - Level 1 - Registering SplitV (<function _SplitVGrad at 0x0000013BA6452160>) in gradient.
+[2026-01-29 13:40:04,152] tensorflow - Level 1 - Registering Const (None) in gradient.
+[2026-01-29 13:40:04,152] tensorflow - Level 1 - Registering Diag (<function _DiagGrad at 0x0000013BA6452200>) in gradient.
+[2026-01-29 13:40:04,153] tensorflow - Level 1 - Registering DiagPart (<function _DiagPartGrad at 0x0000013BA64522A0>) in gradient.
+[2026-01-29 13:40:04,153] tensorflow - Level 1 - Registering MatrixDiag (<function _MatrixDiagGrad at 0x0000013BA6452340>) in gradient.
+[2026-01-29 13:40:04,154] tensorflow - Level 1 - Registering MatrixDiagV2 (<function _MatrixDiagV2Grad at 0x0000013BA64523E0>) in gradient.
+[2026-01-29 13:40:04,154] tensorflow - Level 1 - Registering MatrixDiagV3 (<function _MatrixDiagV3Grad at 0x0000013BA6452480>) in gradient.
+[2026-01-29 13:40:04,155] tensorflow - Level 1 - Registering MatrixDiagPart (<function _MatrixDiagPartGrad at 0x0000013BA6452520>) in gradient.
+[2026-01-29 13:40:04,155] tensorflow - Level 1 - Registering MatrixDiagPartV2 (<function _MatrixDiagPartV2Grad at 0x0000013BA64525C0>) in gradient.
+[2026-01-29 13:40:04,156] tensorflow - Level 1 - Registering MatrixDiagPartV3 (<function _MatrixDiagPartV3Grad at 0x0000013BA6452660>) in gradient.
+[2026-01-29 13:40:04,156] tensorflow - Level 1 - Registering MatrixSetDiag (<function _MatrixSetDiagGrad at 0x0000013BA6452700>) in gradient.
+[2026-01-29 13:40:04,157] tensorflow - Level 1 - Registering MatrixSetDiagV2 (<function _MatrixSetDiagGradV2 at 0x0000013BA64527A0>) in gradient.
+[2026-01-29 13:40:04,158] tensorflow - Level 1 - Registering MatrixSetDiagV3 (<function _MatrixSetDiagGradV3 at 0x0000013BA6452840>) in gradient.
+[2026-01-29 13:40:04,158] tensorflow - Level 1 - Registering MatrixBandPart (<function _MatrixBandPartGrad at 0x0000013BA64528E0>) in gradient.
+[2026-01-29 13:40:04,159] tensorflow - Level 1 - Registering EditDistance (None) in gradient.
+[2026-01-29 13:40:04,159] tensorflow - Level 1 - Registering Fill (<function _FillGrad at 0x0000013BA6452980>) in gradient.
+[2026-01-29 13:40:04,159] tensorflow - Level 1 - Registering ZerosLike (None) in gradient.
+[2026-01-29 13:40:04,160] tensorflow - Level 1 - Registering OnesLike (None) in gradient.
+[2026-01-29 13:40:04,160] tensorflow - Level 1 - Registering PreventGradient (<function _PreventGradientGrad at 0x0000013BA6452A20>) in gradient.
+[2026-01-29 13:40:04,161] tensorflow - Level 1 - Registering Gather (<function _GatherGrad at 0x0000013BA6452B60>) in gradient.
+[2026-01-29 13:40:04,161] tensorflow - Level 1 - Registering GatherV2 (<function _GatherV2Grad at 0x0000013BA6452D40>) in gradient.
+[2026-01-29 13:40:04,162] tensorflow - Level 1 - Registering GatherNd (<function _GatherNdGrad at 0x0000013BA6452DE0>) in gradient.
+[2026-01-29 13:40:04,162] tensorflow - Level 1 - Registering ResourceGatherNd (<function _ResourceGatherNdGrad at 0x0000013BA6452E80>) in gradient.
+[2026-01-29 13:40:04,162] tensorflow - Level 1 - Registering CheckNumerics (<function _CheckNumericsGrad at 0x0000013BA6452F20>) in gradient.
+[2026-01-29 13:40:04,163] tensorflow - Level 1 - Registering CheckNumericsV2 (<function _CheckNumericsV2Grad at 0x0000013BA6452FC0>) in gradient.
+[2026-01-29 13:40:04,163] tensorflow - Level 1 - Registering Identity (<function _IdGrad at 0x0000013BA6453060>) in gradient.
+[2026-01-29 13:40:04,164] tensorflow - Level 1 - Registering PlaceholderWithDefault (<function _IdGrad at 0x0000013BA6453060>) in gradient.
+[2026-01-29 13:40:04,164] tensorflow - Level 1 - Registering _EagerConst (<function _EagerConstGrad at 0x0000013BA6453100>) in gradient.
+[2026-01-29 13:40:04,165] tensorflow - Level 1 - Registering RefIdentity (<function _RefIdGrad at 0x0000013BA64531A0>) in gradient.
+[2026-01-29 13:40:04,165] tensorflow - Level 1 - Registering IdentityN (<function _IdNGrad at 0x0000013BA6453240>) in gradient.
+[2026-01-29 13:40:04,165] tensorflow - Level 1 - Registering StopGradient (None) in gradient.
+[2026-01-29 13:40:04,166] tensorflow - Level 1 - Registering Reshape (<function _ReshapeGrad at 0x0000013BA64532E0>) in gradient.
+[2026-01-29 13:40:04,167] tensorflow - Level 1 - Registering InvertPermutation (None) in gradient.
+[2026-01-29 13:40:04,167] tensorflow - Level 1 - Registering ExpandDims (<function _ExpandDimsGrad at 0x0000013BA6453420>) in gradient.
+[2026-01-29 13:40:04,168] tensorflow - Level 1 - Registering Squeeze (<function _SqueezeGrad at 0x0000013BA64534C0>) in gradient.
+[2026-01-29 13:40:04,168] tensorflow - Level 1 - Registering Transpose (<function _TransposeGrad at 0x0000013BA6453560>) in gradient.
+[2026-01-29 13:40:04,169] tensorflow - Level 1 - Registering ConjugateTranspose (<function _ConjugateTransposeGrad at 0x0000013BA6453600>) in gradient.
+[2026-01-29 13:40:04,169] tensorflow - Level 1 - Registering Shape (None) in gradient.
+[2026-01-29 13:40:04,170] tensorflow - Level 1 - Registering ShapeN (None) in gradient.
+[2026-01-29 13:40:04,170] tensorflow - Level 1 - Registering Rank (None) in gradient.
+[2026-01-29 13:40:04,171] tensorflow - Level 1 - Registering Size (None) in gradient.
+[2026-01-29 13:40:04,171] tensorflow - Level 1 - Registering Tile (<function _TileGrad at 0x0000013BA64536A0>) in gradient.
+[2026-01-29 13:40:04,171] tensorflow - Level 1 - Registering BroadcastGradientArgs (None) in gradient.
+[2026-01-29 13:40:04,172] tensorflow - Level 1 - Registering Pad (<function _PadGrad at 0x0000013BA6453740>) in gradient.
+[2026-01-29 13:40:04,172] tensorflow - Level 1 - Registering PadV2 (<function _PadGrad at 0x0000013BA6453740>) in gradient.
+[2026-01-29 13:40:04,173] tensorflow - Level 1 - Registering ReverseSequence (<function _ReverseSequenceGrad at 0x0000013BA64537E0>) in gradient.
+[2026-01-29 13:40:04,174] tensorflow - Level 1 - Registering Reverse (<function _ReverseGrad at 0x0000013BA6453880>) in gradient.
+[2026-01-29 13:40:04,174] tensorflow - Level 1 - Registering ReverseV2 (<function _ReverseV2Grad at 0x0000013BA6453920>) in gradient.
+[2026-01-29 13:40:04,174] tensorflow - Level 1 - Registering SpaceToBatch (<function _SpaceToBatchGrad at 0x0000013BA64539C0>) in gradient.
+[2026-01-29 13:40:04,175] tensorflow - Level 1 - Registering SpaceToBatchND (<function _SpaceToBatchNDGrad at 0x0000013BA6453A60>) in gradient.
+[2026-01-29 13:40:04,175] tensorflow - Level 1 - Registering BatchToSpace (<function _BatchToSpaceGrad at 0x0000013BA6453B00>) in gradient.
+[2026-01-29 13:40:04,176] tensorflow - Level 1 - Registering BatchToSpaceND (<function _BatchToSpaceNDGrad at 0x0000013BA6453BA0>) in gradient.
+[2026-01-29 13:40:04,176] tensorflow - Level 1 - Registering SpaceToDepth (<function _SpaceToDepthGrad at 0x0000013BA6453C40>) in gradient.
+[2026-01-29 13:40:04,177] tensorflow - Level 1 - Registering DepthToSpace (<function _DepthToSpaceGrad at 0x0000013BA6453CE0>) in gradient.
+[2026-01-29 13:40:04,177] tensorflow - Level 1 - Registering OneHot (None) in gradient.
+[2026-01-29 13:40:04,178] tensorflow - Level 1 - Registering MirrorPad (<function _MirrorPadGrad at 0x0000013BA6453D80>) in gradient.
+[2026-01-29 13:40:04,178] tensorflow - Level 1 - Registering MirrorPadGrad (<function _MirrorPadGradGrad at 0x0000013BA6453E20>) in gradient.
+[2026-01-29 13:40:04,179] tensorflow - Level 1 - Registering FakeQuantWithMinMaxArgsGradient (None) in gradient.
+[2026-01-29 13:40:04,179] tensorflow - Level 1 - Registering FakeQuantWithMinMaxVarsGradient (None) in gradient.
+[2026-01-29 13:40:04,180] tensorflow - Level 1 - Registering FakeQuantWithMinMaxVarsPerChannelGradient (None) in gradient.
+[2026-01-29 13:40:04,180] tensorflow - Level 1 - Registering QuantizeAndDequantize (<function _QuantizeAndDequantizeGrad at 0x0000013BA6453EC0>) in gradient.
+[2026-01-29 13:40:04,181] tensorflow - Level 1 - Registering QuantizeAndDequantizeV2 (<function _QuantizeAndDequantizeV2Grad at 0x0000013BA6453F60>) in gradient.
+[2026-01-29 13:40:04,181] tensorflow - Level 1 - Registering QuantizeAndDequantizeV3 (<function _QuantizeAndDequantizeV3Grad at 0x0000013BA64A4040>) in gradient.
+[2026-01-29 13:40:04,182] tensorflow - Level 1 - Registering ExtractImagePatches (<function _ExtractImagePatchesGrad at 0x0000013BA64A40E0>) in gradient.
+[2026-01-29 13:40:04,183] tensorflow - Level 1 - Registering ExtractVolumePatches (<function _ExtractVolumePatchesGrad at 0x0000013BA64A4180>) in gradient.
+[2026-01-29 13:40:04,183] tensorflow - Level 1 - Registering ScatterNd (<function _ScatterNdGrad at 0x0000013BA64A4220>) in gradient.
+[2026-01-29 13:40:04,184] tensorflow - Level 1 - Registering TensorScatterUpdate (<function _TensorScatterUpdateGrad at 0x0000013BA64A42C0>) in gradient.
+[2026-01-29 13:40:04,185] tensorflow - Level 1 - Registering TensorScatterAdd (<function _TensorScatterAddGrad at 0x0000013BA64A4360>) in gradient.
+[2026-01-29 13:40:04,185] tensorflow - Level 1 - Registering TensorScatterMax (<function _TensorScatterMaxGrad at 0x0000013BA64A44A0>) in gradient.
+[2026-01-29 13:40:04,186] tensorflow - Level 1 - Registering TensorScatterMin (<function _TensorScatterMinGrad at 0x0000013BA64A4540>) in gradient.
+[2026-01-29 13:40:04,186] tensorflow - Level 1 - Registering TensorScatterSub (<function _TensorScatterSubGrad at 0x0000013BA64A45E0>) in gradient.
+[2026-01-29 13:40:04,187] tensorflow - Level 1 - Registering ScatterNdNonAliasingAdd (<function _ScatterNdNonAliasingAddGrad at 0x0000013BA64A4680>) in gradient.
+[2026-01-29 13:40:04,187] tensorflow - Level 1 - Registering BroadcastTo (<function _BroadcastToGrad at 0x0000013BA64A4720>) in gradient.
+[2026-01-29 13:40:04,191] tensorflow - Level 1 - Registering Switch (<function _SwitchGrad at 0x0000013BA64A4900>) in gradient.
+[2026-01-29 13:40:04,194] tensorflow - Level 1 - Registering RefSwitch (<function _SwitchGrad at 0x0000013BA64A4900>) in gradient.
+[2026-01-29 13:40:04,195] tensorflow - Level 1 - Registering Merge (<function _MergeGrad at 0x0000013BA64A49A0>) in gradient.
+[2026-01-29 13:40:04,195] tensorflow - Level 1 - Registering RefMerge (<function _RefMergeGrad at 0x0000013BA64A4AE0>) in gradient.
+[2026-01-29 13:40:04,196] tensorflow - Level 1 - Registering Exit (<function _ExitGrad at 0x0000013BA64A4A40>) in gradient.
+[2026-01-29 13:40:04,196] tensorflow - Level 1 - Registering RefExit (<function _ExitGrad at 0x0000013BA64A4A40>) in gradient.
+[2026-01-29 13:40:04,197] tensorflow - Level 1 - Registering NextIteration (<function _NextIterationGrad at 0x0000013BA64A4B80>) in gradient.
+[2026-01-29 13:40:04,197] tensorflow - Level 1 - Registering RefNextIteration (<function _RefNextIterationGrad at 0x0000013BA64A4C20>) in gradient.
+[2026-01-29 13:40:04,197] tensorflow - Level 1 - Registering Enter (<function _EnterGrad at 0x0000013BA64A4CC0>) in gradient.
+[2026-01-29 13:40:04,198] tensorflow - Level 1 - Registering RefEnter (<function _RefEnterGrad at 0x0000013BA64A4D60>) in gradient.
+[2026-01-29 13:40:04,199] tensorflow - Level 1 - Registering LoopCond (<function _LoopCondGrad at 0x0000013BA64A4E00>) in gradient.
+[2026-01-29 13:40:04,213] tensorflow - Level 1 - Registering CudnnRNN (<function _cudnn_rnn_backward at 0x0000013BA64A4F40>) in gradient.
+[2026-01-29 13:40:04,216] tensorflow - Level 1 - Registering CudnnRNNV2 (<function _cudnn_rnn_backward_v2 at 0x0000013BA64A5120>) in gradient.
+[2026-01-29 13:40:04,217] tensorflow - Level 1 - Registering CudnnRNNV3 (<function _cudnn_rnn_backwardv3 at 0x0000013BA64C5260>) in gradient.
+[2026-01-29 13:40:04,219] tensorflow - Level 1 - Registering ResizeNearestNeighbor (<function _ResizeNearestNeighborGrad at 0x0000013BA64C51C0>) in gradient.
+[2026-01-29 13:40:04,222] tensorflow - Level 1 - Registering ResizeBilinear (<function _ResizeBilinearGrad at 0x0000013BA64C5300>) in gradient.
+[2026-01-29 13:40:04,222] tensorflow - Level 1 - Registering ResizeBilinearGrad (None) in gradient.
+[2026-01-29 13:40:04,223] tensorflow - Level 1 - Registering ScaleAndTranslate (<function _ScaleAndTranslateGrad at 0x0000013BA64C54E0>) in gradient.
+[2026-01-29 13:40:04,223] tensorflow - Level 1 - Registering ResizeBicubic (<function _ResizeBicubicGrad at 0x0000013BA64C5440>) in gradient.
+[2026-01-29 13:40:04,224] tensorflow - Level 1 - Registering CropAndResize (<function _CropAndResizeGrad at 0x0000013BA64C5580>) in gradient.
+[2026-01-29 13:40:04,224] tensorflow - Level 1 - Registering RGBToHSV (<function _RGBToHSVGrad at 0x0000013BA64C56C0>) in gradient.
+[2026-01-29 13:40:04,240] tensorflow - Level 1 - Registering ReaderRead (None) in gradient.
+[2026-01-29 13:40:04,243] tensorflow - Level 1 - Registering ReaderReadUpTo (None) in gradient.
+[2026-01-29 13:40:04,244] tensorflow - Level 1 - Registering ReaderNumRecordsProduced (None) in gradient.
+[2026-01-29 13:40:04,244] tensorflow - Level 1 - Registering ReaderNumWorkUnitsCompleted (None) in gradient.
+[2026-01-29 13:40:04,245] tensorflow - Level 1 - Registering ReaderSerializeState (None) in gradient.
+[2026-01-29 13:40:04,245] tensorflow - Level 1 - Registering ReaderRestoreState (None) in gradient.
+[2026-01-29 13:40:04,245] tensorflow - Level 1 - Registering ReaderReset (None) in gradient.
+[2026-01-29 13:40:04,247] tensorflow - Level 1 - Registering WholeFileReader (None) in gradient.
+[2026-01-29 13:40:04,249] tensorflow - Level 1 - Registering TextLineReader (None) in gradient.
+[2026-01-29 13:40:04,250] tensorflow - Level 1 - Registering FixedLengthRecordReader (None) in gradient.
+[2026-01-29 13:40:04,251] tensorflow - Level 1 - Registering TFRecordReader (None) in gradient.
+[2026-01-29 13:40:04,252] tensorflow - Level 1 - Registering LMDBReader (None) in gradient.
+[2026-01-29 13:40:04,252] tensorflow - Level 1 - Registering IdentityReader (None) in gradient.
+[2026-01-29 13:40:04,269] tensorflow - Level 1 - Registering MatrixInverse (<function _MatrixInverseGrad at 0x0000013BA6516B60>) in gradient.
+[2026-01-29 13:40:04,273] tensorflow - Level 1 - Registering Einsum (<function _EinsumGrad at 0x0000013BA6516DE0>) in gradient.
+[2026-01-29 13:40:04,274] tensorflow - Level 1 - Registering MatrixDeterminant (<function _MatrixDeterminantGrad at 0x0000013BA6545260>) in gradient.
+[2026-01-29 13:40:04,275] tensorflow - Level 1 - Registering MatrixSquareRoot (<function _MatrixSquareRootGrad at 0x0000013BA65453A0>) in gradient.
+[2026-01-29 13:40:04,275] tensorflow - Level 1 - Registering LogMatrixDeterminant (<function _LogMatrixDeterminantGrad at 0x0000013BA6545440>) in gradient.
+[2026-01-29 13:40:04,276] tensorflow - Level 1 - Registering Cholesky (<function _CholeskyGrad at 0x0000013BA65454E0>) in gradient.
+[2026-01-29 13:40:04,277] tensorflow - Level 1 - Registering Qr (<function _QrGrad at 0x0000013BA6545580>) in gradient.
+[2026-01-29 13:40:04,277] tensorflow - Level 1 - Registering MatrixSolve (<function _MatrixSolveGrad at 0x0000013BA6545620>) in gradient.
+[2026-01-29 13:40:04,278] tensorflow - Level 1 - Registering MatrixSolveLs (<function _MatrixSolveLsGrad at 0x0000013BA65456C0>) in gradient.
+[2026-01-29 13:40:04,278] tensorflow - Level 1 - Registering BandedTriangularSolve (<function _BandedTriangularSolveGrad at 0x0000013BA6545760>) in gradient.
+[2026-01-29 13:40:04,279] tensorflow - Level 1 - Registering MatrixTriangularSolve (<function _MatrixTriangularSolveGrad at 0x0000013BA6545800>) in gradient.
+[2026-01-29 13:40:04,279] tensorflow - Level 1 - Registering Eig (<function _EigGrad at 0x0000013BA6545940>) in gradient.
+[2026-01-29 13:40:04,280] tensorflow - Level 1 - Registering SelfAdjointEigV2 (<function _SelfAdjointEigV2Grad at 0x0000013BA65459E0>) in gradient.
+[2026-01-29 13:40:04,280] tensorflow - Level 1 - Registering Svd (<function _SvdGrad at 0x0000013BA6545A80>) in gradient.
+[2026-01-29 13:40:04,281] tensorflow - Level 1 - Registering TridiagonalMatMul (<function _TridiagonalMatMulGrad at 0x0000013BA6545C60>) in gradient.
+[2026-01-29 13:40:04,281] tensorflow - Level 1 - Registering TridiagonalSolve (<function _TridiagonalSolveGrad at 0x0000013BA6545D00>) in gradient.
+[2026-01-29 13:40:04,285] tensorflow - Level 1 - Registering LookupTableFind (None) in gradient.
+[2026-01-29 13:40:04,288] tensorflow - Level 1 - Registering LookupTableFindV2 (None) in gradient.
+[2026-01-29 13:40:04,289] tensorflow - Level 1 - Registering LookupTableInsert (None) in gradient.
+[2026-01-29 13:40:04,289] tensorflow - Level 1 - Registering LookupTableInsertV2 (None) in gradient.
+[2026-01-29 13:40:04,289] tensorflow - Level 1 - Registering LookupTableSize (None) in gradient.
+[2026-01-29 13:40:04,290] tensorflow - Level 1 - Registering LookupTableSizeV2 (None) in gradient.
+[2026-01-29 13:40:04,290] tensorflow - Level 1 - Registering HashTable (None) in gradient.
+[2026-01-29 13:40:04,291] tensorflow - Level 1 - Registering HashTableV2 (None) in gradient.
+[2026-01-29 13:40:04,291] tensorflow - Level 1 - Registering InitializeTable (None) in gradient.
+[2026-01-29 13:40:04,292] tensorflow - Level 1 - Registering InitializeTableV2 (None) in gradient.
+[2026-01-29 13:40:04,292] tensorflow - Level 1 - Registering InitializeTableFromTextFile (None) in gradient.
+[2026-01-29 13:40:04,293] tensorflow - Level 1 - Registering InitializeTableFromTextFileV2 (None) in gradient.
+[2026-01-29 13:40:04,293] tensorflow - Level 1 - Registering MutableDenseHashTable (None) in gradient.
+[2026-01-29 13:40:04,293] tensorflow - Level 1 - Registering MutableDenseHashTableV2 (None) in gradient.
+[2026-01-29 13:40:04,294] tensorflow - Level 1 - Registering MutableHashTable (None) in gradient.
+[2026-01-29 13:40:04,294] tensorflow - Level 1 - Registering MutableHashTableV2 (None) in gradient.
+[2026-01-29 13:40:04,295] tensorflow - Level 1 - Registering MutableHashTableOfTensors (None) in gradient.
+[2026-01-29 13:40:04,295] tensorflow - Level 1 - Registering MutableHashTableOfTensorsV2 (None) in gradient.
+[2026-01-29 13:40:04,303] tensorflow - Level 1 - Registering Roll (<function _RollGrad at 0x0000013BA64A4EA0>) in gradient.
+[2026-01-29 13:40:04,311] tensorflow - Level 1 - Registering ArgMax (<function _ArgMaxGrad at 0x0000013BA6545080>) in gradient.
+[2026-01-29 13:40:04,315] tensorflow - Level 1 - Registering ArgMin (<function _ArgMinGrad at 0x0000013BA6546DE0>) in gradient.
+[2026-01-29 13:40:04,316] tensorflow - Level 1 - Registering EuclideanNorm (<function _EuclideanNormGrad at 0x0000013BA6547060>) in gradient.
+[2026-01-29 13:40:04,316] tensorflow - Level 1 - Registering Sum (<function _SumGrad at 0x0000013BA65474C0>) in gradient.
+[2026-01-29 13:40:04,317] tensorflow - Level 1 - Registering Max (<function _MaxGrad at 0x0000013BA6547600>) in gradient.
+[2026-01-29 13:40:04,317] tensorflow - Level 1 - Registering Min (<function _MinGrad at 0x0000013BA65476A0>) in gradient.
+[2026-01-29 13:40:04,318] tensorflow - Level 1 - Registering Mean (<function _MeanGrad at 0x0000013BA6547740>) in gradient.
+[2026-01-29 13:40:04,318] tensorflow - Level 1 - Registering Prod (<function _ProdGrad at 0x0000013BA65477E0>) in gradient.
+[2026-01-29 13:40:04,319] tensorflow - Level 1 - Registering SegmentSum (<function _SegmentSumGrad at 0x0000013BA6547880>) in gradient.
+[2026-01-29 13:40:04,319] tensorflow - Level 1 - Registering SegmentMean (<function _SegmentMeanGrad at 0x0000013BA6547920>) in gradient.
+[2026-01-29 13:40:04,320] tensorflow - Level 1 - Registering SparseSegmentSum (<function _SparseSegmentSumGrad at 0x0000013BA6547B00>) in gradient.
+[2026-01-29 13:40:04,320] tensorflow - Level 1 - Registering SparseSegmentSumWithNumSegments (<function _SparseSegmentSumWithNumSegmentsGrad at 0x0000013BA6547BA0>) in gradient.
+[2026-01-29 13:40:04,321] tensorflow - Level 1 - Registering SparseSegmentMean (<function _SparseSegmentMeanGrad at 0x0000013BA6547C40>) in gradient.
+[2026-01-29 13:40:04,321] tensorflow - Level 1 - Registering SparseSegmentMeanWithNumSegments (<function _SparseSegmentMeanWithNumSegmentsGrad at 0x0000013BA6547CE0>) in gradient.
+[2026-01-29 13:40:04,322] tensorflow - Level 1 - Registering SparseSegmentSqrtN (<function _SparseSegmentSqrtNGrad at 0x0000013BA6547D80>) in gradient.
+[2026-01-29 13:40:04,322] tensorflow - Level 1 - Registering SparseSegmentSqrtNWithNumSegments (<function _SparseSegmentSqrtNWithNumSegmentsGrad at 0x0000013BA6547E20>) in gradient.
+[2026-01-29 13:40:04,322] tensorflow - Level 1 - Registering SegmentMin (<function _SegmentMinGrad at 0x0000013BA6547F60>) in gradient.
+[2026-01-29 13:40:04,323] tensorflow - Level 1 - Registering SegmentMax (<function _SegmentMaxGrad at 0x0000013BA65B4040>) in gradient.
+[2026-01-29 13:40:04,323] tensorflow - Level 1 - Registering SegmentProd (<function _SegmentProdGrad at 0x0000013BA65B40E0>) in gradient.
+[2026-01-29 13:40:04,324] tensorflow - Level 1 - Registering UnsortedSegmentSum (<function _UnsortedSegmentSumGrad at 0x0000013BA65B42C0>) in gradient.
+[2026-01-29 13:40:04,324] tensorflow - Level 1 - Registering UnsortedSegmentMax (<function _UnsortedSegmentMaxGrad at 0x0000013BA65B4360>) in gradient.
+[2026-01-29 13:40:04,324] tensorflow - Level 1 - Registering UnsortedSegmentMin (<function _UnsortedSegmentMinGrad at 0x0000013BA65B4400>) in gradient.
+[2026-01-29 13:40:04,325] tensorflow - Level 1 - Registering UnsortedSegmentProd (<function _UnsortedSegmentProdGrad at 0x0000013BA65B44A0>) in gradient.
+[2026-01-29 13:40:04,325] tensorflow - Level 1 - Registering Abs (<function _AbsGrad at 0x0000013BA65B4540>) in gradient.
+[2026-01-29 13:40:04,326] tensorflow - Level 1 - Registering Neg (<function _NegGrad at 0x0000013BA65B45E0>) in gradient.
+[2026-01-29 13:40:04,326] tensorflow - Level 1 - Registering Inv (<function _InvGrad at 0x0000013BA65B4680>) in gradient.
+[2026-01-29 13:40:04,327] tensorflow - Level 1 - Registering Reciprocal (<function _ReciprocalGrad at 0x0000013BA65B4720>) in gradient.
+[2026-01-29 13:40:04,327] tensorflow - Level 1 - Registering InvGrad (<function _InvGradGrad at 0x0000013BA65B47C0>) in gradient.
+[2026-01-29 13:40:04,328] tensorflow - Level 1 - Registering ReciprocalGrad (<function _ReciprocalGradGrad at 0x0000013BA65B4860>) in gradient.
+[2026-01-29 13:40:04,328] tensorflow - Level 1 - Registering Square (<function _SquareGrad at 0x0000013BA65B4900>) in gradient.
+[2026-01-29 13:40:04,329] tensorflow - Level 1 - Registering Sqrt (<function _SqrtGrad at 0x0000013BA65B49A0>) in gradient.
+[2026-01-29 13:40:04,329] tensorflow - Level 1 - Registering SqrtGrad (<function _SqrtGradGrad at 0x0000013BA65B4A40>) in gradient.
+[2026-01-29 13:40:04,330] tensorflow - Level 1 - Registering Rsqrt (<function _RsqrtGrad at 0x0000013BA65B4AE0>) in gradient.
+[2026-01-29 13:40:04,330] tensorflow - Level 1 - Registering RsqrtGrad (<function _RsqrtGradGrad at 0x0000013BA65B4B80>) in gradient.
+[2026-01-29 13:40:04,330] tensorflow - Level 1 - Registering Exp (<function _ExpGrad at 0x0000013BA65B4C20>) in gradient.
+[2026-01-29 13:40:04,331] tensorflow - Level 1 - Registering Expm1 (<function _Expm1Grad at 0x0000013BA65B4CC0>) in gradient.
+[2026-01-29 13:40:04,332] tensorflow - Level 1 - Registering Log (<function _LogGrad at 0x0000013BA65B4D60>) in gradient.
+[2026-01-29 13:40:04,332] tensorflow - Level 1 - Registering Log1p (<function _Log1pGrad at 0x0000013BA65B4E00>) in gradient.
+[2026-01-29 13:40:04,333] tensorflow - Level 1 - Registering Xlogy (<function _XLogyGrad at 0x0000013BA65B4EA0>) in gradient.
+[2026-01-29 13:40:04,333] tensorflow - Level 1 - Registering Xlog1py (<function _XLog1pyGrad at 0x0000013BA65B4F40>) in gradient.
+[2026-01-29 13:40:04,334] tensorflow - Level 1 - Registering Xdivy (<function _XDivyGrad at 0x0000013BA65B4FE0>) in gradient.
+[2026-01-29 13:40:04,334] tensorflow - Level 1 - Registering Sinh (<function _SinhGrad at 0x0000013BA65B5080>) in gradient.
+[2026-01-29 13:40:04,335] tensorflow - Level 1 - Registering Cosh (<function _CoshGrad at 0x0000013BA65B5120>) in gradient.
+[2026-01-29 13:40:04,335] tensorflow - Level 1 - Registering Tanh (<function _TanhGrad at 0x0000013BA65B51C0>) in gradient.
+[2026-01-29 13:40:04,336] tensorflow - Level 1 - Registering Asinh (<function _AsinhGrad at 0x0000013BA65B5260>) in gradient.
+[2026-01-29 13:40:04,336] tensorflow - Level 1 - Registering Acosh (<function _AcoshGrad at 0x0000013BA65B5300>) in gradient.
+[2026-01-29 13:40:04,337] tensorflow - Level 1 - Registering Atanh (<function _AtanhGrad at 0x0000013BA65B53A0>) in gradient.
+[2026-01-29 13:40:04,337] tensorflow - Level 1 - Registering TanhGrad (<function _TanhGradGrad at 0x0000013BA65B5440>) in gradient.
+[2026-01-29 13:40:04,338] tensorflow - Level 1 - Registering Erf (<function _ErfGrad at 0x0000013BA65B54E0>) in gradient.
+[2026-01-29 13:40:04,339] tensorflow - Level 1 - Registering Erfc (<function _ErfcGrad at 0x0000013BA65B5580>) in gradient.
+[2026-01-29 13:40:04,339] tensorflow - Level 1 - Registering Erfinv (<function _ErfinvGrad at 0x0000013BA65B5620>) in gradient.
+[2026-01-29 13:40:04,340] tensorflow - Level 1 - Registering Ndtri (<function _NdtriGrad at 0x0000013BA65B56C0>) in gradient.
+[2026-01-29 13:40:04,341] tensorflow - Level 1 - Registering Lgamma (<function _LgammaGrad at 0x0000013BA65B5760>) in gradient.
+[2026-01-29 13:40:04,341] tensorflow - Level 1 - Registering Digamma (<function _DigammaGrad at 0x0000013BA65B5800>) in gradient.
+[2026-01-29 13:40:04,342] tensorflow - Level 1 - Registering Dawsn (<function _DawsnGrad at 0x0000013BA65B58A0>) in gradient.
+[2026-01-29 13:40:04,343] tensorflow - Level 1 - Registering Expint (<function _ExpintGrad at 0x0000013BA65B5940>) in gradient.
+[2026-01-29 13:40:04,344] tensorflow - Level 1 - Registering FresnelCos (<function _FresnelCosGrad at 0x0000013BA65B59E0>) in gradient.
+[2026-01-29 13:40:04,345] tensorflow - Level 1 - Registering FresnelSin (<function _FresnelSinGrad at 0x0000013BA65B5A80>) in gradient.
+[2026-01-29 13:40:04,345] tensorflow - Level 1 - Registering Spence (<function _SpenceGrad at 0x0000013BA65B5B20>) in gradient.
+[2026-01-29 13:40:04,346] tensorflow - Level 1 - Registering BesselI0 (<function _BesselI0Grad at 0x0000013BA65B5BC0>) in gradient.
+[2026-01-29 13:40:04,347] tensorflow - Level 1 - Registering BesselI0e (<function _BesselI0eGrad at 0x0000013BA65B5C60>) in gradient.
+[2026-01-29 13:40:04,347] tensorflow - Level 1 - Registering BesselI1 (<function _BesselI1Grad at 0x0000013BA65B5D00>) in gradient.
+[2026-01-29 13:40:04,348] tensorflow - Level 1 - Registering BesselI1e (<function _BesselI1eGrad at 0x0000013BA65B5DA0>) in gradient.
+[2026-01-29 13:40:04,348] tensorflow - Level 1 - Registering BesselK0 (<function _BesselK0Grad at 0x0000013BA65B5E40>) in gradient.
+[2026-01-29 13:40:04,349] tensorflow - Level 1 - Registering BesselK0e (<function _BesselK0eGrad at 0x0000013BA65B5EE0>) in gradient.
+[2026-01-29 13:40:04,350] tensorflow - Level 1 - Registering BesselK1 (<function _BesselK1Grad at 0x0000013BA65B5F80>) in gradient.
+[2026-01-29 13:40:04,350] tensorflow - Level 1 - Registering BesselK1e (<function _BesselK1eGrad at 0x0000013BA65B6020>) in gradient.
+[2026-01-29 13:40:04,351] tensorflow - Level 1 - Registering BesselJ0 (<function _BesselJ0Grad at 0x0000013BA65B60C0>) in gradient.
+[2026-01-29 13:40:04,353] tensorflow - Level 1 - Registering BesselJ1 (<function _BesselJ1Grad at 0x0000013BA65B6160>) in gradient.
+[2026-01-29 13:40:04,353] tensorflow - Level 1 - Registering BesselY0 (<function _BesselY0Grad at 0x0000013BA65B6200>) in gradient.
+[2026-01-29 13:40:04,353] tensorflow - Level 1 - Registering BesselY1 (<function _BesselY1Grad at 0x0000013BA65B62A0>) in gradient.
+[2026-01-29 13:40:04,353] tensorflow - Level 1 - Registering Igamma (<function _IgammaGrad at 0x0000013BA65B6340>) in gradient.
+[2026-01-29 13:40:04,354] tensorflow - Level 1 - Registering Igammac (<function _IgammacGrad at 0x0000013BA65B63E0>) in gradient.
+[2026-01-29 13:40:04,354] tensorflow - Level 1 - Registering Betainc (<function _BetaincGrad at 0x0000013BA65B6480>) in gradient.
+[2026-01-29 13:40:04,355] tensorflow - Level 1 - Registering Zeta (<function _ZetaGrad at 0x0000013BA65B6520>) in gradient.
+[2026-01-29 13:40:04,356] tensorflow - Level 1 - Registering Polygamma (<function _PolygammaGrad at 0x0000013BA65B65C0>) in gradient.
+[2026-01-29 13:40:04,356] tensorflow - Level 1 - Registering Sigmoid (<function _SigmoidGrad at 0x0000013BA65B6660>) in gradient.
+[2026-01-29 13:40:04,356] tensorflow - Level 1 - Registering SigmoidGrad (<function _SigmoidGradGrad at 0x0000013BA65B6700>) in gradient.
+[2026-01-29 13:40:04,356] tensorflow - Level 1 - Registering Sign (<function _SignGrad at 0x0000013BA65B67A0>) in gradient.
+[2026-01-29 13:40:04,357] tensorflow - Level 1 - Registering Sin (<function _SinGrad at 0x0000013BA65B6840>) in gradient.
+[2026-01-29 13:40:04,357] tensorflow - Level 1 - Registering Cos (<function _CosGrad at 0x0000013BA65B68E0>) in gradient.
+[2026-01-29 13:40:04,358] tensorflow - Level 1 - Registering Tan (<function _TanGrad at 0x0000013BA65B6980>) in gradient.
+[2026-01-29 13:40:04,359] tensorflow - Level 1 - Registering Asin (<function _AsinGrad at 0x0000013BA65B6A20>) in gradient.
+[2026-01-29 13:40:04,359] tensorflow - Level 1 - Registering Acos (<function _AcosGrad at 0x0000013BA65B6AC0>) in gradient.
+[2026-01-29 13:40:04,360] tensorflow - Level 1 - Registering Atan (<function _AtanGrad at 0x0000013BA65B6B60>) in gradient.
+[2026-01-29 13:40:04,360] tensorflow - Level 1 - Registering Atan2 (<function _Atan2Grad at 0x0000013BA65B6C00>) in gradient.
+[2026-01-29 13:40:04,361] tensorflow - Level 1 - Registering AddN (<function _AddNGrad at 0x0000013BA65B6CA0>) in gradient.
+[2026-01-29 13:40:04,362] tensorflow - Level 1 - Registering AddV2 (<function _AddGrad at 0x0000013BA65B6DE0>) in gradient.
+[2026-01-29 13:40:04,363] tensorflow - Level 1 - Registering Add (<function _AddGrad at 0x0000013BA65B6DE0>) in gradient.
+[2026-01-29 13:40:04,363] tensorflow - Level 1 - Registering Sub (<function _SubGrad at 0x0000013BA65B6E80>) in gradient.
+[2026-01-29 13:40:04,364] tensorflow - Level 1 - Registering Mul (<function _MulGrad at 0x0000013BA65B6F20>) in gradient.
+[2026-01-29 13:40:04,365] tensorflow - Level 1 - Registering MulNoNan (<function _MulNoNanGrad at 0x0000013BA65B6FC0>) in gradient.
+[2026-01-29 13:40:04,365] tensorflow - Level 1 - Registering Div (<function _DivGrad at 0x0000013BA65B7060>) in gradient.
+[2026-01-29 13:40:04,366] tensorflow - Level 1 - Registering FloorDiv (<function _FloorDivGrad at 0x0000013BA65B7100>) in gradient.
+[2026-01-29 13:40:04,366] tensorflow - Level 1 - Registering FloorMod (<function _FloorModGrad at 0x0000013BA65B71A0>) in gradient.
+[2026-01-29 13:40:04,366] tensorflow - Level 1 - Registering TruncateDiv (<function _TruncateDivGrad at 0x0000013BA65B7240>) in gradient.
+[2026-01-29 13:40:04,367] tensorflow - Level 1 - Registering RealDiv (<function _RealDivGrad at 0x0000013BA65B72E0>) in gradient.
+[2026-01-29 13:40:04,368] tensorflow - Level 1 - Registering DivNoNan (<function _DivNoNanGrad at 0x0000013BA65B7380>) in gradient.
+[2026-01-29 13:40:04,368] tensorflow - Level 1 - Registering Pow (<function _PowGrad at 0x0000013BA65B7420>) in gradient.
+[2026-01-29 13:40:04,369] tensorflow - Level 1 - Registering Maximum (<function _MaximumGrad at 0x0000013BA65B7600>) in gradient.
+[2026-01-29 13:40:04,369] tensorflow - Level 1 - Registering Minimum (<function _MinimumGrad at 0x0000013BA65B76A0>) in gradient.
+[2026-01-29 13:40:04,370] tensorflow - Level 1 - Registering SquaredDifference (<function _SquaredDifferenceGrad at 0x0000013BA65B7740>) in gradient.
+[2026-01-29 13:40:04,371] tensorflow - Level 1 - Registering Less (None) in gradient.
+[2026-01-29 13:40:04,371] tensorflow - Level 1 - Registering LessEqual (None) in gradient.
+[2026-01-29 13:40:04,371] tensorflow - Level 1 - Registering Greater (None) in gradient.
+[2026-01-29 13:40:04,372] tensorflow - Level 1 - Registering GreaterEqual (None) in gradient.
+[2026-01-29 13:40:04,373] tensorflow - Level 1 - Registering Equal (None) in gradient.
+[2026-01-29 13:40:04,373] tensorflow - Level 1 - Registering ApproximateEqual (None) in gradient.
+[2026-01-29 13:40:04,374] tensorflow - Level 1 - Registering NotEqual (None) in gradient.
+[2026-01-29 13:40:04,374] tensorflow - Level 1 - Registering LogicalAnd (None) in gradient.
+[2026-01-29 13:40:04,375] tensorflow - Level 1 - Registering LogicalOr (None) in gradient.
+[2026-01-29 13:40:04,375] tensorflow - Level 1 - Registering LogicalNot (None) in gradient.
+[2026-01-29 13:40:04,375] tensorflow - Level 1 - Registering Select (<function _SelectGrad at 0x0000013BA65B77E0>) in gradient.
+[2026-01-29 13:40:04,376] tensorflow - Level 1 - Registering SelectV2 (<function _SelectGradV2 at 0x0000013BA65B7880>) in gradient.
+[2026-01-29 13:40:04,376] tensorflow - Level 1 - Registering MatMul (<function _MatMulGrad at 0x0000013BA65B7A60>) in gradient.
+[2026-01-29 13:40:04,378] tensorflow - Level 1 - Registering SparseMatMul (<function _SparseMatMulGrad at 0x0000013BA65B7B00>) in gradient.
+[2026-01-29 13:40:04,378] tensorflow - Level 1 - Registering Floor (<function _FloorGrad at 0x0000013BA65B7BA0>) in gradient.
+[2026-01-29 13:40:04,379] tensorflow - Level 1 - Registering Ceil (<function _CeilGrad at 0x0000013BA65B7C40>) in gradient.
+[2026-01-29 13:40:04,379] tensorflow - Level 1 - Registering Round (<function _RoundGrad at 0x0000013BA65B7CE0>) in gradient.
+[2026-01-29 13:40:04,380] tensorflow - Level 1 - Registering Rint (<function _RintGrad at 0x0000013BA65B7D80>) in gradient.
+[2026-01-29 13:40:04,380] tensorflow - Level 1 - Registering BatchMatMul (<function _BatchMatMul at 0x0000013BA65B7E20>) in gradient.
+[2026-01-29 13:40:04,381] tensorflow - Level 1 - Registering BatchMatMulV3 (<function _BatchMatMulV2 at 0x0000013BA65B7EC0>) in gradient.
+[2026-01-29 13:40:04,381] tensorflow - Level 1 - Registering BatchMatMulV2 (<function _BatchMatMulV2 at 0x0000013BA65B7EC0>) in gradient.
+[2026-01-29 13:40:04,381] tensorflow - Level 1 - Registering Range (None) in gradient.
+[2026-01-29 13:40:04,382] tensorflow - Level 1 - Registering LinSpace (None) in gradient.
+[2026-01-29 13:40:04,382] tensorflow - Level 1 - Registering Complex (<function _ComplexGrad at 0x0000013BA65B7F60>) in gradient.
+[2026-01-29 13:40:04,383] tensorflow - Level 1 - Registering Real (<function _RealGrad at 0x0000013BA65C4040>) in gradient.
+[2026-01-29 13:40:04,383] tensorflow - Level 1 - Registering Imag (<function _ImagGrad at 0x0000013BA65C40E0>) in gradient.
+[2026-01-29 13:40:04,384] tensorflow - Level 1 - Registering Angle (<function _AngleGrad at 0x0000013BA65C4180>) in gradient.
+[2026-01-29 13:40:04,385] tensorflow - Level 1 - Registering Conj (<function _ConjGrad at 0x0000013BA65C4220>) in gradient.
+[2026-01-29 13:40:04,385] tensorflow - Level 1 - Registering ComplexAbs (<function _ComplexAbsGrad at 0x0000013BA65C42C0>) in gradient.
+[2026-01-29 13:40:04,386] tensorflow - Level 1 - Registering Cast (<function _CastGrad at 0x0000013BA65C4360>) in gradient.
+[2026-01-29 13:40:04,386] tensorflow - Level 1 - Registering Cross (<function _CrossGrad at 0x0000013BA65C4400>) in gradient.
+[2026-01-29 13:40:04,387] tensorflow - Level 1 - Registering Cumsum (<function _CumsumGrad at 0x0000013BA65C44A0>) in gradient.
+[2026-01-29 13:40:04,387] tensorflow - Level 1 - Registering Cumprod (<function _CumprodGrad at 0x0000013BA65C4540>) in gradient.
+[2026-01-29 13:40:04,388] tensorflow - Level 1 - Registering CumulativeLogsumexp (<function _CumulativeLogsumexpGrad at 0x0000013BA65C45E0>) in gradient.
+[2026-01-29 13:40:04,388] tensorflow - Level 1 - Registering NextAfter (<function _NextAfterGrad at 0x0000013BA65C4680>) in gradient.
+[2026-01-29 13:40:04,404] tensorflow - Level 1 - Registering NcclAllReduce (<function _all_sum_grad at 0x0000013BA65C4A40>) in gradient.
+[2026-01-29 13:40:04,407] tensorflow - Level 1 - Registering NcclReduce (<function _reduce_sum_grad at 0x0000013BA65C5620>) in gradient.
+[2026-01-29 13:40:04,408] tensorflow - Level 1 - Registering NcclBroadcast (<function _broadcast_grad at 0x0000013BA65C5760>) in gradient.
+[2026-01-29 13:40:04,411] tensorflow - Level 1 - Registering OptionalFromValue (<function _OptionalFromValueGrad at 0x0000013BA65C53A0>) in gradient.
+[2026-01-29 13:40:04,413] tensorflow - Level 1 - Registering OptionalGetValue (<function _OptionalGetValueGrad at 0x0000013BA65C5A80>) in gradient.
+[2026-01-29 13:40:04,417] tensorflow - Level 1 - Registering DecodeRaw (None) in gradient.
+[2026-01-29 13:40:04,420] tensorflow - Level 1 - Registering DecodePaddedRaw (None) in gradient.
+[2026-01-29 13:40:04,421] tensorflow - Level 1 - Registering ParseTensor (None) in gradient.
+[2026-01-29 13:40:04,421] tensorflow - Level 1 - Registering SerializeTensor (None) in gradient.
+[2026-01-29 13:40:04,422] tensorflow - Level 1 - Registering StringToNumber (None) in gradient.
+[2026-01-29 13:40:04,432] tensorflow - Level 1 - Registering DecodeProtoV2 (None) in gradient.
+[2026-01-29 13:40:04,435] tensorflow - Level 1 - Registering EncodeProto (None) in gradient.
+[2026-01-29 13:40:04,438] tensorflow - Level 1 - Registering RandomGamma (<function _RandomGammaGrad at 0x0000013BA65C67A0>) in gradient.
+[2026-01-29 13:40:04,441] tensorflow - Level 1 - Registering StatelessRandomGammaV2 (<function _StatelessRandomGammaV2Grad at 0x0000013BA65C68E0>) in gradient.
+[2026-01-29 13:40:04,442] tensorflow - Level 1 - Registering StatelessRandomGammaV3 (<function _StatelessRandomGammaV3Grad at 0x0000013BA65C6A20>) in gradient.
+[2026-01-29 13:40:04,442] tensorflow - Level 1 - Registering StatelessParameterizedTruncatedNormal (<function _StatelessParameterizedTruncatedNormalGrad at 0x0000013BA65C6CA0>) in gradient.
+[2026-01-29 13:40:04,456] tensorflow - Level 1 - Registering BlockLSTM (<function _block_lstm_grad at 0x0000013BA65C6980>) in gradient.
+[2026-01-29 13:40:04,459] tensorflow - Level 1 - Registering BlockLSTMV2 (<function _block_lstm_grad at 0x0000013BA65C6980>) in gradient.
+[2026-01-29 13:40:04,469] tensorflow - Level 1 - Registering SdcaFprint (None) in gradient.
+[2026-01-29 13:40:04,472] tensorflow - Level 1 - Registering SdcaOptimizer (None) in gradient.
+[2026-01-29 13:40:04,472] tensorflow - Level 1 - Registering SdcaOptimizerV2 (None) in gradient.
+[2026-01-29 13:40:04,473] tensorflow - Level 1 - Registering SdcaShrinkL1 (None) in gradient.
+[2026-01-29 13:40:04,485] tensorflow - Level 1 - Registering SetSize (None) in gradient.
+[2026-01-29 13:40:04,487] tensorflow - Level 1 - Registering DenseToDenseSetOperation (None) in gradient.
+[2026-01-29 13:40:04,488] tensorflow - Level 1 - Registering DenseToSparseSetOperation (None) in gradient.
+[2026-01-29 13:40:04,488] tensorflow - Level 1 - Registering SparseToSparseSetOperation (None) in gradient.
+[2026-01-29 13:40:04,495] tensorflow - Level 1 - Registering SparseAddGrad (None) in gradient.
+[2026-01-29 13:40:04,499] tensorflow - Level 1 - Registering SparseConcat (None) in gradient.
+[2026-01-29 13:40:04,499] tensorflow - Level 1 - Registering SparseReorder (<function _SparseReorderGrad at 0x0000013BA6615D00>) in gradient.
+[2026-01-29 13:40:04,500] tensorflow - Level 1 - Registering SparseAdd (<function _SparseAddGrad at 0x0000013BA6615EE0>) in gradient.
+[2026-01-29 13:40:04,500] tensorflow - Level 1 - Registering SparseTensorDenseAdd (<function _SparseTensorDenseAddGrad at 0x0000013BA6615E40>) in gradient.
+[2026-01-29 13:40:04,501] tensorflow - Level 1 - Registering SparseReduceSum (<function _SparseReduceSumGrad at 0x0000013BA6615F80>) in gradient.
+[2026-01-29 13:40:04,502] tensorflow - Level 1 - Registering SparseSlice (<function _SparseSliceGrad at 0x0000013BA6616020>) in gradient.
+[2026-01-29 13:40:04,502] tensorflow - Level 1 - Registering SparseTensorDenseMatMul (<function _SparseTensorDenseMatMulGrad at 0x0000013BA66160C0>) in gradient.
+[2026-01-29 13:40:04,503] tensorflow - Level 1 - Registering SparseDenseCwiseAdd (<function _SparseDenseCwiseAddGrad at 0x0000013BA6616160>) in gradient.
+[2026-01-29 13:40:04,503] tensorflow - Level 1 - Registering SparseDenseCwiseMul (<function _SparseDenseCwiseMulGrad at 0x0000013BA66162A0>) in gradient.
+[2026-01-29 13:40:04,503] tensorflow - Level 1 - Registering SparseDenseCwiseDiv (<function _SparseDenseCwiseDivGrad at 0x0000013BA6616340>) in gradient.
+[2026-01-29 13:40:04,504] tensorflow - Level 1 - Registering SparseSoftmax (<function _SparseSoftmaxGrad at 0x0000013BA66163E0>) in gradient.
+[2026-01-29 13:40:04,504] tensorflow - Level 1 - Registering SparseSparseMaximum (<function _SparseSparseMaximumGrad at 0x0000013BA6616480>) in gradient.
+[2026-01-29 13:40:04,505] tensorflow - Level 1 - Registering SparseSparseMinimum (<function _SparseSparseMinimumGrad at 0x0000013BA6616520>) in gradient.
+[2026-01-29 13:40:04,505] tensorflow - Level 1 - Registering SparseFillEmptyRows (<function _SparseFillEmptyRowsGrad at 0x0000013BA66165C0>) in gradient.
+[2026-01-29 13:40:04,506] tensorflow - Level 1 - Registering SparseToDense (<function _SparseToDenseGrad at 0x0000013BA6616660>) in gradient.
+[2026-01-29 13:40:04,509] tensorflow - Level 1 - Registering TensorArray (None) in gradient.
+[2026-01-29 13:40:04,512] tensorflow - Level 1 - Registering TensorArrayGrad (None) in gradient.
+[2026-01-29 13:40:04,513] tensorflow - Level 1 - Registering TensorArraySize (None) in gradient.
+[2026-01-29 13:40:04,513] tensorflow - Level 1 - Registering TensorArrayClose (None) in gradient.
+[2026-01-29 13:40:04,514] tensorflow - Level 1 - Registering TensorArrayV2 (None) in gradient.
+[2026-01-29 13:40:04,514] tensorflow - Level 1 - Registering TensorArrayGradV2 (None) in gradient.
+[2026-01-29 13:40:04,515] tensorflow - Level 1 - Registering TensorArraySizeV2 (None) in gradient.
+[2026-01-29 13:40:04,515] tensorflow - Level 1 - Registering TensorArrayCloseV2 (None) in gradient.
+[2026-01-29 13:40:04,516] tensorflow - Level 1 - Registering TensorArrayV3 (None) in gradient.
+[2026-01-29 13:40:04,516] tensorflow - Level 1 - Registering TensorArrayGradV3 (None) in gradient.
+[2026-01-29 13:40:04,517] tensorflow - Level 1 - Registering TensorArrayGradWithShape (None) in gradient.
+[2026-01-29 13:40:04,517] tensorflow - Level 1 - Registering TensorArraySizeV3 (None) in gradient.
+[2026-01-29 13:40:04,518] tensorflow - Level 1 - Registering TensorArrayCloseV3 (None) in gradient.
+[2026-01-29 13:40:04,518] tensorflow - Level 1 - Registering TensorArrayReadV3 (<function _TensorArrayReadGrad at 0x0000013BA6616840>) in gradient.
+[2026-01-29 13:40:04,519] tensorflow - Level 1 - Registering TensorArrayReadV2 (<function _TensorArrayReadGrad at 0x0000013BA6616840>) in gradient.
+[2026-01-29 13:40:04,519] tensorflow - Level 1 - Registering TensorArrayRead (<function _TensorArrayReadGrad at 0x0000013BA6616840>) in gradient.
+[2026-01-29 13:40:04,520] tensorflow - Level 1 - Registering TensorArrayWriteV3 (<function _TensorArrayWriteGrad at 0x0000013BA66167A0>) in gradient.
+[2026-01-29 13:40:04,520] tensorflow - Level 1 - Registering TensorArrayWriteV2 (<function _TensorArrayWriteGrad at 0x0000013BA66167A0>) in gradient.
+[2026-01-29 13:40:04,520] tensorflow - Level 1 - Registering TensorArrayWrite (<function _TensorArrayWriteGrad at 0x0000013BA66167A0>) in gradient.
+[2026-01-29 13:40:04,521] tensorflow - Level 1 - Registering TensorArrayGatherV3 (<function _TensorArrayGatherGrad at 0x0000013BA66168E0>) in gradient.
+[2026-01-29 13:40:04,521] tensorflow - Level 1 - Registering TensorArrayGatherV2 (<function _TensorArrayGatherGrad at 0x0000013BA66168E0>) in gradient.
+[2026-01-29 13:40:04,522] tensorflow - Level 1 - Registering TensorArrayGather (<function _TensorArrayGatherGrad at 0x0000013BA66168E0>) in gradient.
+[2026-01-29 13:40:04,524] tensorflow - Level 1 - Registering TensorArrayScatterV3 (<function _TensorArrayScatterGrad at 0x0000013BA6616980>) in gradient.
+[2026-01-29 13:40:04,524] tensorflow - Level 1 - Registering TensorArrayScatterV2 (<function _TensorArrayScatterGrad at 0x0000013BA6616980>) in gradient.
+[2026-01-29 13:40:04,524] tensorflow - Level 1 - Registering TensorArrayScatter (<function _TensorArrayScatterGrad at 0x0000013BA6616980>) in gradient.
+[2026-01-29 13:40:04,525] tensorflow - Level 1 - Registering TensorArrayConcatV3 (<function _TensorArrayConcatGrad at 0x0000013BA6616A20>) in gradient.
+[2026-01-29 13:40:04,525] tensorflow - Level 1 - Registering TensorArrayConcatV2 (<function _TensorArrayConcatGrad at 0x0000013BA6616A20>) in gradient.
+[2026-01-29 13:40:04,525] tensorflow - Level 1 - Registering TensorArrayConcat (<function _TensorArrayConcatGrad at 0x0000013BA6616A20>) in gradient.
+[2026-01-29 13:40:04,526] tensorflow - Level 1 - Registering TensorArraySplitV3 (<function _TensorArraySplitGrad at 0x0000013BA6616AC0>) in gradient.
+[2026-01-29 13:40:04,528] tensorflow - Level 1 - Registering TensorArraySplitV2 (<function _TensorArraySplitGrad at 0x0000013BA6616AC0>) in gradient.
+[2026-01-29 13:40:04,528] tensorflow - Level 1 - Registering TensorArraySplit (<function _TensorArraySplitGrad at 0x0000013BA6616AC0>) in gradient.
+[2026-01-29 13:40:04,548] tensorflow - Level 1 - Registering DenseToCSRSparseMatrix (<function _DenseToCSRSparseMatrixGrad at 0x0000013BA6616D40>) in gradient.
+[2026-01-29 13:40:04,550] tensorflow - Level 1 - Registering CSRSparseMatrixToDense (<function _CSRSparseMatrixToDenseGrad at 0x0000013BA6616E80>) in gradient.
+[2026-01-29 13:40:04,551] tensorflow - Level 1 - Registering SparseTensorToCSRSparseMatrix (<function _SparseTensorToCSRSparseMatrixGrad at 0x0000013BA666B880>) in gradient.
+[2026-01-29 13:40:04,551] tensorflow - Level 1 - Registering CSRSparseMatrixToSparseTensor (<function _CSRSparseMatrixToSparseTensorGrad at 0x0000013BA666B7E0>) in gradient.
+[2026-01-29 13:40:04,552] tensorflow - Level 1 - Registering SparseMatrixNNZ (None) in gradient.
+[2026-01-29 13:40:04,552] tensorflow - Level 1 - Registering SparseMatrixZeros (None) in gradient.
+[2026-01-29 13:40:04,553] tensorflow - Level 1 - Registering SparseMatrixAdd (<function _SparseMatrixAddGrad at 0x0000013BA666BA60>) in gradient.
+[2026-01-29 13:40:04,553] tensorflow - Level 1 - Registering SparseMatrixTranspose (<function _SparseMatrixTransposeGrad at 0x0000013BA666BBA0>) in gradient.
+[2026-01-29 13:40:04,554] tensorflow - Level 1 - Registering SparseMatrixSoftmax (<function _SparseMatrixSoftmaxGrad at 0x0000013BA666BC40>) in gradient.
+[2026-01-29 13:40:04,554] tensorflow - Level 1 - Registering SparseMatrixMatMul (<function _SparseMatrixMatMulGrad at 0x0000013BA666BCE0>) in gradient.
+[2026-01-29 13:40:04,556] tensorflow - Level 1 - Registering SparseMatrixSparseMatMul (<function _SparseMatrixSparseMatMulGrad at 0x0000013BA666BD80>) in gradient.
+[2026-01-29 13:40:04,556] tensorflow - Level 1 - Registering SparseMatrixMul (<function _SparseMatrixMulGrad at 0x0000013BA666BE20>) in gradient.
+[2026-01-29 13:40:04,580] tensorflow - Level 1 - Registering FFT (<function _fft_grad at 0x0000013BA66C1940>) in gradient.
+[2026-01-29 13:40:04,584] tensorflow - Level 1 - Registering IFFT (<function _ifft_grad at 0x0000013BA66C19E0>) in gradient.
+[2026-01-29 13:40:04,585] tensorflow - Level 1 - Registering FFT2D (<function _fft2d_grad at 0x0000013BA66C1A80>) in gradient.
+[2026-01-29 13:40:04,586] tensorflow - Level 1 - Registering IFFT2D (<function _ifft2d_grad at 0x0000013BA66C1BC0>) in gradient.
+[2026-01-29 13:40:04,586] tensorflow - Level 1 - Registering FFT3D (<function _fft3d_grad at 0x0000013BA66C1C60>) in gradient.
+[2026-01-29 13:40:04,587] tensorflow - Level 1 - Registering IFFT3D (<function _ifft3d_grad at 0x0000013BA66C1D00>) in gradient.
+[2026-01-29 13:40:04,588] tensorflow - Level 1 - Registering RFFT (<function _rfft_grad_helper.<locals>._grad at 0x0000013BA66C2160>) in gradient.
+[2026-01-29 13:40:04,588] tensorflow - Level 1 - Registering IRFFT (<function _irfft_grad_helper.<locals>._grad at 0x0000013BA66C2340>) in gradient.
+[2026-01-29 13:40:04,589] tensorflow - Level 1 - Registering RFFT2D (<function _rfft_grad_helper.<locals>._grad at 0x0000013BA66C23E0>) in gradient.
+[2026-01-29 13:40:04,589] tensorflow - Level 1 - Registering IRFFT2D (<function _irfft_grad_helper.<locals>._grad at 0x0000013BA66C2480>) in gradient.
+[2026-01-29 13:40:04,599] tensorflow - Level 1 - Registering GenerateVocabRemapping (None) in gradient.
+[2026-01-29 13:40:04,603] tensorflow - Level 1 - Registering LoadAndRemapMatrix (None) in gradient.
+[2026-01-29 13:40:04,648] tensorflow - Level 1 - Registering XlaVariadicReduce (None) in gradient.
+[2026-01-29 13:40:04,651] tensorflow - Level 1 - Registering XlaSharding (<function _sharding_grad at 0x0000013BA6768EA0>) in gradient.
+[2026-01-29 13:40:04,652] tensorflow - Level 1 - Registering XlaSpmdFullToShardShape (<function _spmd_full_to_shard_shape_grad at 0x0000013BA6768F40>) in gradient.
+[2026-01-29 13:40:04,652] tensorflow - Level 1 - Registering XlaSpmdShardToFullShape (<function _spmd_shard_to_full_shape_grad at 0x0000013BA6768FE0>) in gradient.
+[2026-01-29 13:40:04,674] tensorflow - Level 1 - Registering CTCLoss (<function _CTCLossGrad at 0x0000013BA7981440>) in gradient.
+[2026-01-29 13:40:04,677] tensorflow - Level 1 - Registering CTCLossV2 (<function _CTCLossV2Grad at 0x0000013BA79814E0>) in gradient.
+[2026-01-29 13:40:04,678] tensorflow - Level 1 - Registering CTCGreedyDecoder (None) in gradient.
+[2026-01-29 13:40:04,678] tensorflow - Level 1 - Registering CTCBeamSearchDecoder (None) in gradient.
+[2026-01-29 13:40:04,682] tensorflow - Level 1 - Registering FusedBatchNormGrad (<function _FusedBatchNormGradGrad at 0x0000013BA7982F20>) in gradient.
+[2026-01-29 13:40:04,684] tensorflow - Level 1 - Registering FusedBatchNormGradV2 (<function _FusedBatchNormGradGradV2 at 0x0000013BA7982FC0>) in gradient.
+[2026-01-29 13:40:04,684] tensorflow - Level 1 - Registering FusedBatchNormGradV3 (<function _FusedBatchNormGradGradV3 at 0x0000013BA79831A0>) in gradient.
+[2026-01-29 13:40:04,697] tensorflow - Level 1 - Registering variables ((<class 'tensorflow.core.framework.variable_pb2.VariableDef'>, <function _to_proto_fn at 0x0000013BA79B72E0>, <function _from_proto_fn at 0x0000013BA79B7560>)) in proto functions.
+[2026-01-29 13:40:04,699] tensorflow - Level 1 - Registering trainable_variables ((<class 'tensorflow.core.framework.variable_pb2.VariableDef'>, <function _to_proto_fn at 0x0000013BA79B72E0>, <function _from_proto_fn at 0x0000013BA79B7560>)) in proto functions.
+[2026-01-29 13:40:04,700] tensorflow - Level 1 - Registering moving_average_variables ((<class 'tensorflow.core.framework.variable_pb2.VariableDef'>, <function _to_proto_fn at 0x0000013BA79B72E0>, <function _from_proto_fn at 0x0000013BA79B7560>)) in proto functions.
+[2026-01-29 13:40:04,700] tensorflow - Level 1 - Registering local_variables ((<class 'tensorflow.core.framework.variable_pb2.VariableDef'>, <function _to_proto_fn at 0x0000013BA79B72E0>, <function _from_proto_fn at 0x0000013BA79B7560>)) in proto functions.
+[2026-01-29 13:40:04,700] tensorflow - Level 1 - Registering model_variables ((<class 'tensorflow.core.framework.variable_pb2.VariableDef'>, <function _to_proto_fn at 0x0000013BA79B72E0>, <function _from_proto_fn at 0x0000013BA79B7560>)) in proto functions.
+[2026-01-29 13:40:04,700] tensorflow - Level 1 - Registering global_step ((<class 'tensorflow.core.framework.variable_pb2.VariableDef'>, <function _to_proto_fn at 0x0000013BA79B72E0>, <function _from_proto_fn at 0x0000013BA79B7560>)) in proto functions.
+[2026-01-29 13:40:04,700] tensorflow - Level 1 - Registering metric_variables ((<class 'tensorflow.core.framework.variable_pb2.VariableDef'>, <function _to_proto_fn at 0x0000013BA79B72E0>, <function _from_proto_fn at 0x0000013BA79B7560>)) in proto functions.
+[2026-01-29 13:40:04,701] tensorflow - Level 1 - Registering RandomCrop (None) in gradient.
+[2026-01-29 13:40:04,704] tensorflow - Level 1 - Registering HSVToRGB (None) in gradient.
+[2026-01-29 13:40:04,704] tensorflow - Level 1 - Registering DrawBoundingBoxes (None) in gradient.
+[2026-01-29 13:40:04,704] tensorflow - Level 1 - Registering SampleDistortedBoundingBox (None) in gradient.
+[2026-01-29 13:40:04,704] tensorflow - Level 1 - Registering SampleDistortedBoundingBoxV2 (None) in gradient.
+[2026-01-29 13:40:04,705] tensorflow - Level 1 - Registering ExtractGlimpse (None) in gradient.
+[2026-01-29 13:40:04,705] tensorflow - Level 1 - Registering NonMaxSuppression (None) in gradient.
+[2026-01-29 13:40:04,705] tensorflow - Level 1 - Registering NonMaxSuppressionV2 (None) in gradient.
+[2026-01-29 13:40:04,705] tensorflow - Level 1 - Registering NonMaxSuppressionWithOverlaps (None) in gradient.
+[2026-01-29 13:40:04,705] tensorflow - Level 1 - Registering GenerateBoundingBoxProposals (None) in gradient.
+[2026-01-29 13:40:04,722] tensorflow - Level 1 - Registering ImageProjectiveTransformV2 (<function _image_projective_transform_grad at 0x0000013BA7AA3F60>) in gradient.
+[2026-01-29 13:40:04,724] tensorflow - Level 1 - Registering ImageProjectiveTransformV3 (<function _image_projective_transform_v3_grad at 0x0000013BA7AC8180>) in gradient.
+[2026-01-29 13:40:04,986] tensorflow - Level 1 - Registering savers ((<class 'tensorflow.core.protobuf.saver_pb2.SaverDef'>, <function Saver.to_proto at 0x0000013BA7D73560>, <function Saver.from_proto at 0x0000013BA7D73600>)) in proto functions.
+[2026-01-29 13:40:05,005] tensorflow - Level 1 - Registering EagerPyFunc (<function _EagerPyFuncGrad at 0x0000013BA7DAC220>) in gradient.
+[2026-01-29 13:40:05,009] tensorflow - Level 1 - Registering PyFunc (None) in gradient.
+[2026-01-29 13:40:05,009] tensorflow - Level 1 - Registering PyFuncStateless (None) in gradient.
+[2026-01-29 13:40:05,037] tensorflow - Level 1 - Registering ReduceDataset (None) in gradient.
+[2026-01-29 13:40:05,047] tensorflow - Level 1 - Registering tensorflow.python.data.ops.dataset_ops (<function _tf2_callback at 0x0000013BA7DEE660>) in data_v2_callbacks.
+[2026-01-29 13:40:05,068] tensorflow - Level 1 - Registering _resource_resolver (<function _resource_resolver at 0x0000013BA7E8B2E0>) in acd_resource_resolvers.
+[2026-01-29 13:40:05,093] tensorflow - Level 1 - Registering tensorflow.python.data.experimental.ops.counter (<function _tf2_callback at 0x0000013BA7E96C00>) in data_v2_callbacks.
+[2026-01-29 13:40:05,130] tensorflow - Level 1 - Registering tensorflow.python.data.ops.readers (<function _tf2_callback at 0x0000013BA7E8BEC0>) in data_v2_callbacks.
+[2026-01-29 13:40:05,130] tensorflow - Level 1 - Registering tensorflow.python.data.experimental.ops.interleave_ops (<function _tf2_callback at 0x0000013BA7E97F60>) in data_v2_callbacks.
+[2026-01-29 13:40:05,194] tensorflow - Level 1 - Registering tensorflow.python.data.experimental.ops.random_ops (<function _tf2_callback at 0x0000013BA7F47380>) in data_v2_callbacks.
+[2026-01-29 13:40:05,205] tensorflow - Level 1 - Registering tensorflow.python.data.experimental.ops.readers (<function _tf2_callback at 0x0000013BA7F68CC0>) in data_v2_callbacks.
+[2026-01-29 13:40:05,504] tensorflow - Level 1 - Registering tpu_replicated_input_resolver (<function tpu_replicated_input_resolver at 0x0000013BA81D4CC0>) in acd_resource_resolvers.
+[2026-01-29 13:40:05,515] tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[2026-01-29 13:40:06,049] tensorflow - Level 1 - Registering queue_runners ((<class 'tensorflow.core.protobuf.queue_runner_pb2.QueueRunnerDef'>, <function QueueRunner.to_proto at 0x0000013BA83EB600>, <function QueueRunner.from_proto at 0x0000013BA83EB6A0>)) in proto functions.
+[2026-01-29 13:40:06,877] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2026-01-29 13:40:06,877] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2026-01-29 13:40:06,877] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2026-01-29 13:40:06,878] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2026-01-29 13:40:07,315] tensorflow - Level 1 - Registering DebugGradientIdentity (<function _identify_gradient_grad at 0x0000013BA8E7FF60>) in gradient.
+[2026-01-29 13:40:07,318] tensorflow - Level 1 - Registering DebugGradientRefIdentity (<function _identify_gradient_grad_ref at 0x0000013BA8E84040>) in gradient.
+[2026-01-29 13:40:07,389] tensorflow - Level 1 - Registering DebugIdentityV2 (<function _debug_identity_v2_grad at 0x0000013BA8EF3380>) in gradient.
+[2026-01-29 13:40:07,921] tensorflow - Level 1 - Registering AudioMicrofrontend (None) in gradient.
+[2026-01-29 13:40:08,112] tensorflow - Level 1 - Registering Reciprocal,flops (<function _reciprocal_flops at 0x0000013BAA4A4CC0>) in statistical functions.
+[2026-01-29 13:40:08,116] tensorflow - Level 1 - Registering Square,flops (<function _square_flops at 0x0000013BAA4A4D60>) in statistical functions.
+[2026-01-29 13:40:08,116] tensorflow - Level 1 - Registering Rsqrt,flops (<function _rsqrt_flops at 0x0000013BAA4A4EA0>) in statistical functions.
+[2026-01-29 13:40:08,116] tensorflow - Level 1 - Registering Log,flops (<function _log_flops at 0x0000013BAA4A4E00>) in statistical functions.
+[2026-01-29 13:40:08,117] tensorflow - Level 1 - Registering Neg,flops (<function _neg_flops at 0x0000013BAA4A4F40>) in statistical functions.
+[2026-01-29 13:40:08,117] tensorflow - Level 1 - Registering AssignSub,flops (<function _assign_sub_flops at 0x0000013BAA4A4FE0>) in statistical functions.
+[2026-01-29 13:40:08,118] tensorflow - Level 1 - Registering AssignAdd,flops (<function _assign_add_flops at 0x0000013BAA4A5080>) in statistical functions.
+[2026-01-29 13:40:08,118] tensorflow - Level 1 - Registering L2Loss,flops (<function _l2_loss_flops at 0x0000013BAA4A5120>) in statistical functions.
+[2026-01-29 13:40:08,119] tensorflow - Level 1 - Registering Softmax,flops (<function _softmax_flops at 0x0000013BAA4A51C0>) in statistical functions.
+[2026-01-29 13:40:08,119] tensorflow - Level 1 - Registering AddV2,flops (<function _add_flops at 0x0000013BAA4A5300>) in statistical functions.
+[2026-01-29 13:40:08,119] tensorflow - Level 1 - Registering Add,flops (<function _add_flops at 0x0000013BAA4A5300>) in statistical functions.
+[2026-01-29 13:40:08,120] tensorflow - Level 1 - Registering Sub,flops (<function _sub_flops at 0x0000013BAA4A53A0>) in statistical functions.
+[2026-01-29 13:40:08,120] tensorflow - Level 1 - Registering Mul,flops (<function _mul_flops at 0x0000013BAA4A5440>) in statistical functions.
+[2026-01-29 13:40:08,121] tensorflow - Level 1 - Registering RealDiv,flops (<function _real_div_flops at 0x0000013BAA4A54E0>) in statistical functions.
+[2026-01-29 13:40:08,121] tensorflow - Level 1 - Registering Maximum,flops (<function _maximum_flops at 0x0000013BAA4A5580>) in statistical functions.
+[2026-01-29 13:40:08,121] tensorflow - Level 1 - Registering Minimum,flops (<function _minimum_flops at 0x0000013BAA4A5620>) in statistical functions.
+[2026-01-29 13:40:08,122] tensorflow - Level 1 - Registering Pow,flops (<function _pow_flops at 0x0000013BAA4A56C0>) in statistical functions.
+[2026-01-29 13:40:08,122] tensorflow - Level 1 - Registering RsqrtGrad,flops (<function _rsqrt_grad_flops at 0x0000013BAA4A5760>) in statistical functions.
+[2026-01-29 13:40:08,123] tensorflow - Level 1 - Registering GreaterEqual,flops (<function _greater_equal_flops at 0x0000013BAA4A5800>) in statistical functions.
+[2026-01-29 13:40:08,123] tensorflow - Level 1 - Registering Greater,flops (<function _greater_flops at 0x0000013BAA4A58A0>) in statistical functions.
+[2026-01-29 13:40:08,123] tensorflow - Level 1 - Registering LessEqual,flops (<function _less_equal_flops at 0x0000013BAA4A5940>) in statistical functions.
+[2026-01-29 13:40:08,124] tensorflow - Level 1 - Registering Less,flops (<function _less_flops at 0x0000013BAA4A59E0>) in statistical functions.
+[2026-01-29 13:40:08,124] tensorflow - Level 1 - Registering Equal,flops (<function _equal_flops at 0x0000013BAA4A5A80>) in statistical functions.
+[2026-01-29 13:40:08,124] tensorflow - Level 1 - Registering NotEqual,flops (<function _not_equal_flops at 0x0000013BAA4A5B20>) in statistical functions.
+[2026-01-29 13:40:08,125] tensorflow - Level 1 - Registering SquaredDifference,flops (<function _squared_difference_flops at 0x0000013BAA4A5BC0>) in statistical functions.
+[2026-01-29 13:40:08,125] tensorflow - Level 1 - Registering Mean,flops (<function _mean_flops at 0x0000013BAA4A5D00>) in statistical functions.
+[2026-01-29 13:40:08,126] tensorflow - Level 1 - Registering Sum,flops (<function _sum_flops at 0x0000013BAA4A5DA0>) in statistical functions.
+[2026-01-29 13:40:08,126] tensorflow - Level 1 - Registering ArgMax,flops (<function _arg_max_flops at 0x0000013BAA4A5E40>) in statistical functions.
+[2026-01-29 13:40:08,126] tensorflow - Level 1 - Registering ArgMin,flops (<function _arg_min_flops at 0x0000013BAA4A5EE0>) in statistical functions.
+[2026-01-29 13:40:08,127] tensorflow - Level 1 - Registering BiasAddGrad,flops (<function _bias_add_grad_flops at 0x0000013BAA4A5F80>) in statistical functions.
+[2026-01-29 13:40:08,127] tensorflow - Level 1 - Registering AvgPool,flops (<function _avg_pool_flops at 0x0000013BAA4A6160>) in statistical functions.
+[2026-01-29 13:40:08,128] tensorflow - Level 1 - Registering MaxPool,flops (<function _max_pool_flops at 0x0000013BAA4A6200>) in statistical functions.
+[2026-01-29 13:40:08,128] tensorflow - Level 1 - Registering AvgPoolGrad,flops (<function _avg_pool_grad_flops at 0x0000013BAA4A62A0>) in statistical functions.
+[2026-01-29 13:40:08,128] tensorflow - Level 1 - Registering MaxPoolGrad,flops (<function _max_pool_grad_flops at 0x0000013BAA4A6340>) in statistical functions.
+[2026-01-29 13:40:08,129] tensorflow - Level 1 - Registering Conv2DBackpropInput,flops (<function _conv_2d_backprop_input_flops at 0x0000013BAA4A63E0>) in statistical functions.
+[2026-01-29 13:40:08,129] tensorflow - Level 1 - Registering Conv2DBackpropFilter,flops (<function _conv_2d_backprop_filter_flops at 0x0000013BAA4A6480>) in statistical functions.
+[2026-01-29 13:40:08,129] tensorflow - Level 1 - Registering AddN,flops (<function _add_n_flops at 0x0000013BAA4A6520>) in statistical functions.
+[2026-01-29 13:40:08,130] tensorflow - Level 1 - Registering MatMul,flops (<function _calc_mat_mul_flops at 0x0000013BAA4A65C0>) in statistical functions.
+[2026-01-29 13:40:08,130] tensorflow - Level 1 - Registering BatchMatMulV3,flops (<function _calc_batch_mat_mul_flops at 0x0000013BAA4A6660>) in statistical functions.
+[2026-01-29 13:40:08,130] tensorflow - Level 1 - Registering BatchMatMulV2,flops (<function _calc_batch_mat_mul_flops at 0x0000013BAA4A6660>) in statistical functions.
+[2026-01-29 13:40:08,131] tensorflow - Level 1 - Registering BatchMatMul,flops (<function _calc_batch_mat_mul_flops at 0x0000013BAA4A6660>) in statistical functions.
+[2026-01-29 13:40:09,496] tensorflow - Level 1 - Enabling eager execution
+[2026-01-29 13:40:09,496] tensorflow - Level 1 - Enabling v2 tensorshape
+[2026-01-29 13:40:09,496] tensorflow - Level 1 - Enabling resource variables
+[2026-01-29 13:40:09,496] tensorflow - Level 1 - Enabling tensor equality
+[2026-01-29 13:40:09,497] tensorflow - Level 1 - Enabling control flow v2
+[2026-01-29 13:40:10,878] matplotlib - DEBUG - matplotlib data path: C:\Users\BS\anaconda3\Lib\site-packages\matplotlib\mpl-data
+[2026-01-29 13:40:10,900] matplotlib - DEBUG - CONFIGDIR=C:\Users\BS\.matplotlib
+[2026-01-29 13:40:10,905] matplotlib - DEBUG - interactive is False
+[2026-01-29 13:40:10,905] matplotlib - DEBUG - platform is win32
+[2026-01-29 13:40:11,025] matplotlib - DEBUG - CACHEDIR=C:\Users\BS\.matplotlib
+[2026-01-29 13:40:11,057] matplotlib.font_manager - DEBUG - Using fontManager instance from C:\Users\BS\.matplotlib\fontlist-v390.json
+[2026-01-29 13:40:27,065] tensorflow - WARNING - From C:\Users\BS\anaconda3\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[2026-01-29 13:40:33,532] root - INFO - Data Transformation Config: DataTransformationConfig(current_books_csv='artifacts\\dataset\\clean_data\\current_books_cleaned.csv', current_reviews_csv='artifacts\\dataset\\clean_data\\current_reviews_cleaned.csv', transformed_data_dir='artifacts\\dataset\\transformed_data', chroma_dir='artifacts\\vectorstores\\chroma_db', train_data_csv='artifacts\\dataset\\transformed_data\\train_data.csv', test_data_csv='artifacts\\dataset\\transformed_data\\test_data.csv')
+[2026-01-29 13:40:33,532] root - INFO - Data Validation Config: DataValidationConfig(clean_data_dir='artifacts\\dataset\\clean_data', current_books_csv='artifacts\\dataset\\ingested_data\\current_books.csv', current_reviews_csv='artifacts\\dataset\\ingested_data\\current_reviews.csv', serialized_objects_dir='artifacts\\serialized_objects')
+[2026-01-29 13:40:33,532] root - INFO - ====================Data Transformation log started.==================== 
+[2026-01-29 13:40:33,532] root - INFO - ====================Transforming data.====================
+
+
+[2026-01-29 13:40:47,781] root - INFO - ====================Making most popular books list.====================
+[2026-01-29 13:40:48,029] root - INFO - Most popular books :           ISBN  avg_rating  num_ratings
+0   9687968478    5.000000           96
+1   0944092691    4.916667           60
+2   1930429487    4.882353          289
+3   B0007DVHU2    4.857143           56
+4   B0000CJHIO    4.818182          143
+5   157067051X    4.818182          121
+6   1852309040    4.800000          110
+7   0918973031    4.700000          100
+8   B000FZEKVA    4.666667          144
+9   B0006P6WSS    4.636364          121
+10  1564021017    4.623529           85
+11  0312322291    4.571429          105
+12  0826414346    4.555556           81
+13  B0008852GG    4.500000           64
+14  0671551345    4.459459         4958
+15  187973706X    4.454545           66
+16  0375422811    4.425000         1600
+17  B00085GEUM    4.400000          120
+18  0060012234    4.382022           89
+19  B0007H4QBK    4.378981       103620
+20  B0006CQ9G6    4.377778       104265
+21  B0000630MU    4.333333         1815
+22  B000NKGYMK    4.280000          675
+23  0471121207    4.254902           51
+24  1861081162    4.250000           64
+25  050552421X    4.191011         8633
+26  006000486X    4.187500          272
+27  0789480662    4.166667          648
+28  B0006DWYDW    4.157895          361
+29  0684818701    4.077295          207
+30  B000N7612G    4.076923         1521
+31  B000GSNTRC    4.000000          100
+32  B0006D6DRK    4.000000           90
+33  0226143066    4.000000           81
+34  B000MCKQRS    3.978723        11656
+35  B000N6DGFM    3.929231       505050
+36  B000N6DGFC    3.929231       505050
+37  B000N6DDJQ    3.916006       478298
+38  B000N6DGGQ    3.914286       330750
+39  B000O3QCH8    3.860215        14601
+40  091934545X    3.823529          323
+41  0882899228    3.750000          216
+42  0595344550    3.718750         1024
+43  0345340949    3.714286           98
+44  0932813062    3.700000          130
+45  B000HT54UK    3.500000           60
+46  B000HLN8VU    3.500000           60
+47  B000NRYUHO    2.400000         4940
+[2026-01-29 13:40:48,035] root - INFO - Save most popular book : artifacts\serialized_objects
+[2026-01-29 13:40:48,035] root - INFO - ====================Making pivot table====================
+[2026-01-29 13:40:48,683] root - INFO -  Shape of book pivot table: (3106, 255)
+[2026-01-29 13:40:48,683] root - INFO - Saved pivot table sparse data to artifacts\dataset\transformed_data
+[2026-01-29 13:40:48,683] root - INFO - Saved book_ISBNs serialization object to artifacts\serialized_objects
+[2026-01-29 13:40:48,698] root - INFO - Saved book_pivot serialization object to artifacts\serialized_objects
+[2026-01-29 13:40:48,775] sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+[2026-01-29 13:40:48,777] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2026-01-29 13:40:48,777] urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+[2026-01-29 13:40:50,339] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+[2026-01-29 13:40:50,566] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+[2026-01-29 13:40:50,903] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+[2026-01-29 13:40:51,255] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+[2026-01-29 13:40:51,815] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+[2026-01-29 13:40:52,146] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+[2026-01-29 13:40:52,490] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+[2026-01-29 13:40:52,788] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+[2026-01-29 13:40:53,174] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+[2026-01-29 13:40:53,278] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+[2026-01-29 13:40:53,556] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+[2026-01-29 13:40:53,660] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+[2026-01-29 13:40:53,869] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+[2026-01-29 13:40:54,171] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+[2026-01-29 13:40:54,304] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+[2026-01-29 13:40:54,900] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+[2026-01-29 13:40:55,020] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+[2026-01-29 13:40:55,282] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+[2026-01-29 13:40:55,695] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=True&expand=False HTTP/1.1" 200 6465
+[2026-01-29 13:40:56,243] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json HTTP/1.1" 307 0
+[2026-01-29 13:40:56,430] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json HTTP/1.1" 200 0
+[2026-01-29 13:40:56,883] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6965
+[2026-01-29 13:40:56,968] chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[2026-01-29 13:40:57,107] chromadb.config - DEBUG - Starting component System
+[2026-01-29 13:40:57,107] chromadb.config - DEBUG - Starting component Posthog
+[2026-01-29 13:40:57,775] urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): us.i.posthog.com:443
+[2026-01-29 13:40:58,846] urllib3.connectionpool - DEBUG - https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+[2026-01-29 13:41:23,418] root - INFO - Start splitting data.
+
+[2026-01-29 13:41:33,268] root - INFO - ====================Data Transformation log completed.==================== 
+
+

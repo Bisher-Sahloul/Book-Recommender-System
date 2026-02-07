@@ -1,0 +1,37 @@
+artifacts_config : 
+  artifacts_dir : artifacts  
+
+data_ingestion_config : 
+  dataset_dir : dataset 
+  raw_dir : raw_data
+  ingested_dir : ingested_data
+  Amazon_dir : Amazon 
+  Openlibrary_dir : Openlibrary
+  Goodreads_dir : Goodreads
+  Amazon_books_data : books_data.csv
+  Amazon_books_rating : books_rating.csv
+  Openlibrary_books : openlibrary_books.csv
+  Current_books : current_books.csv
+  Current_reviews : current_reviews.csv
+
+
+data_validation_config : 
+  clean_data_dir : clean_data 
+  current_books : current_books.csv
+  current_reviews : current_reviews.csv 
+  serialized_objects_dir : serialized_objects
+
+
+data_transformation_config:
+  transformed_data_dir: transformed_data
+  current_books : current_books_cleaned.csv
+  current_reviews : current_reviews_cleaned.csv
+  vectorstores_dir : vectorstores
+  chroma_db_dir :  chroma_db 
+  train_csv : train_data.csv
+  test_csv : test_data.csv
+
+
+model_trainer_config:
+  trained_model_dir: trained_model
+  trained_model_name: lightgcn_model

@@ -1,0 +1,33 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#7c3aed;
+  --glass: rgba(255,255,255,0.03);
+  --muted: #9aa4b2;
+}
+*{box-sizing:border-box;font-family:Inter, system-ui}
+html,body,#app{height:100%;margin:0;background:linear-gradient(180deg,#061224 0%, #07132a 100%);color:#e6eef8}
+.topbar{height:64px;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:18px}
+.container{display:flex;gap:20px;padding:20px;max-width:1200px;margin:0 auto}
+.left-col{flex:1}
+.right-col{width:420px}
+.search-card{background:var(--card);padding:16px;border-radius:14px}
+.search-label{color:var(--muted);font-size:13px}
+.search-input{width:100%;padding:12px;margin-top:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:white;font-size:15px}
+.search-results{margin-top:12px;max-height:360px;overflow:auto}
+.grid-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:12px}
+.book-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:10px;cursor:pointer;transition:0.2s}
+.book-card:hover{transform:translateY(-6px)}
+.cover{height:180px;border-radius:8px;background-size:cover;background-position:center;margin-bottom:8px}
+.title{font-size:14px;font-weight:600}
+.meta{font-size:12px;color:var(--muted)}
+.section{margin-top:18px}
+.detail-placeholder,.book-detail{padding:18px;background:rgba(255,255,255,0.02);border-radius:12px}
+.hidden{display:none}
+.related-list{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.related-item{display:flex;gap:12px;cursor:pointer}
+.related-item .cover{height:70px;width:50px}
+.footer{text-align:center;padding:16px;color:var(--muted)}
+.user-badge{padding:6px 12px;border-radius:999px;background:var(--accent)}
+@media (max-width:900px){.container{flex-direction:column}.right-col{width:100%}}
