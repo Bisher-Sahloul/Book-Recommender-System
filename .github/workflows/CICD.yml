@@ -6,17 +6,15 @@ on:
   pull_request: 
     branches: [ main ]
   
-jobs: 
-  dockerbuild:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build The Docker Image
-      run: docker build . --file DockerFile --tag workflow-test:$(date +%s)
-      
+jobs:       
   build-and-test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - name: Clone external repo
+        run: |
+          git clone https://github.com/microsoft/recommenders.git src/steps/stage_03_model_trainer/recommenders_microsoft
+
       - name: Checkout code 
         uses: actions/checkout@v3
         
