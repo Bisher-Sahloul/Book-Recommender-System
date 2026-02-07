@@ -32,7 +32,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest
+          pytest tests/
   build-and-puplish:
     needs: build-and-test
     runs-on: ubuntu-latest
@@ -56,5 +56,5 @@ jobs:
         push : true
         tags: ${{ secrets.DOCKER_USERNAME }} / BookRecommenderSystem-app:latest
     - name: Image digest
-      run: echo ${{ steps.build-and-puplish.outputs.digest}}  
+      run: echo ${{ steps.build-and-puplish.outputs.digest }}  
         
