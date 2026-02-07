@@ -1,4 +1,6 @@
-artifacts/
+raw_data/
+ingested_data/
+clean_data/
 dvc.yaml
 venv/
 **/recommenders_microsoft/
