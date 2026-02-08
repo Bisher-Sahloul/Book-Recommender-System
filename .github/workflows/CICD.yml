@@ -65,7 +65,7 @@ jobs:
         context: .
         file : ./Dockerfile
         push : true
-        tags: ${{ secrets.DOCKER_USERNAME }}/BookRecommenderSystem-app:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/bookrecommendersystem-app:latest
     - name: Image digest
       run: echo ${{ steps.build-and-publish.outputs.digest }}  
         
