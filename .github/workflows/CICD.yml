@@ -10,10 +10,12 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - name: Clone external repo
         run: |
           git clone https://github.com/microsoft/recommenders.git src/steps/stage_03_model_trainer/recommenders_microsoft
+      
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
 
       - name: Checkout code 
         uses: actions/checkout@v3
