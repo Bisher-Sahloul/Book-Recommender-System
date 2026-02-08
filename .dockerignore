@@ -9,18 +9,8 @@ __pycache__/
 venv
 env
 
-tests/
-data/
-datasets/
-models/
-logs/
+artifacts/
+**/recommenders_microsoft/
 
-recommenders_microsoft/
-node_modules/
 
 .github/
-
-*.csv
-*.zip
-*.tar
-*.gz
