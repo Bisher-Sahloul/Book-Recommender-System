@@ -14,8 +14,12 @@ jobs:
         run: |
           git clone https://github.com/microsoft/recommenders.git src/steps/stage_03_model_trainer/recommenders_microsoft
       
+      - name: Install recommenders
+        run: pip install -e src/steps/stage_03_model_trainer/recommenders_microsoft
+
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
+      
 
       - name: Checkout code 
         uses: actions/checkout@v3
