@@ -1,16 +1,23 @@
 .git
-.gitignore
+.github
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
 
-.venv
-venv
-env
+tests/
+data/
+datasets/
+models/
+logs/
 
-artifacts/
-**/recommenders_microsoft/
+recommenders_microsoft/
+src/steps/stage_03_model_trainer/recommenders_microsoft/
 
+venv/
+.env
+*.zip
+*.tar
+*.gz
 
-.github/
+.pytest_cache/
+.cache/
