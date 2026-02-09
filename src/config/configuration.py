@@ -34,11 +34,12 @@ class AppConfiguration:
 
             current_books = os.path.join(ingested_data_dir , data_ingestion_config['Current_books'])
             current_reviews = os.path.join(ingested_data_dir , data_ingestion_config['Current_reviews'])
-
+            download_data_dir = os.path.join(raw_data_dir , data_ingestion_config['download_data_dir'])
             respone =  DataIngestionConfig(
                         raw_data_dir =  raw_data_dir , 
                         ingested_data_dir = ingested_data_dir , 
                         Amazon_data_dir =  Amazon_dir , 
+                        download_data_dir =  download_data_dir ,
                         Openlibrary_data_dir = Openlibrary_dir , 
                         Amazon_books_data  = Amazon_books_data , 
                         Amazon_books_rating = Amazon_Books_rating , 

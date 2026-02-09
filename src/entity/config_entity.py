@@ -5,6 +5,7 @@ DataIngestionConfig = namedtuple(
                        "raw_data_dir" ,
                        "ingested_data_dir" ,
                        "Amazon_data_dir" , 
+                       "download_data_dir" , 
                        "Openlibrary_data_dir" , 
                        "Amazon_books_data" , 
                        "Amazon_books_rating" , 

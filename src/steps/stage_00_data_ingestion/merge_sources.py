@@ -15,7 +15,7 @@ class DataIngestion :
     """
     def __init__(self) -> None :
         """Initialize the data ingestion class."""
-        [self.Amazon_books , self.Amazon_reviews] = ingest_amazonbooks.DataIngestion().get_data()
+        [self.Amazon_books , self.Amazon_reviews] = ingest_amazonbooks.DataIngestion().initiate_data_ingestion()
         self.openlibrary_books = ingest_openlibrary.DataIngestion(pages=range(67,68)).get_data()
         self.current_books = pd.DataFrame()
         self.current_reviews = pd.DataFrame()
