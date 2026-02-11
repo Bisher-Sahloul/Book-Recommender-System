@@ -18,10 +18,10 @@ class AppConfiguration:
         try : 
             data_ingestion_config = self.configs_info['data_ingestion_config']
             artifacts_dir = self.configs_info['artifacts_config']['artifacts_dir']
-            dataset_dir = data_ingestion_config['dataset_dir']
+            dataset_dir =  os.path.join(artifacts_dir , data_ingestion_config['dataset_dir'])
 
-            ingested_data_dir = os.path.join(artifacts_dir , dataset_dir , data_ingestion_config['ingested_dir'])
-            raw_data_dir = os.path.join(artifacts_dir , dataset_dir , data_ingestion_config['raw_dir']) 
+            ingested_data_dir = os.path.join(dataset_dir , data_ingestion_config['ingested_dir'])
+            raw_data_dir = os.path.join(dataset_dir , data_ingestion_config['raw_dir']) 
 
             Amazon_dir  = os.path.join(raw_data_dir , data_ingestion_config['Amazon_dir'])
             Openlibrary_dir = os.path.join(raw_data_dir , data_ingestion_config['Openlibrary_dir'])
@@ -35,7 +35,10 @@ class AppConfiguration:
             current_books = os.path.join(ingested_data_dir , data_ingestion_config['Current_books'])
             current_reviews = os.path.join(ingested_data_dir , data_ingestion_config['Current_reviews'])
             download_data_dir = os.path.join(raw_data_dir , data_ingestion_config['download_data_dir'])
+            
             respone =  DataIngestionConfig(
+                        artifacts_dir = artifacts_dir , 
+                        dataset_dir = dataset_dir , 
                         raw_data_dir =  raw_data_dir , 
                         ingested_data_dir = ingested_data_dir , 
                         Amazon_data_dir =  Amazon_dir , 
@@ -101,6 +104,7 @@ class AppConfiguration:
                 current_books_csv = current_books,
                 current_reviews_csv = current_reviews,
                 transformed_data_dir = transformed_data_dir,
+                vectorstores_dir = vectorstores_dir , 
                 chroma_dir = chroma_dir , 
                 train_data_csv =  train_data ,
                 test_data_csv = test_data , 

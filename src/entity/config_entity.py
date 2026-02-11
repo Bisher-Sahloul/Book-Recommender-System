@@ -2,6 +2,8 @@ from collections import namedtuple
 
 DataIngestionConfig = namedtuple(
     "DatasetConfig" , [
+                       "artifacts_dir" , 
+                       "dataset_dir" , 
                        "raw_data_dir" ,
                        "ingested_data_dir" ,
                        "Amazon_data_dir" , 
@@ -31,6 +33,7 @@ DataTransformationConfig = namedtuple(
         "current_books_csv",
         "current_reviews_csv" ,
         "transformed_data_dir",
+        "vectorstores_dir" , 
         "chroma_dir" , 
         "train_data_csv" , 
         "test_data_csv" 

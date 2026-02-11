@@ -17,6 +17,9 @@ class DataIngestion :
         try : 
             logging.info(f"{'*' * 20} Data Ingestion log started.{'*' * 20}")
             self.data_ingestion_config = app_config.get_data_ingestion_config()
+            os.makedirs(self.data_ingestion_config.artifacts_dir , exist_ok = True)
+            os.makedirs(self.data_ingestion_config.dataset_dir , exist_ok = True)
+            os.makedirs(self.data_ingestion_config.raw_data_dir , exist_ok = True)
             df = merge_sources.DataIngestion()
             df.merging_books_data()
             df.merging_reviews_data()
@@ -25,6 +28,7 @@ class DataIngestion :
             raise AppException(e , sys) from e
     def initiate_data_ingestion(self):
         try:
+            os.makedirs(self.data_ingestion_config.ingested_data_dir , exist_ok = True)
             self.current_books.to_csv(self.data_ingestion_config.Current_books , index=False)
             self.current_reviews.to_csv(self.data_ingestion_config.Current_reviews , index=False)
             logging.info(f"{'='*20}Data Ingestion log completed.{'='*20} \n\n")

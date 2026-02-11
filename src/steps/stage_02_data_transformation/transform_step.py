@@ -63,12 +63,12 @@ class DataTransformation:
     def make_train_test_dataset_for_model(self , current_reviews) -> None : 
         try : 
             logging.info("Start splitting data.\n")
+            os.makedirs(self.data_transformation_config.transformed_data_dir , exist_ok = True)
             train, test = train_test_split(current_reviews.values, test_size=0.2, random_state = 16)
             train = pd.DataFrame(train, columns = current_reviews.columns)
             test = pd.DataFrame(test, columns = current_reviews.columns)
             train = train.rename(columns={'User_id': 'userID', 'ISBN': 'itemID'})
             test = test.rename(columns={'User_id': 'userID', 'ISBN': 'itemID'})
-
             train.to_csv(self.data_transformation_config.train_data_csv , index=False)
             test.to_csv(self.data_transformation_config.test_data_csv  , index = False)
             
@@ -78,6 +78,7 @@ class DataTransformation:
         
     def make_vector_database(self , current_books:pd.DataFrame , current_reviews:pd.DataFrame) -> None :
         try:
+            os.makedirs(self.data_transformation_config.vectorstores_dir , exist_ok = True)
             documents = []
             for _, row in current_books.iterrows():
                 documents.append(
