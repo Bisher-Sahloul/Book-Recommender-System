@@ -18,7 +18,7 @@ langchain>=0.0.278
 langchain-text-splitters>=0.3.0
 langchain-community>=0.0.97
 langchain-huggingface>=0.0.9
-langchain-classic >=0.0.9
+langchain-classic
 chromadb>=0.4.7
 sentencepiece>=0.1.99
 requests>=2.31.0

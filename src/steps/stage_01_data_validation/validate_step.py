@@ -53,8 +53,8 @@ class DataValidation :
           current_books['Categories'] = current_books['Categories'].astype(str).apply(lambda x : x.strip('['))
           current_books['Categories'] = current_books['Categories'].astype(str).apply(lambda x : x.strip(']'))
 
-          # Removing the books with adult content based on keywords in the description and categories
-          pattern = r'love|romance|sex|sexy|sexual|erotic|erotica|porn|fetish|bdsm|nude|nudity|lust|passion|adult|mature|explicit|desire|intimacy|affair'
+          # Removing the books with adult and religion content based on keywords in the description and categories
+          pattern = r'love|romance|sex|sexy|sexual|erotic|erotica|porn|fetish|bdsm|nude|nudity|lust|passion|adult|mature|explicit|desire|intimacy|affair|religion'
           current_books = current_books[~current_books['Categories'].str.contains(pattern, case=False, na=False)]
           current_books = current_books[~current_books['Description'].str.contains(pattern, case=False, na=False)]
 
