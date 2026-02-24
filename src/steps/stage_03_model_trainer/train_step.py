@@ -5,7 +5,6 @@ from fastapi import params
 from fastapi import params
 import pandas as pd 
 import mlflow
-from ruamel.yaml import YAML
 from scipy.sparse import csr_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.neighbors import NearestNeighbors
@@ -161,24 +160,29 @@ class ModelTrainer:
             yaml_file = './src/steps/stage_03_model_trainer/recommenders_microsoft/examples/07_tutorials/KDD2020-tutorial/lightgcn.yaml'
             
             params = read_yaml_file(yaml_file)
-            params['model']['epochs'] = 5 # number of epochs for training
-            params['model']['embed_size'] = 64 # the embedding dimension of users and items
-            params['model']['n_layers'] = 3 # number of layers of the model
+            params['train']['epochs'] = 5  # number of epochs for training
+            params['model']['embed_size'] = 64  # the embedding dimension of users and items
+            params['model']['n_layers'] = 3  # number of layers of the model
             params['train']['batch_size'] = 4096  # batch size for training
-            params['train']['learning_rate'] = 0.001 
-            params['train']['eval_epoch'] = 1 # Evaluate every epoch
-            params['train']['top_k'] = 10 # Ensure this matches the TOP_K used in evaluation
-            params['train']['decay'] = 0.00001 # l2 regularization for embedding parameters
-            
-            # Instantiate the YAML object
-            yaml_obj = YAML(typ='unsafe', pure=True) 
-            yaml_obj.default_flow_style = False
+            params['train']['learning_rate'] = 0.001
+            params['train']['eval_epoch'] = 1  # Evaluate every epoch
+            params['train']['top_k'] = 10  # Ensure this matches the TOP_K used in evaluation
+            params['train']['decay'] = 0.00001  # l2 regularization for embedding parameters
 
-            # Save YAML back to file
-            with open(yaml_file , "w") as f:
-                    yaml_obj.dump(params, f)
-
-            hparams = prepare_hparams(yaml_file)
+            # Keep types explicit to avoid YAML scientific-notation strings (e.g. "1e-05").
+            hparams = prepare_hparams(
+                yaml_file,
+                embed_size=int(params['model']['embed_size']),
+                n_layers=int(params['model']['n_layers']),
+                epochs=int(params['train']['epochs']),
+                batch_size=int(params['train']['batch_size']),
+                learning_rate=float(params['train']['learning_rate']),
+                eval_epoch=int(params['train']['eval_epoch']),
+                top_k=int(params['train']['top_k']),
+                decay=float(params['train']['decay']),
+            )
+            hparams.learning_rate = float(hparams.learning_rate)
+            hparams.decay = float(hparams.decay)
             
 
             model = LightGCN(hparams, data, seed=0)

@@ -96,7 +96,7 @@ function normalizeBook(raw) {
     let s = String(value === undefined || value === null ? '' : value).trim();
     if (!s) return '';
     s = s.replace(/^\[+|\]+$/g, '').trim();
-    s = s.replace(/^[`"'‘’“”\s]+|[`"'‘’“”\s]+$/g, '').trim();
+    s = s.replace(/^[`"'\u2018\u2019\u201C\u201D\s]+|[`"'\u2018\u2019\u201C\u201D\s]+$/g, '').trim();
     return s;
   };
 
@@ -173,20 +173,22 @@ function normalizeBook(raw) {
 
 function dedupeBooks(list) {
   const out = [];
-  const seen = new Set();
+  const seenIds = new Set();
+  const seenTitleAuthor = new Set();
   (list || []).forEach((item) => {
     const b = normalizeBook(item);
     if (!b) return;
     const id = String(b.id || '').trim();
-    const fallback = [
+    const titleAuthorKey = [
       String(b.title || '').trim().toLowerCase(),
-      String((b.authors || []).join('|') || '').trim().toLowerCase(),
-      String(b.year || '').trim().toLowerCase(),
-      String(b.publisher || '').trim().toLowerCase()
+      String((b.authors || []).join('|') || '').trim().toLowerCase()
     ].join('::');
-    const key = id ? `id:${id}` : `meta:${fallback}`;
-    if (seen.has(key)) return;
-    seen.add(key);
+
+    if (id && seenIds.has(id)) return;
+    if (titleAuthorKey !== '::' && seenTitleAuthor.has(titleAuthorKey)) return;
+
+    if (id) seenIds.add(id);
+    if (titleAuthorKey !== '::') seenTitleAuthor.add(titleAuthorKey);
     out.push(b);
   });
   return out;
