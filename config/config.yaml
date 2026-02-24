@@ -10,7 +10,7 @@ data_ingestion_config :
   Openlibrary_dir : Openlibrary
   support_ratings_dir : Support Ratings
   Amazon_books_data : books_data.csv
-  Amazon_books_rating : books_rating.csv
+  Amazon_books_rating : Books_rating.csv
   Openlibrary_books : openlibrary_books.csv
   Current_books : current_books.csv
   Current_reviews : current_reviews.csv
