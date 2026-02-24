@@ -3,47 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Book Recommender</title>
-  <link rel="stylesheet" href="app.css">
+  <title>Premium Editorial Bookstore</title>
+  <link rel="stylesheet" href="app.css" />
 </head>
 <body>
-  <div id="app" class="app-root">
-    <header class="topbar">
-      <div class="brand">📚 AI Book Recommender</div>
-      <div class="user-area" id="userArea">Loading user...</div>
-    </header>
+  <header class="topbar">
+    <div class="brand">📚 Premium Editorial Bookstore</div>
+    <div class="nav-right">
+      <button id="open-wishlist" class="icon-btn">♡ <span id="wishCount" class="count">0</span></button>
+      <button id="open-cart" class="btn-primary">Cart <span id="cartCount" class="count">0</span></button>
+    </div>
+  </header>
 
-    <main class="container">
-      <section class="left-col">
-        <div class="search-card">
-          <label class="search-label">Search by description or category</label>
-          <input id="searchInput" class="search-input" placeholder="e.g. romantic tragic story in Italy" autocomplete="off">
-          <div id="searchResults" class="search-results"></div>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="eyebrow">Featured editorial</div>
+        <h1>Discover books by description, mood or theme</h1>
+        <p class="muted">Editorially curated picks, smart search, and community reviews.</p>
+
+        <div class="search-row">
+          <div class="search-wrapper">
+            <input id="searchInput" placeholder="e.g. cozy mystery with witty heroine" autocomplete="off" />
+            <div id="suggestions" class="suggestions" aria-hidden="true"></div>
+          </div>
+
+          <div class="controls">
+            <select id="sortSelect" class="select">
+              <option value="featured">Featured</option>
+              <option value="rating">Most Rated</option>
+              <option value="newest">Newest</option>
+              <option value="az">A → Z</option>
+            </select>
+            <button id="clearFilters" class="btn-ghost">Clear Filters</button>
+          </div>
         </div>
+      </div>
 
-        <div class="section">
-          <h3>⭐ Most Popular Books</h3>
-          <div id="popularList" class="grid-list"></div>
+      <div class="featured-hero">
+        <div id="featuredCover" class="featured-cover" role="img" aria-label="Featured cover"></div>
+        <div class="featured-body">
+          <div class="featured-eyebrow">Featured</div>
+          <h2 id="featuredTitle">—</h2>
+          <p id="featuredDesc" class="muted">Curated selection from our editors.</p>
+          <div id="featuredMeta" class="muted"></div>
+          <div style="margin-top:12px">
+            <button id="featuredView" class="btn-primary">View Featured</button>
+            <button id="featuredAddCart" class="btn-ghost">Add to cart</button>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="section">
-          <h3>🎯 Recommended for You</h3>
-          <div id="userRecList" class="grid-list"></div>
-        </div>
-      </section>
+  <main class="main">
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Books</h2>
+        <div id="activeFilters" class="muted small"></div>
+      </div>
 
-      <aside class="right-col" id="detailPane">
-        <div id="placeholderDetail" class="detail-placeholder">
-          <h2>Select a book</h2>
-          <p>Click any book to view full details and related recommendations.</p>
-        </div>
-        <div id="bookDetail" class="book-detail hidden"></div>
-      </aside>
-    </main>
+      <div id="searchResults" class="books-grid"></div>
 
-    <footer class="footer">AI Book Recommender — powered by Vector Search & FastAPI</footer>
+      <div id="pagination" class="pager"></div>
+    </section>
+
+    <aside class="sidepanel">
+      <div class="card">
+        <h3>Popular</h3>
+        <div id="popularList" class="side-list"></div>
+      </div>
+
+      <div class="card">
+        <h3>Recommended</h3>
+        <div id="userRecList" class="side-list"></div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Book Modal -->
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content" id="modalContent" role="dialog" aria-modal="true"></div>
   </div>
 
-  <script type="module" src="app.js"></script>
+  <!-- Cart & Wishlist Drawers -->
+  <div id="cartDrawer" class="drawer hidden" aria-hidden="true">
+    <div class="drawer-header"><h3>Cart</h3><button id="closeCart" class="btn-ghost">Close</button></div>
+    <div id="cartItems" class="drawer-body"></div>
+    <div class="drawer-footer"><div id="cartTotal">Total: $0.00</div><button id="checkoutBtn" class="btn-primary">Checkout</button></div>
+  </div>
+
+  <div id="wishDrawer" class="drawer hidden" aria-hidden="true">
+    <div class="drawer-header"><h3>Wishlist</h3><button id="closeWish" class="btn-ghost">Close</button></div>
+    <div id="wishItems" class="drawer-body"></div>
+  </div>
+
+  <script src="app.js" defer></script>
 </body>
 </html>

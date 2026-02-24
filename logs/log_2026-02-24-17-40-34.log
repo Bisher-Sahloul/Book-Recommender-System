@@ -1,0 +1,130 @@
+[2026-02-24 17:40:34,729] book_recommender - INFO - Logging initialized successfully
+[2026-02-24 17:40:34,729] book_recommender - INFO - ******************** Data Ingestion log started.********************
+[2026-02-24 17:40:34,729] root - INFO - Data Ingestion Config: DatasetConfig(artifacts_dir='artifacts', dataset_dir='artifacts\\dataset', raw_data_dir='artifacts\\dataset\\raw_data', ingested_data_dir='artifacts\\dataset\\ingested_data', support_ratings_dir='artifacts\\dataset\\raw_data\\Support Ratings', Amazon_data_dir='artifacts\\dataset\\raw_data\\Amazon', download_data_dir='artifacts\\dataset\\raw_data\\download_data', Openlibrary_data_dir='artifacts\\dataset\\raw_data\\Openlibrary', Amazon_books_data='artifacts\\dataset\\raw_data\\Amazon\\books_data.csv', Amazon_books_rating='artifacts\\dataset\\raw_data\\Amazon\\books_rating.csv', Openlibrary_books='artifacts\\dataset\\raw_data\\Openlibrary\\openlibrary_books.csv', Current_books='artifacts\\dataset\\ingested_data\\current_books.csv', Current_reviews='artifacts\\dataset\\ingested_data\\current_reviews.csv')
+[2026-02-24 17:40:34,740] root - INFO - Data Ingestion Config: DatasetConfig(artifacts_dir='artifacts', dataset_dir='artifacts\\dataset', raw_data_dir='artifacts\\dataset\\raw_data', ingested_data_dir='artifacts\\dataset\\ingested_data', support_ratings_dir='artifacts\\dataset\\raw_data\\Support Ratings', Amazon_data_dir='artifacts\\dataset\\raw_data\\Amazon', download_data_dir='artifacts\\dataset\\raw_data\\download_data', Openlibrary_data_dir='artifacts\\dataset\\raw_data\\Openlibrary', Amazon_books_data='artifacts\\dataset\\raw_data\\Amazon\\books_data.csv', Amazon_books_rating='artifacts\\dataset\\raw_data\\Amazon\\books_rating.csv', Openlibrary_books='artifacts\\dataset\\raw_data\\Openlibrary\\openlibrary_books.csv', Current_books='artifacts\\dataset\\ingested_data\\current_books.csv', Current_reviews='artifacts\\dataset\\ingested_data\\current_reviews.csv')
+[2026-02-24 17:40:34,740] root - INFO - Data Ingestion Config: DatasetConfig(artifacts_dir='artifacts', dataset_dir='artifacts\\dataset', raw_data_dir='artifacts\\dataset\\raw_data', ingested_data_dir='artifacts\\dataset\\ingested_data', support_ratings_dir='artifacts\\dataset\\raw_data\\Support Ratings', Amazon_data_dir='artifacts\\dataset\\raw_data\\Amazon', download_data_dir='artifacts\\dataset\\raw_data\\download_data', Openlibrary_data_dir='artifacts\\dataset\\raw_data\\Openlibrary', Amazon_books_data='artifacts\\dataset\\raw_data\\Amazon\\books_data.csv', Amazon_books_rating='artifacts\\dataset\\raw_data\\Amazon\\books_rating.csv', Openlibrary_books='artifacts\\dataset\\raw_data\\Openlibrary\\openlibrary_books.csv', Current_books='artifacts\\dataset\\ingested_data\\current_books.csv', Current_reviews='artifacts\\dataset\\ingested_data\\current_reviews.csv')
+[2026-02-24 17:40:34,741] book_recommender - INFO - Dataset already exists. Skipping download.
+[2026-02-24 17:41:26,112] book_recommender - INFO - Amazon books are ready for merging
+[2026-02-24 17:41:33,356] book_recommender - INFO - ******************** Data Validation log started.********************
+[2026-02-24 17:41:33,358] root - INFO - Data Validation Config: DataValidationConfig(clean_data_dir='artifacts\\dataset\\clean_data', current_books_csv='artifacts\\dataset\\ingested_data\\current_books.csv', current_reviews_csv='artifacts\\dataset\\ingested_data\\current_reviews.csv', serialized_objects_dir='artifacts\\serialized_objects')
+[2026-02-24 17:41:33,358] root - INFO - Data Transformation Config: DataTransformationConfig(current_books_csv='artifacts\\dataset\\clean_data\\current_books_cleaned.csv', current_reviews_csv='artifacts\\dataset\\clean_data\\current_reviews_cleaned.csv', transformed_data_dir='artifacts\\dataset\\transformed_data', vectorstores_dir='artifacts\\vectorstores', chroma_dir='artifacts\\vectorstores\\chroma_db', train_data_csv='artifacts\\dataset\\transformed_data\\train_data.csv', test_data_csv='artifacts\\dataset\\transformed_data\\test_data.csv')
+[2026-02-24 17:41:33,358] root - INFO - Data Validation Config: DataValidationConfig(clean_data_dir='artifacts\\dataset\\clean_data', current_books_csv='artifacts\\dataset\\ingested_data\\current_books.csv', current_reviews_csv='artifacts\\dataset\\ingested_data\\current_reviews.csv', serialized_objects_dir='artifacts\\serialized_objects')
+[2026-02-24 17:41:33,358] root - INFO - Model Trainer Config: ModelTrainerConfig(trained_model_dir='artifacts\\trained_model', trained_model_name='lightgcn_model', train_csv_file='artifacts\\dataset\\transformed_data\\train_data.csv', test_csv_file='artifacts\\dataset\\transformed_data\\test_data.csv')
+[2026-02-24 17:41:33,358] root - INFO - Data Validation Config: DataValidationConfig(clean_data_dir='artifacts\\dataset\\clean_data', current_books_csv='artifacts\\dataset\\ingested_data\\current_books.csv', current_reviews_csv='artifacts\\dataset\\ingested_data\\current_reviews.csv', serialized_objects_dir='artifacts\\serialized_objects')
+[2026-02-24 17:41:39,986] book_recommender - INFO - ====================Data Ingestion log completed.==================== 
+
+
+[2026-02-24 17:41:39,986] book_recommender - INFO - ====================Data Validation log started.==================== 
+[2026-02-24 17:41:42,706] book_recommender - INFO -  Shape of ratings data file: (16016, 8)
+[2026-02-24 17:41:42,706] book_recommender - INFO -  Shape of books data file: (1625572, 4)
+[2026-02-24 17:41:43,924] book_recommender - INFO - Current books           ISBN  ...                                              Image
+1   0826414346  ...  http://books.google.com/books/content?id=IjvHQ...
+3   0595344550  ...  http://books.google.com/books/content?id=aRSIg...
+5   0802841899  ...  http://books.google.com/books/content?id=kVqRa...
+8   0895554224  ...  http://books.google.com/books/content?id=lmLqA...
+10  0854968350  ...  http://books.google.com/books/content?id=o7izA...
+
+[5 rows x 8 columns]
+[2026-02-24 17:41:43,924] book_recommender - INFO - ****************************************
+[2026-02-24 17:41:43,924] book_recommender - INFO - Current reviews          ISBN  ...                                             review
+0  0826414346  ...  I don't care much for Dr. Seuss but after read...
+1  0826414346  ...  If people become the books they read and if "t...
+2  0826414346  ...  Theodore Seuss Geisel (1904-1991), aka &quot;D...
+3  0826414346  ...  Philip Nel - Dr. Seuss: American IconThis is b...
+4  0826414346  ...  "Dr. Seuss: American Icon" by Philip Nel is a ...
+
+[5 rows x 4 columns]
+[2026-02-24 17:41:49,044] book_recommender - INFO - Saved cleaned data to artifacts\dataset\clean_data
+[2026-02-24 17:41:49,081] book_recommender - INFO - ====================Data Validation log completed.==================== 
+
+
+[2026-02-24 17:41:49,081] book_recommender - INFO - ====================Data Transformation log started.==================== 
+[2026-02-24 17:41:49,081] book_recommender - INFO - ====================Transforming data.====================
+
+
+[2026-02-24 17:41:51,347] book_recommender - INFO - ====================Making most popular books list.====================
+[2026-02-24 17:41:51,379] book_recommender - INFO - Most popular books :             ISBN  ... rating
+0     0810906155  ...    5.0
+1     B0001GDR30  ...    5.0
+2     1586400118  ...    5.0
+3     081353447X  ...    5.0
+4     0307625605  ...    5.0
+...          ...  ...    ...
+4378  0205314570  ...    1.0
+4379  0930751191  ...    1.0
+4380  0930751205  ...    1.0
+4381  0773753044  ...    1.0
+4382  B0008ADQAI  ...    1.0
+
+[4383 rows x 9 columns]
+[2026-02-24 17:41:51,426] book_recommender - INFO - Save most popular book : artifacts\serialized_objects
+[2026-02-24 17:41:51,426] book_recommender - INFO - ====================Making pivot table====================
+[2026-02-24 17:42:08,026] book_recommender - INFO -  Shape of book pivot table: (63621, 4422)
+[2026-02-24 17:42:33,296] book_recommender - INFO - Saved pivot table sparse data to artifacts\dataset\transformed_data
+[2026-02-24 17:42:33,317] book_recommender - INFO - Saved book_ISBNs serialization object to artifacts\serialized_objects
+[2026-02-24 17:43:19,376] book_recommender - INFO - Saved book_pivot serialization object to artifacts\serialized_objects
+[2026-02-24 17:43:20,426] sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+[2026-02-24 17:43:20,442] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[2026-02-24 17:43:20,520] urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+[2026-02-24 17:43:34,362] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+[2026-02-24 17:43:37,150] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+[2026-02-24 17:43:40,190] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+[2026-02-24 17:43:42,880] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+[2026-02-24 17:43:50,318] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+[2026-02-24 17:43:52,714] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+[2026-02-24 17:43:55,909] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+[2026-02-24 17:43:59,051] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+[2026-02-24 17:44:01,909] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+[2026-02-24 17:44:04,487] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+[2026-02-24 17:44:07,572] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+[2026-02-24 17:44:10,377] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+[2026-02-24 17:44:13,186] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+[2026-02-24 17:44:16,125] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+[2026-02-24 17:44:22,440] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+[2026-02-24 17:44:25,995] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+[2026-02-24 17:44:28,909] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+[2026-02-24 17:44:31,753] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+[2026-02-24 17:44:35,318] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=True&expand=False HTTP/1.1" 200 6465
+[2026-02-24 17:44:38,536] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json HTTP/1.1" 307 0
+[2026-02-24 17:44:41,317] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json HTTP/1.1" 200 0
+[2026-02-24 17:44:45,181] urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6919
+[2026-02-24 17:44:45,492] chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[2026-02-24 17:44:45,692] chromadb.config - DEBUG - Starting component System
+[2026-02-24 17:44:45,692] chromadb.config - DEBUG - Starting component Posthog
+[2026-02-24 17:44:46,524] urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): us.i.posthog.com:443
+[2026-02-24 17:45:06,014] urllib3.connectionpool - DEBUG - https://us.i.posthog.com:443 "POST /batch/ HTTP/1.1" 200 15
+[2026-02-24 17:48:12,534] book_recommender - INFO - Start splitting data.
+
+[2026-02-24 17:48:50,455] book_recommender - INFO - ====================Data Transformation log completed.==================== 
+
+
+[2026-02-24 17:48:50,455] book_recommender - INFO - ====================Model Trainer log started.==================== 
+[2026-02-24 17:49:33,888] git.cmd - DEBUG - Popen(['git', 'version'], cwd=C:\Users\BS\OneDrive\Desktop\Book Recommender System, stdin=None, shell=False, universal_newlines=False)
+[2026-02-24 17:49:34,082] git.cmd - DEBUG - Popen(['git', 'version'], cwd=C:\Users\BS\OneDrive\Desktop\Book Recommender System, stdin=None, shell=False, universal_newlines=False)
+[2026-02-24 17:49:34,151] git.util - DEBUG - sys.platform='win32', git_executable='git'
+[2026-02-24 17:49:34,153] git.cmd - DEBUG - Popen(['git', 'check-ignore', 'C:\\Users\\BS\\OneDrive\\Desktop\\Book Recommender System'], cwd=C:\Users\BS\OneDrive\Desktop\Book Recommender System, stdin=None, shell=False, universal_newlines=False)
+[2026-02-24 17:49:34,222] git.cmd - DEBUG - Popen(['git', 'cat-file', '--batch-check'], cwd=C:\Users\BS\OneDrive\Desktop\Book Recommender System, stdin=<valid stream>, shell=False, universal_newlines=False)
+[2026-02-24 17:49:34,371] urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+[2026-02-24 17:49:37,465] book_recommender - INFO - Filtered test set: 346567 -> 334633 pairs (removed 11934 invalid pairs)
+[2026-02-24 17:49:37,465] book_recommender - INFO - Train shape:" (1235198, 3) , columns:" ['itemID', 'userID', 'rating']
+[2026-02-24 17:49:37,471] book_recommender - INFO - Train head:
+"       itemID                 userID  rating
+0  B000IEFHNS  A00540411RKGTDNU543WS     2.0
+1  1888799781  A00540411RKGTDNU543WS     3.0
+2  B000NP2B8Q  A00540411RKGTDNU543WS     2.0
+3  1418476811  A00540411RKGTDNU543WS     2.0
+4  B000FSQ6K0  A00540411RKGTDNU543WS     3.0
+[2026-02-24 17:49:37,471] book_recommender - INFO - 
+Test shape:" (334633, 3), "| columns:" ['itemID', 'userID', 'rating']
+[2026-02-24 17:50:12,597] tensorflow - WARNING - From C:\Users\BS\OneDrive\Desktop\Book Recommender System\src\steps\stage_03_model_trainer\recommenders_microsoft\recommenders\models\deeprec\models\graphrec\lightgcn.py:110: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+[2026-02-24 17:50:13,509] book_recommender - INFO - ==================== Model Start Training. ====================
+[2026-02-24 17:58:05,829] tensorflow - WARNING - From C:\Users\BS\anaconda3\Lib\site-packages\tensorflow\python\training\saver.py:1068: remove_checkpoint (from tensorflow.python.checkpoint.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+[2026-02-24 18:35:10,478] book_recommender - INFO - None
+[2026-02-24 18:35:21,581] book_recommender - INFO - Saving final model to artifacts\trained_model\lightgcn_model
+[2026-02-24 18:35:35,019] book_recommender - INFO - Saving model metadata to artifacts\trained_model\model_metadata.pkl
+[2026-02-24 18:35:35,183] book_recommender - INFO - ====================Model Trainer log completed.==================== 
+
+

@@ -7,7 +7,7 @@ from scipy.sparse import csr_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.neighbors import NearestNeighbors
 from scipy.sparse import csr_matrix
-from src.logger.log import logging
+from src.logger.log import logger
 from src.config.configuration import AppConfiguration
 from src.exception.exception_handler import AppException
 from src.utils.util import clone_github_repo
@@ -43,7 +43,11 @@ class ModelTrainer:
             )
             with open(file_path, "rb") as f:
                 pt = pickle.load(f)            
-            pt_sparse = csr_matrix(pt.values)
+            # Handle both sparse CSR matrices and dense DataFrames
+            if isinstance(pt, csr_matrix):
+                pt_sparse = pt
+            else:
+                pt_sparse = csr_matrix(pt.values)
             item_similarity = cosine_similarity(pt_sparse.T, dense_output=False)
             file_path = os.path.join(
                 self.data_validation_config.serialized_objects_dir,
@@ -55,25 +59,96 @@ class ModelTrainer:
         except Exception as e : 
             raise AppException(e , sys) from e 
     
+    def train_popularity_baseline(self) -> None:
+        """Simple baseline: recommend most popular items to all users."""
+        try:
+            train = pd.read_csv(self.model_trainer_config.train_csv_file)
+            test = pd.read_csv(self.model_trainer_config.test_csv_file)
+            
+            train.drop_duplicates(subset=['userID', 'itemID'], keep='last', inplace=True)
+            test.drop_duplicates(subset=['userID', 'itemID'], keep='last', inplace=True)
+            
+            # Get most popular items by rating count
+            item_popularity = train.groupby('itemID')['rating'].count().sort_values(ascending=False)
+            top_k_popular_items = item_popularity.head(TOP_K).index.tolist()
+            
+            # Filter test to only include users/items in training
+            known_users = set(train['userID'].unique())
+            test_filtered = test[test['userID'].isin(known_users)].copy()
+            
+            known_items = set(train['itemID'].unique())
+            test_filtered = test_filtered[test_filtered['itemID'].isin(known_items)].copy()
+            
+            print(f"\n{'='*60}")
+            print(f"POPULARITY BASELINE:")
+            print(f"Top {TOP_K} popular items: {top_k_popular_items[:5]}...")
+            print(f"Test set size: {len(test_filtered)}")
+            
+            # Create recommendations: same top-k items for all users with prediction scores
+            topk_scores_formatted = []
+            for user_id in test_filtered['userID'].unique():
+                for rank, item_id in enumerate(top_k_popular_items):
+                    # Use inverse rank as score (higher rank = lower score)
+                    score = (TOP_K - rank) / float(TOP_K)
+                    topk_scores_formatted.append({
+                        'userID': user_id,
+                        'itemID': item_id,
+                        'prediction': score  # Required column for evaluation
+                    })
+            topk_scores = pd.DataFrame(topk_scores_formatted)
+            
+            eval_precision = precision_at_k(test_filtered, topk_scores, k=TOP_K, col_prediction='prediction')
+            eval_recall = recall_at_k(test_filtered, topk_scores, k=TOP_K, col_prediction='prediction')
+            eval_ndcg = ndcg_at_k(test_filtered, topk_scores, k=TOP_K, col_prediction='prediction')
+            eval_map = map(test_filtered, topk_scores, k=TOP_K, col_prediction='prediction')
+            
+            print(f"Baseline Precision@{TOP_K}: {eval_precision:.4f}")
+            print(f"Baseline Recall@{TOP_K}: {eval_recall:.4f}")
+            print(f"Baseline nDCG@{TOP_K}: {eval_ndcg:.4f}")
+            print(f"Baseline MAP@{TOP_K}: {eval_map:.4f}")
+            print(f"{'='*60}\n")
+            
+            mlflow.set_experiment("popularity_baseline Model Experiment") 
+            with mlflow.start_run():
+                mlflow.log_param("model_type", "popularity_baseline")
+                mlflow.log_metric("precision", eval_precision)
+                mlflow.log_metric("recall", eval_recall)
+                mlflow.log_metric("nDCG", eval_ndcg)
+                mlflow.log_metric("MAP", eval_map)
+                
+        except Exception as e:
+            logger.error(f"Popularity baseline failed: {e}")
+            raise AppException(e, sys) from e
+    
     def train_LightGCN(self) -> None :
         try:
 
             train = pd.read_csv(self.model_trainer_config.train_csv_file)
             test = pd.read_csv(self.model_trainer_config.test_csv_file)
 
+            train.drop_duplicates(subset=['userID', 'itemID'], keep='last', inplace=True)
+            test.drop_duplicates(subset=['userID', 'itemID'], keep='last', inplace=True)
 
-            logging.info(f'Train shape:" {train.shape} , columns:" {train.columns.tolist()}')
-            logging.info(f'Train head:\n"{train.head()}')
-            logging.info(f'\nTest shape:" {test.shape}, "| columns:" {test.columns.tolist()}')
-            logging.info(f"Test head:\n", test.head())
-            logging.info(f"\nTrain rating range:", train['rating'].min(), "-", train['rating'].max())
-            logging.info(f"Test rating range:", test['rating'].min(), "-", test['rating'].max())
-            logging.info(f"Unique users in train:", train['userID'].nunique(), "| in test:", test['userID'].nunique())
-            logging.info(f"Unique items in train:", train['itemID'].nunique(), "| in test:", test['itemID'].nunique())
+            # Filter test to only include users and items that exist in training data
+            # This prevents index out-of-bounds errors in ImplicitCF
+            train_users = set(train['userID'].unique())
+            train_items = set(train['itemID'].unique())
+            test_before = len(test)
+            test = test[(test['userID'].isin(train_users)) & (test['itemID'].isin(train_items))].copy()
+            logger.info(f"Filtered test set: {test_before} -> {len(test)} pairs (removed {test_before - len(test)} invalid pairs)")
+
+            logger.info(f'Train shape:" {train.shape} , columns:" {train.columns.tolist()}')
+            logger.info(f'Train head:\n"{train.head()}')
+            logger.info(f'\nTest shape:" {test.shape}, "| columns:" {test.columns.tolist()}')
+            logger.info(f"Test head:\n", test.head())
+            logger.info(f"\nTrain rating range:", train['rating'].min(), "-", train['rating'].max())
+            logger.info(f"Test rating range:", test['rating'].min(), "-", test['rating'].max())
+            logger.info(f"Unique users in train:", train['userID'].nunique(), "| in test:", test['userID'].nunique())
+            logger.info(f"Unique items in train:", train['itemID'].nunique(), "| in test:", test['itemID'].nunique())
 
 
             data = ImplicitCF(
-                    train=train, test=None, seed=0,
+                    train=train, test=test, seed=0,
                     col_user='userID',
                     col_item='itemID',
                     col_rating='rating'
@@ -86,19 +161,45 @@ class ModelTrainer:
             params = read_yaml_file(yaml_file)
 
             model = LightGCN(hparams, data, seed=0)
-            logging.info(f"{'='*20} Model Start Training. {'='*20}")
+            logger.info(f"{'='*20} Model Start Training. {'='*20}")
+            
+            mlflow.set_experiment("LightGCN Model Experiment") 
 
             with mlflow.start_run() : 
-                logging.info(f"{model.fit()}")
-                # Filter test users to those present in the training `user2id` mapping
-                if hasattr(data, 'user2id') and isinstance(data.user2id, dict):
-                    known_user_mask = test['userID'].isin(list(data.user2id.keys()))
-                    unknown_count = (~known_user_mask).sum()
-                    if unknown_count > 0:
-                        logging.info(f"Found {unknown_count} users in test not seen during training - skipping them for evaluation.")
-                    test_filtered = test[known_user_mask].copy()
-                else:
-                    test_filtered = test
+                logger.info(f"{model.fit()}")
+                
+                # Filter test data to only include users and items that were DEFINITELY in training
+                test_filtered = test.drop_duplicates(subset=["userID", "itemID"]).copy()
+                
+                print(f"\n{'='*60}")
+                print(f"TEST DATA FILTERING:")
+                print(f"Original test pairs: {len(test_filtered)}")
+                print(f"Training data has {len(data.user2id)} unique users and {len(data.item2id)} unique items")
+                
+                # Get sample of training user/item IDs to see their format
+                sample_users = list(data.user2id.keys())[:5]
+                sample_items = list(data.item2id.keys())[:5]
+                print(f"Sample training user IDs: {sample_users}")
+                print(f"Sample training item IDs: {sample_items}")
+                
+                # Get sample of test user/item IDs
+                test_sample_users = test_filtered['userID'].head().tolist()
+                test_sample_items = test_filtered['itemID'].head().tolist()
+                print(f"Sample test user IDs: {test_sample_users}")
+                print(f"Sample test item IDs: {test_sample_items}")
+                
+                # Keep only users that were in training  
+                known_users = set(data.user2id.keys())
+                test_filtered = test_filtered[test_filtered['userID'].isin(known_users)]
+                print(f"After filtering unmapped users: {len(test_filtered)} pairs remain")
+                
+                # Keep only items that were in training
+                known_items = set(data.item2id.keys())
+                test_filtered = test_filtered[test_filtered['itemID'].isin(known_items)]
+                print(f"After filtering unmapped items: {len(test_filtered)} pairs remain")
+                
+                print(f"Final test pairs for evaluation: {len(test_filtered)}")
+                print(f"{'='*60}\n")
 
                 topk_scores = model.recommend_k_items(test_filtered, top_k = TOP_K)
                 eval_map = map(test_filtered, topk_scores, k=TOP_K)
@@ -126,7 +227,6 @@ class ModelTrainer:
 
                 mlflow.log_artifacts(model_dir, artifact_path="LightGCN_model")
 
-                # train_ds = mlflow.data.from_pandas(train , source="training_data")
                 # mlflow.log_input(train_ds, context="training")
 
                 print(f"Model trained. metrices: Precision : {eval_precision:.4f}, Recall: {eval_recall:.4f} , nDCG: {eval_ndcg:.4f} , MAP: {eval_map:.4f}")
@@ -136,7 +236,7 @@ class ModelTrainer:
             os.makedirs(self.model_trainer_config.trained_model_dir, exist_ok=True)
             file_name = os.path.join(self.model_trainer_config.trained_model_dir,self.model_trainer_config.trained_model_name)
             model.save(file_name)
-            logging.info(f"Saving final model to {file_name}")
+            logger.info(f"Saving final model to {file_name}")
             
             # Save model metadata and inference data (cannot pickle TensorFlow objects)
             metadata = {
@@ -155,7 +255,7 @@ class ModelTrainer:
             metadata_file = os.path.join(self.model_trainer_config.trained_model_dir, 'model_metadata.pkl')
             with open(metadata_file, 'wb') as f:
                 pickle.dump(metadata, f)
-            logging.info(f"Saving model metadata to {metadata_file}")
+            logger.info(f"Saving model metadata to {metadata_file}")
 
         except Exception as e:
             raise AppException(e, sys) from e
@@ -164,9 +264,10 @@ class ModelTrainer:
 
     def initiate_model_trainer(self):
         try:
-            logging.info(f"{'='*20}Model Trainer log started.{'='*20} ")
+            logger.info(f"{'='*20}Model Trainer log started.{'='*20} ")
             self.train_CF()
-            self.train_LightGCN()
-            logging.info(f"{'='*20}Model Trainer log completed.{'='*20} \n\n")
+            self.train_popularity_baseline()  # Run baseline first to establish ground truth
+            self.train_LightGCN()  # Now with fixed data alignment
+            logger.info(f"{'='*20}Model Trainer log completed.{'='*20} \n\n")
         except Exception as e:
             raise AppException(e, sys) from e

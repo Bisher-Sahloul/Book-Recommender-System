@@ -37,8 +37,9 @@ RETRY_STRATEGY = Retry(
     status_forcelist=(429, 500, 502, 503, 504),
     allowed_methods=frozenset(["GET", "POST"]),
 )
-
-
-
-
 TOP_K = 10 
+
+# Constants for data transformation
+SPLIT_RATIO = 0.8
+SEED = 42
+MIN_INTERACTIONS = 1

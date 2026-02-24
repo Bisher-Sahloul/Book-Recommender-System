@@ -5,9 +5,10 @@ data_ingestion_config :
   dataset_dir : dataset 
   raw_dir : raw_data
   ingested_dir : ingested_data
+  download_data_dir : download_data
   Amazon_dir : Amazon 
   Openlibrary_dir : Openlibrary
-  Goodreads_dir : Goodreads
+  support_ratings_dir : Support Ratings
   Amazon_books_data : books_data.csv
   Amazon_books_rating : books_rating.csv
   Openlibrary_books : openlibrary_books.csv

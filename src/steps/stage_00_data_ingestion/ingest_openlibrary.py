@@ -9,7 +9,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 
-from src.logger.log import logging
+from src.logger.log import logger
 from src.config.configuration import AppConfiguration
 from src.exception.exception_handler import AppException 
 from src.constant import * 
@@ -46,7 +46,7 @@ def is_allowed_by_robots(session: requests.Session, target_url: str) -> bool:
     except Exception as e:
         # If robots.txt cannot be retrieved, be conservative and allow,
         # but log a warning. You might want to refuse in stricter settings.
-        logging.warning("Could not fetch robots.txt (%s). Proceeding cautiously. Error: %s", robots_url, e)
+        logger.warning("Could not fetch robots.txt (%s). Proceeding cautiously. Error: %s", robots_url, e)
         return True
 
 
@@ -68,7 +68,7 @@ def atomic_write_df(df: pd.DataFrame, path: Path, fmt: str = "csv") -> None:
     else:
         raise ValueError("Unsupported format: %s" % fmt)
     tmp.replace(path)
-    logging.info("Saved %s rows to %s", len(df), path)
+    logger.info("Saved %s rows to %s", len(df), path)
 
 
 # -----------------------
@@ -95,7 +95,7 @@ def parse_book_page(soup: BeautifulSoup, source_url: str, subject: Optional[str]
             if author_tag:
                 out["Book-Author"] = author_tag.get_text(strip=True)
     except Exception as e:
-        logging.debug("Title/author parse failed for %s: %s", source_url, e)
+        logger.debug("Title/author parse failed for %s: %s", source_url, e)
 
     # ISBN
     try:
@@ -103,7 +103,7 @@ def parse_book_page(soup: BeautifulSoup, source_url: str, subject: Optional[str]
         if isbn_dd:
             out["ISBN"] = isbn_dd.get_text(strip=True)
     except Exception as e:
-        logging.debug("ISBN parse failed for %s: %s", source_url, e)
+        logger.debug("ISBN parse failed for %s: %s", source_url, e)
 
     # Year and Publisher
     try:
@@ -116,7 +116,7 @@ def parse_book_page(soup: BeautifulSoup, source_url: str, subject: Optional[str]
             if publisher_a:
                 out["Publisher"] = publisher_a.get_text(strip=True)
     except Exception as e:
-        logging.debug("Year/Publisher parse failed for %s: %s", source_url, e)
+        logger.debug("Year/Publisher parse failed for %s: %s", source_url, e)
 
     # Description
     try:
@@ -125,7 +125,7 @@ def parse_book_page(soup: BeautifulSoup, source_url: str, subject: Optional[str]
             paragraphs = read_more.find_all("p")
             out["Description"] = " ".join(p.get_text(strip=True) for p in paragraphs)
     except Exception as e:
-        logging.debug("Description parse failed for %s: %s", source_url, e)
+        logger.debug("Description parse failed for %s: %s", source_url, e)
 
     # Image URLs
     try:
@@ -138,7 +138,7 @@ def parse_book_page(soup: BeautifulSoup, source_url: str, subject: Optional[str]
             out["Image-URL-M"] = image_url[:-5] + "M"
             out["Image-URL-L"] = image_url[:-5] + "L"
     except Exception as e:
-        logging.debug("Image parse failed for %s: %s", source_url, e)
+        logger.debug("Image parse failed for %s: %s", source_url, e)
 
     return out
 
@@ -148,7 +148,7 @@ def parse_book_page(soup: BeautifulSoup, source_url: str, subject: Optional[str]
 # -----------------------
 def fetch_soup(session: requests.Session, url: str) -> BeautifulSoup:
     """Fetch a URL and return BeautifulSoup object; raises on HTTP errors."""
-    logging.debug("Fetching URL: %s", url)
+    logger.debug("Fetching URL: %s", url)
     resp = session.get(url, timeout=REQUEST_TIMEOUT)
     resp.raise_for_status()
     return BeautifulSoup(resp.text, "html.parser")
@@ -158,7 +158,7 @@ def scrape_book(session: requests.Session, url: str, subject: Optional[str] = No
     """Scrape a single book page and return data dict or None on failure."""
     try:
         if not is_allowed_by_robots(session, url):
-            logging.info("Blocked by robots.txt: %s", url)
+            logger.info("Blocked by robots.txt: %s", url)
             return None
 
         soup = fetch_soup(session, url)
@@ -166,16 +166,16 @@ def scrape_book(session: requests.Session, url: str, subject: Optional[str] = No
         random_delay()
         return data
     except requests.HTTPError as e:
-        logging.warning("HTTP error while scraping %s: %s", url, e)
+        logger.warning("HTTP error while scraping %s: %s", url, e)
     except Exception as e:
-        logging.exception("Unexpected error while scraping %s: %s", url, e)
+        logger.exception("Unexpected error while scraping %s: %s", url, e)
     return None
 
 
 def get_work_urls_from_search(session: requests.Session, query: str, page: int = 1) -> Set[str]:
     """Return a set of work URLs for a search query & page."""
     search_url = f"{BASE}/search?q={query}&page={page}"
-    logging.info("Searching %s (page=%d)", query, page)
+    logger.info("Searching %s (page=%d)", query, page)
     try:
         soup = fetch_soup(session, search_url)
         urls: Set[str] = set()
@@ -185,14 +185,14 @@ def get_work_urls_from_search(session: requests.Session, query: str, page: int =
         random_delay()
         return urls
     except Exception as e:
-        logging.exception("Failed to get work URLs for query=%s page=%d: %s", query, page, e)
+        logger.exception("Failed to get work URLs for query=%s page=%d: %s", query, page, e)
         return set()
 
 
 def get_books_subjects(session: requests.Session) -> List[str]:
     """Return list of subject strings from the subjects page."""
     subjects_page = urljoin(BASE, "/subjects")
-    logging.info("Fetching subjects from %s", subjects_page)
+    logger.info("Fetching subjects from %s", subjects_page)
     try:
         soup = fetch_soup(session, subjects_page)
         body = soup.find("div", id="subjectsPage")
@@ -200,7 +200,7 @@ def get_books_subjects(session: requests.Session) -> List[str]:
             return []
         return [li.get_text(strip=True) for li in body.find_all("li")]
     except Exception as e:
-        logging.exception("Failed to fetch subjects: %s", e)
+        logger.exception("Failed to fetch subjects: %s", e)
         return []
 
 
@@ -217,7 +217,7 @@ def load_existing_rows(path: Path) -> Dict[str, Dict]:
             if isbn:
                 rows[isbn] = r.to_dict()
     except Exception:
-        logging.exception("Error loading existing CSV; continuing with empty store.")
+        logger.exception("Error loading existing CSV; continuing with empty store.")
     return rows
 
 
@@ -248,23 +248,23 @@ def collect_data(session: requests.Session, path , pages: range = range(1, 3), s
     """High-level orchestration: fetch subjects -> for each subject sample queries -> scrape results."""
     subjects = get_books_subjects(session)
     if not subjects:
-        logging.warning("No subjects found — aborting collection.")
+        logger.warning("No subjects found — aborting collection.")
         return
 
     for page in pages:
         # sample a subset of subjects to avoid making this run huge
         sample_subjects = random.sample(subjects, min(subjects_sample_size, len(subjects)))
-        logging.info("Page %d: sampled %d subjects", page, len(sample_subjects))
+        logger.info("Page %d: sampled %d subjects", page, len(sample_subjects))
         for subj in sample_subjects:
             try:
                 work_urls = get_work_urls_from_search(session, subj, page)
-                logging.info("Found %d works for subject=%s page=%d", len(work_urls), subj, page)
+                logger.info("Found %d works for subject=%s page=%d", len(work_urls), subj, page)
                 for work_url in work_urls:
                     data = scrape_book(session, work_url, subject=subj)
                     if data:
                         upsert_row_and_save(data, path)
             except Exception:
-                logging.exception("Error collecting data for subject=%s page=%d", subj, page)
+                logger.exception("Error collecting data for subject=%s page=%d", subj, page)
 
 
 
@@ -282,10 +282,10 @@ class DataIngestion :
             data_dir.mkdir(parents=True , exist_ok=True)
             session = create_session()
             allowed = is_allowed_by_robots(session, BASE)
-            logging.info("Scraper allowed by robots.txt for base=%s ? %s", BASE, allowed)
+            logger.info("Scraper allowed by robots.txt for base=%s ? %s", BASE, allowed)
             collect_data(session, self.data_ingestion_config.Openlibrary_books, pages=pages, subjects_sample_size=subjects_sample_size)
-            logging.info("OpenLibrary data collected at %s", self.data_ingestion_config.Openlibrary_books)
-            logging.info("Finished scraping run.")
+            logger.info("OpenLibrary data collected at %s", self.data_ingestion_config.Openlibrary_books)
+            logger.info("Finished scraping run.")
             openlibrary_books = pd.read_csv(self.data_ingestion_config.Openlibrary_books)
             openlibrary_books.rename(columns={
                                      'Subject':'Categories',
@@ -295,7 +295,7 @@ class DataIngestion :
             openlibrary_books["ISBN"] = openlibrary_books["ISBN"].str.split("\n")
             openlibrary_books["ISBN"] = openlibrary_books["ISBN"].str[0].str.strip().str.strip(',')
             self.df = openlibrary_books
-            logging.info("openlibrarybooks are ready for merging")
+            logger.info("openlibrarybooks are ready for merging")
         except Exception as e : 
             raise AppException(e , sys) from e 
     def get_data(self) -> pd.DataFrame : 

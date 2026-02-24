@@ -1,3 +1,4 @@
+import logging
 import os
 import sys
 import pandas as pd 
@@ -9,21 +10,38 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, RedirectResponse
 from typing import Optional
 from typing import List 
-from api.vectordb import search_books
-from api.models import Book
-from api.database import BOOKS 
 from src.config.configuration import AppConfiguration
 import pickle
 from scipy.sparse import csr_matrix
 import tensorflow as tf
 import numpy as np
+from src.logger.log import setup_logging
+setup_logging()
+
 
 # Add the recommenders_microsoft path to sys.path to resolve module imports
 recommenders_path = os.path.join(os.path.dirname(__file__), '..', 'src', 'steps', 'stage_03_model_trainer', 'recommenders_microsoft')
 sys.path.insert(0, recommenders_path)
 
+
+from src.pipeline.training_pipeline import TrainingPipeline
+from src.exception.exception_handler import AppException
 from src.steps.stage_03_model_trainer.recommenders_microsoft.recommenders.models.deeprec.models.graphrec.lightgcn import LightGCN
 from src.steps.stage_03_model_trainer.recommenders_microsoft.recommenders.utils.python_utils import get_top_k_scored_items
+
+
+# Run the training pipeline when the script is executed
+# try:
+#         obj = TrainingPipeline()
+#         obj.start_training_pipeline()
+#         logging.info(f"Pipeline has finished successfully!")
+# except Exception as e:
+#     raise AppException(e, sys) from e
+
+
+from api.vectordb import search_books
+from api.models import Book
+from api.database import BOOKS 
 
 # Global cache for model
 _model_cache = {
@@ -150,7 +168,7 @@ def load_lightgcn_model_and_metadata():
             metadata = pickle.load(f)
         
         # Load model checkpoint
-        model_path = os.path.join(model_dir, 'model')  # TensorFlow checkpoint path
+        model_path = os.path.join(model_dir, 'lightgcn_model')  # TensorFlow checkpoint path
         
         # Create TensorFlow session to restore model
         tf.compat.v1.reset_default_graph()
@@ -260,7 +278,7 @@ def popular_books():
 
 # 👤 User recommendations
 @app.get("/api/user/recommendations", response_model = List[Book])
-def user_recommendations(user_id: str = "A2ZE4PQJ4TR0CH"):
+def user_recommendations(user_id: str = "A00540411RKGTDNU543WS"):
     """
     Get personalized book recommendations for a user using LightGCN model.
     Returns top 5 recommended books based on collaborative filtering.

@@ -1,6 +1,10 @@
-raw_data/
+Amazon/
 ingested_data/
 clean_data/
 dvc.yaml
 venv/
 **/recommenders_microsoft/
+serialized_objects/
+trained_model/
+chroma_db/
+transformed_data/

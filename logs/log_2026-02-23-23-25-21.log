@@ -1,0 +1,16 @@
+[2026-02-23 23:25:28,160] pydot - DEBUG - pydot initializing
+[2026-02-23 23:25:28,160] pydot - DEBUG - pydot 4.0.1
+[2026-02-23 23:25:28,160] pydot.core - DEBUG - pydot core module initializing
+[2026-02-23 23:25:42,170] tensorflow - DEBUG - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[2026-02-23 23:25:42,820] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2026-02-23 23:25:42,820] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2026-02-23 23:25:42,820] h5py._conv - DEBUG - Creating converter from 7 to 5
+[2026-02-23 23:25:42,820] h5py._conv - DEBUG - Creating converter from 5 to 7
+[2026-02-23 23:25:45,463] matplotlib - DEBUG - matplotlib data path: C:\Users\BS\anaconda3\Lib\site-packages\matplotlib\mpl-data
+[2026-02-23 23:25:45,463] matplotlib - DEBUG - CONFIGDIR=C:\Users\BS\.matplotlib
+[2026-02-23 23:25:45,463] matplotlib - DEBUG - interactive is False
+[2026-02-23 23:25:45,463] matplotlib - DEBUG - platform is win32
+[2026-02-23 23:25:45,553] matplotlib - DEBUG - CACHEDIR=C:\Users\BS\.matplotlib
+[2026-02-23 23:25:45,553] matplotlib.font_manager - DEBUG - Using fontManager instance from C:\Users\BS\.matplotlib\fontlist-v390.json
+[2026-02-23 23:25:52,109] tensorflow - WARNING - From C:\Users\BS\anaconda3\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
