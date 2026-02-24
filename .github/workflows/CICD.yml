@@ -41,9 +41,7 @@ jobs:
       
       # 7. Start application
       - name: Start app
-        run: |
-          python main.py &
-          sleep 10
+        run: python main.py 
 
       # 8. Run tests
       - name: Run tests
