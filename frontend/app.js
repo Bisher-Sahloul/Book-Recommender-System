@@ -230,7 +230,7 @@ function formatAvgDisplay(avg, reviewCount) {
 
 // inline svg eye
 function eyeSvg() {
-  return `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/><circle cx="12" cy="12" r="2.5"/></svg>`;
+  return `<svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:18px;height:18px;min-width:18px;min-height:18px;max-width:18px;max-height:18px;display:inline-block;vertical-align:middle;flex:0 0 18px;fill:currentColor"><path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/><circle cx="12" cy="12" r="2.5"/></svg>`;
 }
 
 /* ---------- computeCombinedAverage ----------
@@ -475,7 +475,7 @@ function showBookModal(book, related = []) {
         <div class="muted">${escapeHtml((book.authors || []).join(', '))} · ${escapeHtml(book.year || '')}</div>
         <div style="margin-top:8px">
           <strong style="font-size:18px">${avg.toFixed(1)} ⭐</strong>
-          <span class="muted" style="margin-left:8px">${eyeSvg()} <span class="views-count">${views}</span> views</span>
+          <span class="views-inline muted" style="margin-left:8px">${eyeSvg()} <span class="views-count">${views}</span> views</span>
           <span class="muted" style="margin-left:10px">(${Math.max(book.reviewCount || 0, localReviews.length)} reviews)</span>
         </div>
 
@@ -505,7 +505,14 @@ function showBookModal(book, related = []) {
 
     <div style="margin-top:12px">
       <h4>Related</h4>
-      <div style="display:flex;gap:10px;overflow:auto">${related.map(r => `<div class="related-item" data-isbn="${escapeHtml(r.id || '')}"><div style="width:110px;height:150px;background-image:url('${escapeHtml(r.image || PLACEHOLDER)}');background-size:cover;border-radius:8px"></div><div style="font-size:13px;margin-top:6px">${escapeHtml(r.title)}</div></div>`).join('')}</div>
+      <div class="related-row">
+        ${related.length ? related.map(r => `
+          <button class="related-item" type="button" data-isbn="${escapeHtml(r.id || '')}" aria-label="Open related book ${escapeHtml(r.title || '')}">
+            <div class="related-cover" style="background-image:url('${escapeHtml(r.image || PLACEHOLDER)}')"></div>
+            <div class="related-title">${escapeHtml(r.title)}</div>
+          </button>
+        `).join('') : `<div class="muted small">No related books found.</div>`}
+      </div>
     </div>
   `;
 

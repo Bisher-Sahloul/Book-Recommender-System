@@ -1,12 +1,16 @@
 import os
 import sys
 import pickle
+from fastapi import params
+from fastapi import params
 import pandas as pd 
 import mlflow
+from ruamel import yaml
 from scipy.sparse import csr_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.neighbors import NearestNeighbors
 from scipy.sparse import csr_matrix
+from transformers import data
 from src.logger.log import logger
 from src.config.configuration import AppConfiguration
 from src.exception.exception_handler import AppException
@@ -155,10 +159,23 @@ class ModelTrainer:
             )
 
             yaml_file = './src/steps/stage_03_model_trainer/recommenders_microsoft/examples/07_tutorials/KDD2020-tutorial/lightgcn.yaml'
+            
+            params = read_yaml_file(yaml_file)
+            params['model']['epochs'] = 5 # number of epochs for training
+            params['model']['embed_size'] = 64 # the embedding dimension of users and items
+            params['model']['n_layers'] = 3 # number of layers of the model
+            params['train']['batch_size'] = 4096  # batch size for training
+            params['train']['learning_rate'] = 0.001 
+            params['train']['eval_epoch'] = 1 # Evaluate every epoch
+            params['train']['top_k'] = 10 # Ensure this matches the TOP_K used in evaluation
+            params['train']['decay'] = 0.00001 # l2 regularization for embedding parameters
+
+            # Save YAML back to file
+            with open(yaml_file , "w") as f:
+                yaml.dump(params, f, default_flow_style=False)
 
             hparams = prepare_hparams(yaml_file)
-
-            params = read_yaml_file(yaml_file)
+            
 
             model = LightGCN(hparams, data, seed=0)
             logger.info(f"{'='*20} Model Start Training. {'='*20}")
