@@ -139,7 +139,7 @@ class DataTransformation:
 
     def get_data_transformer(self):
         try:
-            logger.info(f"{"="*20}Transforming data.{"="*20}\n\n")
+            logger.info(f'{"="*20}Transforming data.{"="*20}\n\n')
             current_reviews = pd.read_csv(self.data_transformation_config.current_reviews_csv)
             current_books = pd.read_csv(self.data_transformation_config.current_books_csv)
             
