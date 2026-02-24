@@ -91,6 +91,41 @@ function normalizeBook(raw) {
   if (!raw) return null;
   if (Array.isArray(raw) && raw.length > 0) raw = raw[0];
 
+  // Remove wrapping quotes/brackets from noisy CSV-like values, e.g. "'History'" or "['History']"
+  const cleanLabel = (value) => {
+    let s = String(value === undefined || value === null ? '' : value).trim();
+    if (!s) return '';
+    s = s.replace(/^\[+|\]+$/g, '').trim();
+    s = s.replace(/^[`"'‘’“”\s]+|[`"'‘’“”\s]+$/g, '').trim();
+    return s;
+  };
+
+  const toCleanArray = (value) => {
+    let parts = [];
+    if (Array.isArray(value)) parts = value;
+    else if (typeof value === 'string') {
+      const s = value.trim();
+      if (!s) parts = [];
+      else {
+        const unwrapped = (s.startsWith('[') && s.endsWith(']')) ? s.slice(1, -1) : s;
+        parts = unwrapped.split(/[,;|]+/);
+      }
+    } else if (value !== undefined && value !== null) {
+      parts = [value];
+    }
+
+    const out = [];
+    const seen = new Set();
+    parts.forEach((p) => {
+      const cleaned = cleanLabel(p);
+      const key = cleaned.toLowerCase();
+      if (!cleaned || seen.has(key)) return;
+      seen.add(key);
+      out.push(cleaned);
+    });
+    return out;
+  };
+
   const get = (o, ...keys) => {
     for (const k of keys) {
       if (!o) continue;
@@ -114,14 +149,16 @@ function normalizeBook(raw) {
   // authors to array
   let aRaw = get(raw, 'Book_Author', 'Book-Author', 'authors', 'author') || [];
   let authors = [];
-  if (Array.isArray(aRaw)) authors = aRaw.map(String).filter(Boolean);
-  else if (typeof aRaw === 'string') authors = aRaw.split(/[,;|]+/).map(s => s.trim()).filter(Boolean);
+  if (Array.isArray(aRaw)) authors = toCleanArray(aRaw);
+  else if (typeof aRaw === 'string') authors = toCleanArray(aRaw);
+  else authors = toCleanArray(aRaw);
 
   // categories to array
   let cRaw = get(raw, 'Categories', 'categories', 'tags') || [];
   let categories = [];
-  if (Array.isArray(cRaw)) categories = cRaw.map(String).filter(Boolean);
-  else if (typeof cRaw === 'string') categories = cRaw.split(/[,;|]+/).map(s => s.trim()).filter(Boolean);
+  if (Array.isArray(cRaw)) categories = toCleanArray(cRaw);
+  else if (typeof cRaw === 'string') categories = toCleanArray(cRaw);
+  else categories = toCleanArray(cRaw);
 
   // backend-provided review count or variations
   let reviewCount = get(raw, 'reviewCount', 'reviews_count', 'review_count', 'num_reviews', 'reviewsCount', 'reviews') || 0;
@@ -132,6 +169,27 @@ function normalizeBook(raw) {
   let views = Number(get(raw, 'views', 'view_count', 'viewsCount') || 0);
 
   return { id, title, authors, categories, image, description, rating, reviewCount, publisher, year, views };
+}
+
+function dedupeBooks(list) {
+  const out = [];
+  const seen = new Set();
+  (list || []).forEach((item) => {
+    const b = normalizeBook(item);
+    if (!b) return;
+    const id = String(b.id || '').trim();
+    const fallback = [
+      String(b.title || '').trim().toLowerCase(),
+      String((b.authors || []).join('|') || '').trim().toLowerCase(),
+      String(b.year || '').trim().toLowerCase(),
+      String(b.publisher || '').trim().toLowerCase()
+    ].join('::');
+    const key = id ? `id:${id}` : `meta:${fallback}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push(b);
+  });
+  return out;
 }
 
 /* ---------------- local storage helpers ---------------- */
@@ -353,7 +411,7 @@ const doSearch = debounce(async (q) => {
   try {
     const res = await fetchVerbose(`/search?q=${encodeURIComponent(q)}`, 'search');
     const arr = Array.isArray(res) ? res : (res && (res.results || res.items || res.data) ? (res.results || res.items || res.data) : []);
-    STATE.searchResults = (arr || []).map(normalizeBook);
+    STATE.searchResults = dedupeBooks(arr || []);
     renderSuggestions(STATE.searchResults.slice(0, 6));
     STATE.page = 1;
     applySearchAndRender();
@@ -403,6 +461,7 @@ clearFiltersBtn?.addEventListener('click', () => {
 
 function applySearchAndRender() {
   let arr = (STATE.isSearching && Array.isArray(STATE.searchResults)) ? [...STATE.searchResults] : [...STATE.books];
+  arr = dedupeBooks(arr);
 
   if (STATE.filters.author) arr = arr.filter(b => (b.authors || []).includes(STATE.filters.author));
   if (STATE.filters.category) arr = arr.filter(b => (b.categories || []).includes(STATE.filters.category));
@@ -445,7 +504,7 @@ async function openBook(isbn) {
   let related = [];
   try {
     const rr = await fetchVerbose(`/books/${encodeURIComponent(isbn)}/related`, 'related');
-    related = Array.isArray(rr) ? rr.map(normalizeBook) : [];
+    related = Array.isArray(rr) ? dedupeBooks(rr) : [];
   } catch (e) {
     // ignore if server doesn't return related
   }
@@ -635,7 +694,7 @@ async function loadHome() {
     // popular
     const popRaw = await fetchVerbose('/books/popular', 'popular');
     const popular = Array.isArray(popRaw) ? popRaw : (popRaw && (popRaw.results || popRaw.data || popRaw.items) ? (popRaw.results || popRaw.data || popRaw.items) : []);
-    const normalized = (popular || []).map(normalizeBook);
+    const normalized = dedupeBooks(popular || []);
 
     // store into STATE.books as a base dataset (server likely returns limited list; but we use it)
     STATE.books = normalized;
@@ -646,7 +705,7 @@ async function loadHome() {
     // recommendations
     try {
       const recRaw = await fetchVerbose('/user/recommendations', 'recs');
-      const recs = Array.isArray(recRaw) ? recRaw.map(normalizeBook) : [];
+      const recs = Array.isArray(recRaw) ? dedupeBooks(recRaw) : [];
       renderCarousel(userRecList, recs);
     } catch (e) {
       // ignore recs error
@@ -657,7 +716,7 @@ async function loadHome() {
       const all = await fetchVerbose('/books?per_page=500', 'books_all');
       const arr = Array.isArray(all) ? all : (all && (all.results || all.data || all.items) ? (all.results || all.data || all.items) : (all ? [all] : []));
       if (arr && arr.length) {
-        STATE.books = (arr || []).map(normalizeBook);
+        STATE.books = dedupeBooks(arr || []);
         // keep featured if not provided by popular
         STATE.featured = STATE.featured || (STATE.books.length ? STATE.books[0] : null);
         renderFeatured();
@@ -669,7 +728,7 @@ async function loadHome() {
     applySearchAndRender();
   } catch (e) {
     console.warn('loadHome failed — falling back to demo data', e);
-    STATE.books = demoBooks().map(normalizeBook);
+    STATE.books = dedupeBooks(demoBooks());
     STATE.featured = STATE.books[0] || null;
     renderFeatured();
     renderCarousel(popularList, STATE.books.slice(0, 6));
@@ -691,8 +750,9 @@ function renderFeatured() {
 function renderCarousel(container, items) {
   if (!container) return;
   container.innerHTML = '';
-  if (!items || items.length === 0) { container.innerHTML = '<div class="muted">No items</div>'; return; }
-  items.forEach(it => {
+  const uniqueItems = dedupeBooks(items || []);
+  if (!uniqueItems.length) { container.innerHTML = '<div class="muted">No items</div>'; return; }
+  uniqueItems.forEach(it => {
     const b = normalizeBook(it);
     const el = document.createElement('div');
     el.className = 'side-item';

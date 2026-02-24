@@ -5,7 +5,7 @@ from fastapi import params
 from fastapi import params
 import pandas as pd 
 import mlflow
-from ruamel import yaml
+from ruamel.yaml import YAML
 from scipy.sparse import csr_matrix
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.neighbors import NearestNeighbors
@@ -169,10 +169,14 @@ class ModelTrainer:
             params['train']['eval_epoch'] = 1 # Evaluate every epoch
             params['train']['top_k'] = 10 # Ensure this matches the TOP_K used in evaluation
             params['train']['decay'] = 0.00001 # l2 regularization for embedding parameters
+            
+            # Instantiate the YAML object
+            yaml_obj = YAML(typ='unsafe', pure=True) 
+            yaml_obj.default_flow_style = False
 
             # Save YAML back to file
             with open(yaml_file , "w") as f:
-                yaml.dump(params, f, default_flow_style=False)
+                    yaml_obj.dump(params, f)
 
             hparams = prepare_hparams(yaml_file)
             
