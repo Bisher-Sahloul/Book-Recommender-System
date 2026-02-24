@@ -17,20 +17,8 @@ class DataIngestion :
     """
     def __init__(self) -> None :
         """Initialize the data ingestion class."""
-        self.data_ingestion_config = AppConfiguration().get_data_ingestion_config()
-        [self.Amazon_books , self.Amazon_reviews] = ingest_amazonbooks.DataIngestion().initiate_data_ingestion()
-        # self.openlibrary_books = ingest_openlibrary.DataIngestion(pages=range(70,72)).get_data()
-        self.openlibrary_books = pd.read_csv(self.data_ingestion_config.Openlibrary_books)
-        self.openlibrary_books.rename(columns={
-                                     'Subject':'Categories',
-                                     'Image-URL-M':'Image',
-                                  }, inplace=True)
-        self.openlibrary_books = self.openlibrary_books[['ISBN', 'Book-Title', 'Book-Author', 'Year-Of-Publication', 'Publisher' , 'Description' , 'Categories', 'Image']]
-        self.openlibrary_books["ISBN"] = self.openlibrary_books["ISBN"].str.split("\n")
-        self.openlibrary_books["ISBN"] = self.openlibrary_books["ISBN"].str[0].str.strip().str.strip(',')
-
-        
-        self.support_ratings = pd.read_csv(os.path.join(self.data_ingestion_config.support_ratings_dir , "support_ratings.csv"))
+        [self.Amazon_books , self.Amazon_reviews] = ingest_amazonbooks.DataIngestion().get_data()
+        self.openlibrary_books = ingest_openlibrary.DataIngestion(pages=range(67,68)).get_data()
         self.current_books = pd.DataFrame()
         self.current_reviews = pd.DataFrame()
     def merging_books_data(self) -> None  : 

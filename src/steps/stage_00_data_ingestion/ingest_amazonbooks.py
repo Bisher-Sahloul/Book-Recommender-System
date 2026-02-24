@@ -18,27 +18,6 @@ class DataIngestion :
         """Initialize the data ingestion class."""
         """Get the amazon_book and the rating from the data folder"""
         self.data_ingestion_config = app_config.get_data_ingestion_config()
-
-    def download_and_extract_data(self) -> None:
-        """
-        Downloads the latest Amazon books dataset using kagglehub.
-        Returns the path to the downloaded zip file or folder.
-        """
-        os.makedirs(self.data_ingestion_config.Amazon_data_dir , exist_ok = True)
-        
-        if os.path.exists(self.data_ingestion_config.Amazon_books_data) and os.path.exists(self.data_ingestion_config.Amazon_books_rating) :
-            logger.info("Dataset already exists. Skipping download.")
-            return
-        
-        path = kagglehub.dataset_download(
-                "mohamedbakhet/amazon-books-reviews",
-                output_dir=self.data_ingestion_config.Amazon_data_dir,
-                force_download=True
-        )
-
-        logger.info(f"Dataset downloaded to: {path}")
-        
-    def read_data(self) -> None : 
         Amazon_books = pd.read_csv(self.data_ingestion_config.Amazon_books_data)
         Amazon_reviews = pd.read_csv(self.data_ingestion_config.Amazon_books_rating)
 
@@ -63,8 +42,7 @@ class DataIngestion :
         Amazon_books.drop_duplicates(subset=['ISBN'], inplace=True)
         Amazon_books = Amazon_books[['ISBN', 'Book-Title', 'Book-Author', 'Year-Of-Publication', 'Publisher', 'Description', 'Categories' , 'Image']].head(7500)
         self.df = [Amazon_books , Amazon_reviews]
-        logger.info("Amazon books are ready for merging")
-        
+        logging.info("Amazon books are ready for merging")
     def get_data(self) -> List: 
         return self.df
     

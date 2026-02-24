@@ -63,42 +63,12 @@ class DataTransformation:
 
     def make_train_test_dataset_for_model(self , current_reviews) -> None : 
         try : 
-            logger.info("Start splitting data.\n")
-            os.makedirs(self.data_transformation_config.transformed_data_dir , exist_ok = True)
-            
-            # Filter users with at least 12 interactions
-            user_counts = current_reviews["User_id"].value_counts()
-            valid_users = user_counts[user_counts >= MIN_INTERACTIONS].index
-            current_reviews = current_reviews[current_reviews["User_id"].isin(valid_users)]
-
-            current_reviews = current_reviews.sample(frac=1, random_state=SEED)
-
-            train_list = []
-            test_list = []
-
-            print("Splitting per user...")
-
-            for user, group in current_reviews.groupby("User_id"):
-                n = len(group)
-                train_size = max(1, int(n * SPLIT_RATIO))
-
-                train_part = group.iloc[:train_size]
-                test_part = group.iloc[train_size:]
-
-                if len(test_part) == 0:
-                    test_part = train_part.tail(1)
-                    train_part = train_part.iloc[:-1]
-
-                train_list.append(train_part)
-                test_list.append(test_part)
-
-            train = pd.concat(train_list)
-            test = pd.concat(test_list)
-
+            logging.info("Start splitting data.\n")
+            train, test = train_test_split(current_reviews.values, test_size=0.2, random_state = 16)
+            train = pd.DataFrame(train, columns = current_reviews.columns)
+            test = pd.DataFrame(test, columns = current_reviews.columns)
             train = train.rename(columns={'User_id': 'userID', 'ISBN': 'itemID'})
             test = test.rename(columns={'User_id': 'userID', 'ISBN': 'itemID'})
-            
-            test = test[test["itemID"].isin(train["itemID"].unique())]
 
             train.to_csv(self.data_transformation_config.train_data_csv , index=False)
             test.to_csv(self.data_transformation_config.test_data_csv  , index = False)

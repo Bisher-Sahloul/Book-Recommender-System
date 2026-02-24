@@ -33,9 +33,6 @@ class AppConfiguration:
 
             current_books = os.path.join(ingested_data_dir , data_ingestion_config['Current_books'])
             current_reviews = os.path.join(ingested_data_dir , data_ingestion_config['Current_reviews'])
-            download_data_dir = os.path.join(raw_data_dir , data_ingestion_config['download_data_dir'])
-            
-            support_ratings_dir = os.path.join(raw_data_dir , data_ingestion_config['support_ratings_dir'])
 
             respone =  DataIngestionConfig(
                         artifacts_dir = artifacts_dir , 
