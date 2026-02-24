@@ -117,3 +117,12 @@ Test shape:" (333326, 3), "| columns:" ['itemID', 'userID', 'rating']
 [2026-02-24 22:18:36,193] tensorflow - WARNING - From C:\Users\BS\OneDrive\Desktop\Book Recommender System\src\steps\stage_03_model_trainer\recommenders_microsoft\recommenders\models\deeprec\models\graphrec\lightgcn.py:110: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
 
 [2026-02-24 22:18:37,060] book_recommender - INFO - ==================== Model Start Training. ====================
+[2026-02-24 22:25:15,752] tensorflow - WARNING - From C:\Users\BS\anaconda3\Lib\site-packages\tensorflow\python\training\saver.py:1068: remove_checkpoint (from tensorflow.python.checkpoint.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+[2026-02-24 22:25:43,069] book_recommender - INFO - None
+[2026-02-24 22:25:57,408] book_recommender - INFO - Saving final model to artifacts\trained_model\lightgcn_model
+[2026-02-24 22:26:11,989] book_recommender - INFO - Saving model metadata to artifacts\trained_model\model_metadata.pkl
+[2026-02-24 22:26:12,155] book_recommender - INFO - ====================Model Trainer log completed.==================== 
+
+
