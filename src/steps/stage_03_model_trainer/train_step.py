@@ -160,7 +160,7 @@ class ModelTrainer:
             yaml_file = './src/steps/stage_03_model_trainer/recommenders_microsoft/examples/07_tutorials/KDD2020-tutorial/lightgcn.yaml'
             
             params = read_yaml_file(yaml_file)
-            params['train']['epochs'] = 5  # number of epochs for training
+            params['train']['epochs'] = 1  # number of epochs for training
             params['model']['embed_size'] = 64  # the embedding dimension of users and items
             params['model']['n_layers'] = 3  # number of layers of the model
             params['train']['batch_size'] = 4096  # batch size for training
@@ -248,7 +248,6 @@ class ModelTrainer:
                 mlflow.log_metric("MAP", eval_map)
 
                 model_dir = os.path.join(self.data_validation_config.serialized_objects_dir, "lightgcn_model")
-                model.save(model_dir)
 
                 mlflow.log_artifacts(model_dir, artifact_path="LightGCN_model")
 
@@ -260,7 +259,6 @@ class ModelTrainer:
             #Saving model object for recommendations
             os.makedirs(self.model_trainer_config.trained_model_dir, exist_ok=True)
             file_name = os.path.join(self.model_trainer_config.trained_model_dir,self.model_trainer_config.trained_model_name)
-            model.save(file_name)
             logger.info(f"Saving final model to {file_name}")
             
             # Save model metadata and inference data (cannot pickle TensorFlow objects)

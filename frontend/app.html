@@ -4,7 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Premium Editorial Bookstore</title>
-  <link rel="stylesheet" href="app.css?v=20260224a" />
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const v = params.get('v') || String(Date.now());
+      window.__assetVersion = v;
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = `app.css?v=${encodeURIComponent(v)}`;
+      document.head.appendChild(link);
+    })();
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -98,7 +108,14 @@
     <div class="drawer-header"><h3>Wishlist</h3><button id="closeWish" class="btn-ghost">Close</button></div>
     <div id="wishItems" class="drawer-body"></div>
   </div>
-
-  <script src="app.js?v=20260224a" defer></script>
+  <script>
+    (function () {
+      const v = window.__assetVersion || String(Date.now());
+      const script = document.createElement('script');
+      script.src = `app.js?v=${encodeURIComponent(v)}`;
+      script.defer = true;
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>

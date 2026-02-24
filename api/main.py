@@ -1,6 +1,7 @@
 import logging
 import os
 import sys
+import time
 import pandas as pd 
 import numpy as np 
 from fastapi import FastAPI , Request , Query
@@ -202,6 +203,17 @@ def load_lightgcn_model_and_metadata():
 
 app = FastAPI(title="Book Recommender API")
 
+FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))
+
+
+def frontend_asset_version():
+    try:
+        files = ["app.html", "app.css", "app.js"]
+        mtimes = [int(os.path.getmtime(os.path.join(FRONTEND_DIR, name))) for name in files]
+        return str(max(mtimes))
+    except Exception:
+        return str(int(time.time()))
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -264,11 +276,11 @@ def item_based_recommend(
 
 
 
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
 
 @app.get("/")
 async def read_root():
-    return RedirectResponse(url="/static/app.html")
+    return RedirectResponse(url=f"/static/app.html?v={frontend_asset_version()}")
 
 
 # 🔍 Vector search
