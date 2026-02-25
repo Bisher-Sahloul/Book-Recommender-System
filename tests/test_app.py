@@ -2,7 +2,6 @@ from xmlrpc import client
 from api.main import app
 from fastapi.testclient import TestClient
 
-
 class TestSearchAPI :
     def __init__(self) -> None:
         self.client = TestClient(app)
