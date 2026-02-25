@@ -160,7 +160,7 @@ class ModelTrainer:
             yaml_file = './src/steps/stage_03_model_trainer/recommenders_microsoft/examples/07_tutorials/KDD2020-tutorial/lightgcn.yaml'
             
             params = read_yaml_file(yaml_file)
-            params['train']['epochs'] = 1  # number of epochs for training
+            params['train']['epochs'] = 5  # number of epochs for training
             params['model']['embed_size'] = 64  # the embedding dimension of users and items
             params['model']['n_layers'] = 3  # number of layers of the model
             params['train']['batch_size'] = 4096  # batch size for training
