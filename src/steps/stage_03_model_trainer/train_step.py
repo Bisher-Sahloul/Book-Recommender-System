@@ -249,7 +249,7 @@ class ModelTrainer:
 
                 model_dir = os.path.join(self.data_validation_config.serialized_objects_dir, "lightgcn_model")
 
-                mlflow.log_artifacts(model_dir, artifact_path="LightGCN_model")
+                #mlflow.log_artifacts(model_dir, artifact_path="LightGCN_model")
 
                 # mlflow.log_input(train_ds, context="training")
 
