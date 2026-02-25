@@ -168,7 +168,7 @@ Final filtered test set: `333,298` user-item pairs
 
 ### Prerequisites
 
-- Python 3.9+ (CI currently uses 3.11)
+- Python 3.11+ (recommended to match CI and Docker)
 - pip
 - (Optional) Docker
 - Kaggle access/token for Amazon dataset download
