@@ -2,6 +2,12 @@
 
 End-to-end recommendation system that combines data engineering, collaborative filtering, graph-based recommendation (LightGCN), API serving, and a frontend UI.
 
+## Project Documentation
+
+AI-powered walkthrough of the full system architecture and design decisions:
+
+- https://zread.ai/Bisher-Sahloul/Book-Recommender-System
+
 ## Overview
 
 This project is built as a full ML pipeline:
